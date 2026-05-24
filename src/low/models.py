@@ -15,7 +15,7 @@ class SpeakerCount:
     language: "Language"
     speaker_count: int
     speaker_fraction: float   # share of country population, 0.0–1.0
-    source: str  # "cldr" or "cia"
+    source: str  # "cldr", "cia", or "linguameta"
 
     def __repr__(self) -> str:
         return (

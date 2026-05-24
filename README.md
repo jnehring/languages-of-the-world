@@ -92,6 +92,7 @@ db.speaker_counts.for_country("DE")        # all entries for Germany
 db.speaker_counts.for_language("deu")      # all entries for German
 db.speaker_counts.by_source("cldr")        # all CLDR-sourced entries
 db.speaker_counts.by_source("cia")         # all CIA-sourced entries
+db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 ```
 
 ---
@@ -120,7 +121,7 @@ db.speaker_counts.by_source("cia")         # all CIA-sourced entries
 | `countries` | `List[Country]` | LinguaMeta | Countries where the language is spoken |
 | `family` | `Optional[LanguageFamily]` | Glottolog | Immediate parent node in the Glottolog tree |
 | `glottocode` | `Optional[str]` | Glottolog | Glottolog identifier (e.g. `"kin1248"`) |
-| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA | Per-country speaker counts for this language |
+| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-country speaker counts for this language |
 
 ### Country
 
@@ -135,7 +136,7 @@ db.speaker_counts.by_source("cia")         # all CIA-sourced entries
 | `official_languages` | `List[Language]` | CLDR | Nationally official languages (`officialStatus="official"`) |
 | `official_regional_languages` | `List[Language]` | CLDR | Regionally official languages (`officialStatus="official_regional"`) |
 | `de_facto_official_languages` | `List[Language]` | CLDR | De facto official languages (`officialStatus="de_facto_official"`) |
-| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA | Per-language speaker counts in this country |
+| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-language speaker counts in this country |
 
 ### SpeakerCount
 
@@ -147,9 +148,9 @@ according to a specific data source. Both `country.speaker_counts` and
 |---|---|---|---|
 | `country` | `Country` | — | The country |
 | `language` | `Language` | — | The language |
-| `speaker_count` | `int` | CLDR / CIA | Estimated number of speakers |
-| `speaker_fraction` | `float` | CLDR / CIA | Share of country population (0.0–1.0) |
-| `source` | `str` | — | `"cldr"` or `"cia"` |
+| `speaker_count` | `int` | CLDR / CIA / LinguaMeta | Estimated number of speakers |
+| `speaker_fraction` | `float` | CLDR / CIA / LinguaMeta | Share of country population (0.0–1.0; derived from `Country.population` for LinguaMeta) |
+| `source` | `str` | — | `"cldr"`, `"cia"`, or `"linguameta"` |
 
 ### Region
 
@@ -229,8 +230,9 @@ standard sequence protocol:
 ```python
 db.speaker_counts.for_country("DE")    # List[SpeakerCount] — all entries for Germany
 db.speaker_counts.for_language("deu")  # List[SpeakerCount] — all entries for German
-db.speaker_counts.by_source("cldr")    # List[SpeakerCount] — CLDR entries only
-db.speaker_counts.by_source("cia")     # List[SpeakerCount] — CIA entries only
+db.speaker_counts.by_source("cldr")        # List[SpeakerCount] — CLDR entries only
+db.speaker_counts.by_source("cia")         # List[SpeakerCount] — CIA entries only
+db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] — LinguaMeta entries only
 ```
 
 The same data is also reachable through dot navigation on `Country` and `Language`:
@@ -284,19 +286,32 @@ Countries, regions, and continents are entirely built from this CSV.
 
 ### [Google Research — LinguaMeta](https://github.com/google-research/url-nlp/tree/main/linguameta)
 
-**URL:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/linguameta.tsv`  
-**Licence:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)  
+**TSV URL:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/linguameta.tsv`
+**Per-language JSON base:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/data/<bcp47>.json`
+**Licence:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+**Raw output:** `src/low/data/sources/linguameta_speakers.json`
 **Fields provided:**
 
-| Field | Column in source |
+| Field | Source path |
 |---|---|
-| `Language.speaker_count` | `estimated_number_of_speakers` |
-| `Language.countries` | `locales` (comma-separated ISO 3166-1 alpha-2) |
+| `Language.speaker_count` | TSV `estimated_number_of_speakers` (merged max with Wikidata) |
+| `Language.countries` | TSV `locales` (comma-separated ISO 3166-1 alpha-2) |
+| `SpeakerCount.country` | per-language JSON `language_script_locale[].locale.iso_3166_code` |
+| `SpeakerCount.language` | per-language JSON `iso_639_3_code` |
+| `SpeakerCount.speaker_count` | `language_script_locale[].speaker_data.number_of_speakers` |
+| `SpeakerCount.speaker_fraction` | derived as `speaker_count / Country.population` (CLDR-sourced population) |
 
-LinguaMeta covers ~6 600 languages with speaker-count estimates and the countries
-where each language is spoken.  Speaker counts use order-of-magnitude rounding.
-Multiple BCP-47 rows mapping to the same ISO 639-3 code are merged (max speakers,
-union of country codes).
+The TSV is the authoritative table for the global per-language total
+(`estimated_number_of_speakers`, order-of-magnitude rounded). Multiple BCP-47
+rows mapping to the same ISO 639-3 code are merged (max speakers, union of
+country codes).
+
+The per-language JSON files under `linguameta/data/` carry per-locale speaker
+counts (`language_script_locale[].speaker_data.number_of_speakers`). These are
+fetched in parallel (~7 000 files, up to 20 threads) and merged into the
+`SpeakerCount` collection with `source="linguameta"`. The repo file tree is
+discovered via a single GitHub trees API call; individual files come from
+`raw.githubusercontent.com` (no rate-limit).
 
 ---
 
@@ -411,6 +426,7 @@ The bootstrap writes three files:
 | `src/low/data/low_db.json` | Merged, deduplicated graph database (includes `country_official_languages` section) |
 | `src/low/data/sources/cldr_speakers.json` | Raw CLDR per-territory language population records (includes `official_status` field) |
 | `src/low/data/sources/cia_speakers.json` | Raw CIA World Factbook per-country language records |
+| `src/low/data/sources/linguameta_speakers.json` | Raw LinguaMeta per-locale speaker-count records |
 | `src/low/data/sources/wikidata_speakers.json` | Raw Wikidata SPARQL global speaker-count records |
 
 The two source files preserve the original data exactly as parsed, before

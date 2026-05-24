@@ -42,6 +42,14 @@ _LINGUAMETA_TSV = (
     "https://raw.githubusercontent.com/google-research/url-nlp"
     "/main/linguameta/linguameta.tsv"
 )
+# Per-language JSON files in this directory carry per-country speaker counts
+# under language_script_locale[].speaker_data.number_of_speakers.
+_LINGUAMETA_TREE_API = (
+    "https://api.github.com/repos/google-research/url-nlp/git/trees/main?recursive=1"
+)
+_LINGUAMETA_RAW_BASE = (
+    "https://raw.githubusercontent.com/google-research/url-nlp/main/"
+)
 _GLOTTOLOG_LANGUAGES_CSV = (
     "https://raw.githubusercontent.com/glottolog/glottolog-cldf"
     "/master/cldf/languages.csv"
@@ -525,6 +533,96 @@ def _parse_cia_speakers(
     return records
 
 
+def _fetch_linguameta_country(path: str) -> Optional[Dict[str, Any]]:
+    """Fetch one LinguaMeta per-language JSON file or None on error."""
+    try:
+        text = _fetch_text(_LINGUAMETA_RAW_BASE + path)
+        return json.loads(text)
+    except Exception:
+        return None
+
+
+def _parse_linguameta_country_speakers(
+    known_country_codes: set,
+    known_part3: set,
+) -> List[Dict[str, Any]]:
+    """
+    Fetch per-locale LinguaMeta data and return per-(country, language) records.
+
+    LinguaMeta stores per-country speaker counts in linguameta/data/<bcp47>.json
+    under language_script_locale[].speaker_data.number_of_speakers.
+
+    Each record:
+        country_code   ISO 3166-1 alpha-2 (uppercased)
+        iso639_3       resolved ISO 639-3
+        speaker_count  int
+        has_official_status bool (or None)
+    """
+    print("  Fetching LinguaMeta file tree…")
+    try:
+        tree_text = _fetch_text(_LINGUAMETA_TREE_API)
+        tree_data: Dict[str, Any] = json.loads(tree_text)
+    except Exception as exc:
+        print(f"  WARNING: Could not fetch LinguaMeta tree: {exc}")
+        return []
+
+    paths: List[str] = []
+    for item in tree_data.get("tree", []):
+        p = item.get("path", "")
+        if item.get("type") != "blob":
+            continue
+        if not p.startswith("linguameta/data/") or not p.endswith(".json"):
+            continue
+        paths.append(p)
+
+    print(f"  Fetching {len(paths)} LinguaMeta language files (parallel)…")
+
+    fetched: List[Dict[str, Any]] = []
+    with ThreadPoolExecutor(max_workers=20) as pool:
+        futures = {pool.submit(_fetch_linguameta_country, p): p for p in paths}
+        done = 0
+        for fut in as_completed(futures):
+            done += 1
+            if done % 500 == 0:
+                print(f"    {done}/{len(paths)}…")
+            data = fut.result()
+            if data:
+                fetched.append(data)
+
+    records: List[Dict[str, Any]] = []
+    for data in fetched:
+        p3 = _normalize(data.get("iso_639_3_code", ""))
+        if not p3 or p3 not in known_part3:
+            continue
+
+        for entry in data.get("language_script_locale", []) or []:
+            locale = entry.get("locale") or {}
+            country_code = _normalize(locale.get("iso_3166_code", "")).upper()
+            if len(country_code) != 2 or country_code not in known_country_codes:
+                continue
+
+            speaker_data = entry.get("speaker_data") or {}
+            raw_count = speaker_data.get("number_of_speakers")
+            try:
+                speaker_count = int(raw_count) if raw_count is not None else 0
+            except (ValueError, TypeError):
+                speaker_count = 0
+            if speaker_count <= 0:
+                continue
+
+            official = entry.get("official_status") or {}
+            has_official = official.get("has_official_status")
+
+            records.append({
+                "country_code": country_code,
+                "iso639_3": p3,
+                "speaker_count": speaker_count,
+                "has_official_status": has_official,
+            })
+
+    return records
+
+
 def _fetch_wikidata_speakers(
     iso1_to_part3: Dict[str, str],
     known_part3: set,
@@ -718,6 +816,26 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     )
     print(f"  Stored {len(cia_raw)} CIA records → {cia_path}")
 
+    # --- LinguaMeta per-country speaker counts ----------------------------
+    print("Fetching LinguaMeta per-country speaker data…")
+    try:
+        linguameta_country_raw = _parse_linguameta_country_speakers(
+            known_country_codes, known_part3
+        )
+    except Exception as exc:
+        print(f"  WARNING: LinguaMeta per-country fetch failed: {exc}")
+        linguameta_country_raw = []
+
+    linguameta_country_path = sources_dir / "linguameta_speakers.json"
+    linguameta_country_path.write_text(
+        json.dumps(linguameta_country_raw, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(
+        f"  Stored {len(linguameta_country_raw)} LinguaMeta per-country records "
+        f"→ {linguameta_country_path}"
+    )
+
     # --- Wikidata global speaker counts -----------------------------------
     print("Fetching Wikidata SPARQL speaker counts (P1098)…")
     try:
@@ -784,6 +902,26 @@ def build_db(output_path: Optional[Path] = None) -> Path:
                 "source": "cia",
             }
 
+    # LinguaMeta per-country: derive speaker_fraction from country population
+    # when available (population is stamped onto raw_countries from CLDR).
+    for rec in linguameta_country_raw:
+        cc = rec.get("country_code")
+        p3 = rec.get("iso639_3")
+        if not cc or not p3:
+            continue
+        key = (cc, p3, "linguameta")
+        existing = seen_keys.get(key)
+        if existing is None or rec["speaker_count"] > existing["speaker_count"]:
+            pop = raw_countries.get(cc, {}).get("population", 0)
+            fraction = round(rec["speaker_count"] / pop, 6) if pop else 0.0
+            seen_keys[key] = {
+                "country_code": cc,
+                "language_code": p3,
+                "speaker_count": rec["speaker_count"],
+                "speaker_fraction": fraction,
+                "source": "linguameta",
+            }
+
     country_language_speakers = sorted(
         seen_keys.values(),
         key=lambda x: (x["country_code"], x["source"], x["language_code"]),
@@ -830,6 +968,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     root_families        = sum(1 for f in db["families"] if not f["parent_glottocode"])
     cldr_entries         = sum(1 for r in country_language_speakers if r["source"] == "cldr")
     cia_entries          = sum(1 for r in country_language_speakers if r["source"] == "cia")
+    linguameta_entries   = sum(1 for r in country_language_speakers if r["source"] == "linguameta")
     official_counts      = {s: sum(1 for r in country_official_languages if r["status"] == s)
                             for s in _TRACKED_STATUSES}
 
@@ -845,7 +984,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         f"{len(db['continents'])} continents\n"
         f"  {len(db['families'])} family tree nodes ({root_families} root families)\n"
         f"  {len(country_language_speakers)} country-language speaker records "
-        f"({cldr_entries} CLDR, {cia_entries} CIA)\n"
+        f"({cldr_entries} CLDR, {cia_entries} CIA, {linguameta_entries} LinguaMeta)\n"
         f"  {len(country_official_languages)} official-language entries "
         f"(official: {official_counts['official']}, "
         f"regional: {official_counts['official_regional']}, "

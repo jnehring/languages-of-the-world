@@ -167,5 +167,5 @@ class SpeakerCountCollection(_BaseCollection[SpeakerCount]):
         return self._by_language.get(part3.lower(), [])
 
     def by_source(self, source: str) -> List[SpeakerCount]:
-        """All SpeakerCount entries from a given source (e.g. 'cldr', 'cia')."""
+        """All SpeakerCount entries from a given source (e.g. 'cldr', 'cia', 'linguameta')."""
         return [sc for sc in self._items if sc.source == source]
