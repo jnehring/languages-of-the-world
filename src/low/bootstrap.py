@@ -186,6 +186,11 @@ def _parse_glottolog(languages_text: str, values_text: str):
         For language (and dialect) nodes, derived from the classification path.
         The classification value is a slash-separated ancestor chain where
         the last element is the immediate parent.
+
+    glottocode_to_aes : {glottocode: aes_label}
+        Glottolog Agglomerated Endangerment Status per language node, e.g.
+        "not_endangered", "threatened", "shifting", "moribund",
+        "nearly_extinct", "extinct".
     """
     # ---- languages.csv ------------------------------------------------
     lang_reader = csv.DictReader(io.StringIO(languages_text))
@@ -216,23 +221,30 @@ def _parse_glottolog(languages_text: str, values_text: str):
     # Example: "indo1319/clas1257/germ1287/.../glob1243"  → parent = glob1243
     val_reader = csv.DictReader(io.StringIO(values_text))
     lang_to_parent: Dict[str, str] = {}
+    glottocode_to_aes: Dict[str, str] = {}
 
     for row in val_reader:
-        if _normalize(row.get("Parameter_ID", "")) != "classification":
-            continue
+        param = _normalize(row.get("Parameter_ID", ""))
         glottocode = _normalize(row.get("Language_ID", ""))
-        path = _normalize(row.get("Value", ""))
-        if not glottocode or not path:
+        if not glottocode:
             continue
 
-        parent_gc = path.split("/")[-1]
+        if param == "classification":
+            path = _normalize(row.get("Value", ""))
+            if not path:
+                continue
+            parent_gc = path.split("/")[-1]
+            if glottocode in families:
+                families[glottocode]["parent_glottocode"] = parent_gc
+            else:
+                lang_to_parent[glottocode] = parent_gc
+        elif param == "aes":
+            # Code_ID has the form "aes-not_endangered"; strip the prefix.
+            code_id = _normalize(row.get("Code_ID", ""))
+            if code_id.startswith("aes-"):
+                glottocode_to_aes[glottocode] = code_id[len("aes-"):]
 
-        if glottocode in families:
-            families[glottocode]["parent_glottocode"] = parent_gc
-        else:
-            lang_to_parent[glottocode] = parent_gc
-
-    return families, iso_to_glottocode, lang_to_parent
+    return families, iso_to_glottocode, lang_to_parent, glottocode_to_aes
 
 
 def _parse_un_m49(csv_text: str):
@@ -747,7 +759,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     glottolog_langs_text = _fetch_text(_GLOTTOLOG_LANGUAGES_CSV)
     print("Fetching Glottolog family tree (values.csv)…")
     glottolog_vals_text = _fetch_text(_GLOTTOLOG_VALUES_CSV)
-    glottolog_families, iso_to_glottocode, lang_to_parent = _parse_glottolog(
+    glottolog_families, iso_to_glottocode, lang_to_parent, glottocode_to_aes = _parse_glottolog(
         glottolog_langs_text, glottolog_vals_text
     )
 
@@ -789,6 +801,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
                 "speaker_count": lm.get("speaker_count", 0),
                 "glottocode": lang_glottocode,
                 "family_glottocode": family_glottocode,
+                "endangerment": glottocode_to_aes.get(lang_glottocode) if lang_glottocode else None,
                 "country_codes": country_codes,
             }
         )

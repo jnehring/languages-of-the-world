@@ -138,6 +138,7 @@ class LanguagesOfTheWorld:
                 part1=row.get("part1"),
                 speaker_count=row.get("speaker_count", 0),
                 glottocode=row.get("glottocode"),
+                endangerment=row.get("endangerment"),
             )
             # Back-wire countries -> languages
             for country in lang_countries:

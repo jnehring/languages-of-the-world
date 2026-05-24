@@ -193,6 +193,10 @@ class Language:
     part1: Optional[str] = None        # ISO 639-1 (optional)
     speaker_count: int = 0
     glottocode: Optional[str] = None   # Glottolog identifier
+    endangerment: Optional[str] = None
+    """Glottolog Agglomerated Endangered Status (AES). One of:
+    'not_endangered', 'threatened', 'shifting', 'moribund', 'nearly_extinct',
+    'extinct'. None if Glottolog has no AES assessment for this language."""
     _speaker_count_ref: List["SpeakerCount"] = field(default_factory=list, repr=False, compare=False)
     _names_ref: List["LanguageName"] = field(default_factory=list, repr=False, compare=False)
 

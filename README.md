@@ -12,7 +12,7 @@ Instead of wrapping data behind traditional repository classes, `low` exposes ev
 ## Installation
 
 ```bash
-pip install low
+pip install languages-of-the-world
 ```
 
 ---
@@ -50,6 +50,12 @@ for l in rw.languages:
 # Filter by partial name or minimum speakers
 popular = db.languages.filter(min_speakers=50_000_000)
 romance = db.languages.filter(label_contains="Portug")
+
+# Glottolog endangerment status
+print(db.languages.get("kin").endangerment)   # 'not_endangered'
+print(db.languages.get("dlg").endangerment)   # 'moribund'  (Dolgan)
+at_risk = [l for l in db.languages
+           if l.endangerment in {"nearly_extinct", "moribund"}]
 
 # Walk the Glottolog language family tree
 deu = db.languages.get("deu")
@@ -131,6 +137,7 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 | `countries` | `List[Country]` | LinguaMeta | Countries where the language is spoken |
 | `family` | `Optional[LanguageFamily]` | Glottolog | Immediate parent node in the Glottolog tree |
 | `glottocode` | `Optional[str]` | Glottolog | Glottolog identifier (e.g. `"kin1248"`) |
+| `endangerment` | `Optional[str]` | Glottolog | Agglomerated Endangerment Status (AES). One of `"not_endangered"`, `"threatened"`, `"shifting"`, `"moribund"`, `"nearly_extinct"`, `"extinct"`; `None` if Glottolog has no assessment |
 | `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-country speaker counts for this language |
 | `names` | `List[LanguageName]` | LinguaMeta | Canonical names for this language in other languages |
 | `endonym` | `Optional[LanguageName]` *(property)* | LinguaMeta | The name expressed in the language itself, if available |
@@ -377,6 +384,7 @@ files come from `raw.githubusercontent.com` (no rate-limit).
 | `LanguageFamily.parent` | Last component of the `classification` path (values.csv) |
 | `Language.glottocode` | `ID` (languages.csv, `Level=language`) |
 | `Language.family` | Resolved from the language's `classification` path |
+| `Language.endangerment` | `Code_ID` of the `aes` parameter (values.csv), with the `aes-` prefix stripped |
 
 The `classification` value is a slash-separated ancestor chain from the root
 family down to the node's immediate parent (e.g.
