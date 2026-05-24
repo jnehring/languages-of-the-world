@@ -9,10 +9,19 @@ from .collections import (
     CountryCollection,
     FamilyCollection,
     LanguageCollection,
+    LanguageNameCollection,
     RegionCollection,
     SpeakerCountCollection,
 )
-from .models import Continent, Country, Language, LanguageFamily, Region, SpeakerCount
+from .models import (
+    Continent,
+    Country,
+    Language,
+    LanguageFamily,
+    LanguageName,
+    Region,
+    SpeakerCount,
+)
 
 _DEFAULT_DB = Path(__file__).parent / "data" / "low_db.json"
 
@@ -48,6 +57,7 @@ class LanguagesOfTheWorld:
             self.families,
             self.languages,
             self.speaker_counts,
+            self.language_names,
         ) = self._assemble(raw)
 
     # ------------------------------------------------------------------
@@ -171,6 +181,25 @@ class LanguagesOfTheWorld:
             lang._speaker_count_ref.append(sc)
             speaker_counts_list.append(sc)
 
+        # --- Language names (LinguaMeta) ----------------------------------
+        language_names_list: list[LanguageName] = []
+        for row in raw.get("language_names", []):
+            lang = languages_map.get(row["language_part3"])
+            if lang is None:
+                continue
+            in_p3 = row.get("in_language_part3")
+            in_lang = languages_map.get(in_p3) if in_p3 else None
+            ln = LanguageName(
+                language=lang,
+                name=row["name"],
+                in_language_bcp47=row["in_language_bcp47"],
+                in_language=in_lang,
+                script=row.get("script"),
+                source=row.get("source"),
+            )
+            lang._names_ref.append(ln)
+            language_names_list.append(ln)
+
         return (
             ContinentCollection(list(continents.values())),
             RegionCollection(list(regions.values())),
@@ -178,6 +207,7 @@ class LanguagesOfTheWorld:
             FamilyCollection(list(families.values())),
             LanguageCollection(languages_list),
             SpeakerCountCollection(speaker_counts_list),
+            LanguageNameCollection(language_names_list),
         )
 
     # ------------------------------------------------------------------
@@ -190,5 +220,6 @@ class LanguagesOfTheWorld:
             f"languages={len(self.languages)}, "
             f"countries={len(self.countries)}, "
             f"continents={len(self.continents)}, "
-            f"speaker_counts={len(self.speaker_counts)})"
+            f"speaker_counts={len(self.speaker_counts)}, "
+            f"language_names={len(self.language_names)})"
         )

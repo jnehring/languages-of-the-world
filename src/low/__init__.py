@@ -9,14 +9,24 @@ An in-memory object graph for language, country, continent, and regional data.
     print(lang.countries[0].region.label)
 """
 from .graph import LanguagesOfTheWorld
-from .models import Continent, Country, Language, LanguageFamily, Region
+from .models import (
+    Continent,
+    Country,
+    Language,
+    LanguageFamily,
+    LanguageName,
+    Region,
+    SpeakerCount,
+)
 
 __all__ = [
     "LanguagesOfTheWorld",
     "Language",
+    "LanguageName",
     "Country",
     "Continent",
     "Region",
     "LanguageFamily",
+    "SpeakerCount",
 ]
 __version__ = "0.1.0"

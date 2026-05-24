@@ -87,6 +87,16 @@ kin = db.languages.get("kin")
 for sc in kin.speaker_counts:
     print(f"{sc.country.label}: {sc.speaker_count:,} ({sc.source})")
 
+# Canonical names for a language across other languages
+deu = db.languages.get("deu")
+print(deu.endonym.name)                       # "Deutsch"
+print([n.name for n in deu.names if n.in_language_bcp47 == "fr"])
+# ['allemand']
+
+# All known English names for every language
+for n in db.language_names.in_language("en")[:5]:
+    print(f"{n.language.part3} → {n.name}")
+
 # Query the full SpeakerCount collection directly
 db.speaker_counts.for_country("DE")        # all entries for Germany
 db.speaker_counts.for_language("deu")      # all entries for German
@@ -100,8 +110,8 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 ## Entity Model
 
 ```
-[Continent] <───1:N─── [Region] <───1:N─── [Country] <───M:N─── [Language]
-     │                                           │                     │
+[Continent] <───1:N─── [Region] <───1:N─── [Country] <───M:N─── [Language] ───1:N─── [LanguageName]
+     │                                           │                     │                    │
      └───────────────────1:N────────────────────┘                     └───N:1─── [LanguageFamily]
                                 │                                                      │ parent/children
                                 └───────────── [SpeakerCount] ─────────────────────────
@@ -122,6 +132,22 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 | `family` | `Optional[LanguageFamily]` | Glottolog | Immediate parent node in the Glottolog tree |
 | `glottocode` | `Optional[str]` | Glottolog | Glottolog identifier (e.g. `"kin1248"`) |
 | `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-country speaker counts for this language |
+| `names` | `List[LanguageName]` | LinguaMeta | Canonical names for this language in other languages |
+| `endonym` | `Optional[LanguageName]` *(property)* | LinguaMeta | The name expressed in the language itself, if available |
+
+### LanguageName
+
+A single canonical name for a language, expressed in some (possibly different) language. Sourced from LinguaMeta's `name_data`, filtered to `is_canonical=True`.
+
+| Property | Type | Source | Description |
+|---|---|---|---|
+| `language` | `Language` | — | The language being named |
+| `name` | `str` | LinguaMeta | The name string (e.g. `"Deutsch"`, `"German"`, `"Allemand"`) |
+| `in_language_bcp47` | `str` | LinguaMeta | BCP 47 code of the language the name is expressed in |
+| `in_language` | `Optional[Language]` | derived | Resolved `Language`, when the BCP 47 base maps to a known ISO 639-3 |
+| `script` | `Optional[str]` | LinguaMeta | ISO 15924 script code, when supplied |
+| `source` | `Optional[str]` | LinguaMeta | Upstream provenance string (e.g. `"CLDR"`, `"GOOGLE_RESEARCH"`) |
+| `is_endonym` | `bool` *(property)* | derived | True when `in_language` is the same as `language` |
 
 ### Country
 
@@ -190,7 +216,7 @@ family like Indo-European — is a `LanguageFamily` instance.
 
 ## Collection Interface
 
-Every entity collection (`db.languages`, `db.countries`, `db.continents`, `db.regions`, `db.families`, `db.speaker_counts`) implements the Python sequence protocol:
+Every entity collection (`db.languages`, `db.countries`, `db.continents`, `db.regions`, `db.families`, `db.speaker_counts`, `db.language_names`) implements the Python sequence protocol:
 
 ```python
 len(db.languages)        # int
@@ -234,6 +260,22 @@ db.speaker_counts.by_source("cldr")        # List[SpeakerCount] — CLDR entries
 db.speaker_counts.by_source("cia")         # List[SpeakerCount] — CIA entries only
 db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] — LinguaMeta entries only
 ```
+
+### LanguageNameCollection (`db.language_names`)
+
+Holds every canonical name parsed from LinguaMeta's per-language JSON
+(`name_data` rows with `is_canonical=True`), one record per
+`(language, in_language_bcp47, script)` triple.
+
+```python
+db.language_names.for_language("deu")   # every canonical name of German
+db.language_names.in_language("en")     # every language's English canonical name
+db.language_names.endonyms()            # one entry per language: its name in itself
+```
+
+Each entry resolves to a `Language` via `name.in_language` when the BCP 47 base
+maps to a known ISO 639-3; otherwise `in_language` is `None` and only
+`in_language_bcp47` is meaningful.
 
 The same data is also reachable through dot navigation on `Country` and `Language`:
 
@@ -300,18 +342,24 @@ Countries, regions, and continents are entirely built from this CSV.
 | `SpeakerCount.language` | per-language JSON `iso_639_3_code` |
 | `SpeakerCount.speaker_count` | `language_script_locale[].speaker_data.number_of_speakers` |
 | `SpeakerCount.speaker_fraction` | derived as `speaker_count / Country.population` (CLDR-sourced population) |
+| `LanguageName.name` | per-language JSON `name_data[].name` (filtered to `is_canonical=true`) |
+| `LanguageName.in_language_bcp47` | `name_data[].bcp_47_code` |
+| `LanguageName.script` | `name_data[].iso_15924_code` (optional) |
+| `LanguageName.source` | `name_data[].source` (e.g. `"CLDR"`, `"GOOGLE_RESEARCH"`) |
 
 The TSV is the authoritative table for the global per-language total
 (`estimated_number_of_speakers`, order-of-magnitude rounded). Multiple BCP-47
 rows mapping to the same ISO 639-3 code are merged (max speakers, union of
 country codes).
 
-The per-language JSON files under `linguameta/data/` carry per-locale speaker
-counts (`language_script_locale[].speaker_data.number_of_speakers`). These are
-fetched in parallel (~7 000 files, up to 20 threads) and merged into the
-`SpeakerCount` collection with `source="linguameta"`. The repo file tree is
-discovered via a single GitHub trees API call; individual files come from
-`raw.githubusercontent.com` (no rate-limit).
+The per-language JSON files under `linguameta/data/` are fetched in parallel
+(~7 000 files, up to 20 threads) in a single pass that produces two record sets:
+
+- **Per-locale speaker counts** from `language_script_locale[].speaker_data.number_of_speakers` → merged into `SpeakerCount` with `source="linguameta"`.
+- **Canonical names** from `name_data[]` (rows with `is_canonical=true`) → `LanguageName` collection. Names are deduplicated on `(language, in_language_bcp47, script)`; the first occurrence wins.
+
+The repo file tree is discovered via a single GitHub trees API call; individual
+files come from `raw.githubusercontent.com` (no rate-limit).
 
 ---
 
@@ -427,6 +475,7 @@ The bootstrap writes three files:
 | `src/low/data/sources/cldr_speakers.json` | Raw CLDR per-territory language population records (includes `official_status` field) |
 | `src/low/data/sources/cia_speakers.json` | Raw CIA World Factbook per-country language records |
 | `src/low/data/sources/linguameta_speakers.json` | Raw LinguaMeta per-locale speaker-count records |
+| `src/low/data/sources/linguameta_names.json` | Raw LinguaMeta canonical language-name records |
 | `src/low/data/sources/wikidata_speakers.json` | Raw Wikidata SPARQL global speaker-count records |
 
 The two source files preserve the original data exactly as parsed, before

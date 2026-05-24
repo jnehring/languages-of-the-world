@@ -157,6 +157,33 @@ class LanguageFamily:
 
 
 @dataclass
+class LanguageName:
+    """
+    A canonical name for a language, expressed in some (possibly different) language.
+
+    Sourced from LinguaMeta's `name_data` (`is_canonical=True` only).
+    """
+
+    language: "Language"             # the language being named
+    name: str                        # the name itself (e.g. "Deutsch", "German")
+    in_language_bcp47: str           # BCP 47 code of the language the name is in
+    in_language: Optional["Language"]  # resolved Language, if a known ISO 639-3 maps
+    script: Optional[str] = None     # ISO 15924 code, when supplied
+    source: Optional[str] = None     # upstream source (e.g. "CLDR")
+
+    @property
+    def is_endonym(self) -> bool:
+        """True when this name is expressed in the language itself."""
+        return self.in_language is not None and self.in_language.part3 == self.language.part3
+
+    def __repr__(self) -> str:
+        return (
+            f"LanguageName(language={self.language.part3!r}, "
+            f"name={self.name!r}, in_language={self.in_language_bcp47!r})"
+        )
+
+
+@dataclass
 class Language:
     part3: str           # ISO 639-3 — primary key
     label: str
@@ -167,10 +194,24 @@ class Language:
     speaker_count: int = 0
     glottocode: Optional[str] = None   # Glottolog identifier
     _speaker_count_ref: List["SpeakerCount"] = field(default_factory=list, repr=False, compare=False)
+    _names_ref: List["LanguageName"] = field(default_factory=list, repr=False, compare=False)
 
     @property
     def speaker_counts(self) -> List["SpeakerCount"]:
         return self._speaker_count_ref
+
+    @property
+    def names(self) -> List["LanguageName"]:
+        """All canonical names for this language, across other languages."""
+        return self._names_ref
+
+    @property
+    def endonym(self) -> Optional["LanguageName"]:
+        """The canonical name expressed in this language itself, if known."""
+        for n in self._names_ref:
+            if n.is_endonym:
+                return n
+        return None
 
     def __repr__(self) -> str:
         return f"Language(part3={self.part3!r}, label={self.label!r})"

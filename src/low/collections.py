@@ -2,7 +2,15 @@ from __future__ import annotations
 
 from typing import Generic, Iterator, List, Optional, TypeVar, overload
 
-from .models import Continent, Country, Language, LanguageFamily, Region, SpeakerCount
+from .models import (
+    Continent,
+    Country,
+    Language,
+    LanguageFamily,
+    LanguageName,
+    Region,
+    SpeakerCount,
+)
 
 T = TypeVar("T")
 
@@ -169,3 +177,29 @@ class SpeakerCountCollection(_BaseCollection[SpeakerCount]):
     def by_source(self, source: str) -> List[SpeakerCount]:
         """All SpeakerCount entries from a given source (e.g. 'cldr', 'cia', 'linguameta')."""
         return [sc for sc in self._items if sc.source == source]
+
+
+class LanguageNameCollection(_BaseCollection[LanguageName]):
+    def __init__(self, items: List[LanguageName]) -> None:
+        super().__init__(items)
+        self._by_language: dict = {}
+        self._by_in_language: dict = {}
+        for n in items:
+            self._by_language.setdefault(n.language.part3, []).append(n)
+            self._by_in_language.setdefault(n.in_language_bcp47, []).append(n)
+
+    def for_language(self, part3: str) -> List[LanguageName]:
+        """All canonical names for an ISO 639-3 language code."""
+        return self._by_language.get(part3.lower(), [])
+
+    def in_language(self, bcp47: str) -> List[LanguageName]:
+        """
+        All names expressed in a given BCP 47 language tag.
+
+        db.language_names.in_language("en")  -> every language's English name
+        """
+        return self._by_in_language.get(bcp47.lower(), [])
+
+    def endonyms(self) -> List[LanguageName]:
+        """All names that are endonyms (expressed in the language itself)."""
+        return [n for n in self._items if n.is_endonym]

@@ -542,21 +542,25 @@ def _fetch_linguameta_country(path: str) -> Optional[Dict[str, Any]]:
         return None
 
 
-def _parse_linguameta_country_speakers(
+def _parse_linguameta_per_language(
     known_country_codes: set,
     known_part3: set,
-) -> List[Dict[str, Any]]:
+    iso1_to_part3: Dict[str, str],
+):
     """
-    Fetch per-locale LinguaMeta data and return per-(country, language) records.
+    Fetch every LinguaMeta per-language JSON file once and extract two record sets:
 
-    LinguaMeta stores per-country speaker counts in linguameta/data/<bcp47>.json
-    under language_script_locale[].speaker_data.number_of_speakers.
+    speaker_records: per-(country, language) speaker counts from
+        language_script_locale[].speaker_data.number_of_speakers
 
-    Each record:
-        country_code   ISO 3166-1 alpha-2 (uppercased)
-        iso639_3       resolved ISO 639-3
-        speaker_count  int
-        has_official_status bool (or None)
+    name_records: canonical names for each language in other languages from
+        name_data[] (filtered to is_canonical=True). Each record:
+            language_part3      ISO 639-3 of the language being named
+            name                the name itself
+            in_language_bcp47   BCP 47 of the language the name is expressed in
+            in_language_part3   resolved ISO 639-3 (or null)
+            script              ISO 15924 code (or null)
+            source              originating source string (e.g. "CLDR")
     """
     print("  Fetching LinguaMeta file tree…")
     try:
@@ -589,12 +593,15 @@ def _parse_linguameta_country_speakers(
             if data:
                 fetched.append(data)
 
-    records: List[Dict[str, Any]] = []
+    speaker_records: List[Dict[str, Any]] = []
+    name_records: List[Dict[str, Any]] = []
+
     for data in fetched:
         p3 = _normalize(data.get("iso_639_3_code", ""))
         if not p3 or p3 not in known_part3:
             continue
 
+        # --- Per-country speaker counts ---
         for entry in data.get("language_script_locale", []) or []:
             locale = entry.get("locale") or {}
             country_code = _normalize(locale.get("iso_3166_code", "")).upper()
@@ -611,16 +618,42 @@ def _parse_linguameta_country_speakers(
                 continue
 
             official = entry.get("official_status") or {}
-            has_official = official.get("has_official_status")
-
-            records.append({
+            speaker_records.append({
                 "country_code": country_code,
                 "iso639_3": p3,
                 "speaker_count": speaker_count,
-                "has_official_status": has_official,
+                "has_official_status": official.get("has_official_status"),
             })
 
-    return records
+        # --- Language names (canonical only) ---
+        for entry in data.get("name_data", []) or []:
+            if not entry.get("is_canonical"):
+                continue
+            name = _normalize(entry.get("name", ""))
+            if not name:
+                continue
+            in_bcp47 = _normalize(entry.get("bcp_47_code", "")).lower()
+            if not in_bcp47:
+                continue
+
+            base = in_bcp47.split("-")[0].split("_")[0]
+            in_part3: Optional[str] = None
+            if len(base) == 2 and base in iso1_to_part3:
+                in_part3 = iso1_to_part3[base]
+            elif len(base) == 3 and base in known_part3:
+                in_part3 = base
+
+            script = _normalize(entry.get("iso_15924_code", "")) or None
+            name_records.append({
+                "language_part3": p3,
+                "name": name,
+                "in_language_bcp47": in_bcp47,
+                "in_language_part3": in_part3,
+                "script": script,
+                "source": _normalize(entry.get("source", "")) or None,
+            })
+
+    return speaker_records, name_records
 
 
 def _fetch_wikidata_speakers(
@@ -816,15 +849,15 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     )
     print(f"  Stored {len(cia_raw)} CIA records → {cia_path}")
 
-    # --- LinguaMeta per-country speaker counts ----------------------------
-    print("Fetching LinguaMeta per-country speaker data…")
+    # --- LinguaMeta per-country speaker counts + canonical names ----------
+    print("Fetching LinguaMeta per-language JSON files…")
     try:
-        linguameta_country_raw = _parse_linguameta_country_speakers(
-            known_country_codes, known_part3
+        linguameta_country_raw, linguameta_names_raw = _parse_linguameta_per_language(
+            known_country_codes, known_part3, iso1_to_part3
         )
     except Exception as exc:
-        print(f"  WARNING: LinguaMeta per-country fetch failed: {exc}")
-        linguameta_country_raw = []
+        print(f"  WARNING: LinguaMeta per-language fetch failed: {exc}")
+        linguameta_country_raw, linguameta_names_raw = [], []
 
     linguameta_country_path = sources_dir / "linguameta_speakers.json"
     linguameta_country_path.write_text(
@@ -834,6 +867,16 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     print(
         f"  Stored {len(linguameta_country_raw)} LinguaMeta per-country records "
         f"→ {linguameta_country_path}"
+    )
+
+    linguameta_names_path = sources_dir / "linguameta_names.json"
+    linguameta_names_path.write_text(
+        json.dumps(linguameta_names_raw, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(
+        f"  Stored {len(linguameta_names_raw)} LinguaMeta canonical-name records "
+        f"→ {linguameta_names_path}"
     )
 
     # --- Wikidata global speaker counts -----------------------------------
@@ -951,6 +994,20 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         key=lambda x: (x["country_code"], x["status"], x["language_code"])
     )
 
+    # --- Language names (LinguaMeta) --------------------------------------
+    # Dedupe on (language_part3, in_language_bcp47, script). First entry wins.
+    seen_names: set = set()
+    language_names: List[Dict[str, Any]] = []
+    for rec in linguameta_names_raw:
+        key = (rec["language_part3"], rec["in_language_bcp47"], rec.get("script"))
+        if key in seen_names:
+            continue
+        seen_names.add(key)
+        language_names.append(rec)
+    language_names.sort(
+        key=lambda x: (x["language_part3"], x["in_language_bcp47"], x.get("script") or "")
+    )
+
     # --- Assemble final DB ------------------------------------------------
     db = {
         "continents": sorted(raw_conts.values(), key=lambda x: x["id"]),
@@ -960,6 +1017,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         "languages":  sorted(languages, key=lambda x: x["label"]),
         "country_language_speakers": country_language_speakers,
         "country_official_languages": country_official_languages,
+        "language_names": language_names,
     }
 
     langs_with_speakers  = sum(1 for l in db["languages"] if l["speaker_count"] > 0)
@@ -985,6 +1043,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         f"  {len(db['families'])} family tree nodes ({root_families} root families)\n"
         f"  {len(country_language_speakers)} country-language speaker records "
         f"({cldr_entries} CLDR, {cia_entries} CIA, {linguameta_entries} LinguaMeta)\n"
+        f"  {len(language_names)} canonical language names (LinguaMeta)\n"
         f"  {len(country_official_languages)} official-language entries "
         f"(official: {official_counts['official']}, "
         f"regional: {official_counts['official_regional']}, "
