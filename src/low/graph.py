@@ -136,7 +136,7 @@ class LanguagesOfTheWorld:
                 countries=lang_countries,
                 family=family,
                 part1=row.get("part1"),
-                speaker_count=row.get("speaker_count", 0),
+                speaker_count=row.get("speaker_count"),
                 glottocode=row.get("glottocode"),
                 endangerment=row.get("endangerment"),
             )

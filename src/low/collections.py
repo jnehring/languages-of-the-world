@@ -72,7 +72,7 @@ class LanguageCollection(_BaseCollection[Language]):
             needle = label_contains.lower()
             res = [l for l in res if needle in l.label.lower()]
         if min_speakers is not None:
-            res = [l for l in res if l.speaker_count >= min_speakers]
+            res = [l for l in res if l.speaker_count is not None and l.speaker_count >= min_speakers]
         return res
 
 

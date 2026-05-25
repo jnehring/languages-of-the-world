@@ -191,7 +191,8 @@ class Language:
     countries: List[Country]
     family: Optional[LanguageFamily]   # immediate parent node in Glottolog tree
     part1: Optional[str] = None        # ISO 639-1 (optional)
-    speaker_count: int = 0
+    speaker_count: Optional[int] = None
+    """Total speakers across all sources. None if no source reported a count."""
     glottocode: Optional[str] = None   # Glottolog identifier
     endangerment: Optional[str] = None
     """Glottolog Agglomerated Endangered Status (AES). One of:

@@ -145,9 +145,9 @@ def _parse_linguameta(tsv_text: str) -> Dict[str, Dict[str, Any]]:
 
         raw_count = _normalize(row.get("estimated_number_of_speakers", ""))
         try:
-            speaker_count = int(raw_count) if raw_count else 0
+            speaker_count: Optional[int] = int(raw_count) if raw_count else None
         except ValueError:
-            speaker_count = 0
+            speaker_count = None
 
         raw_locales = _normalize(row.get("locales", ""))
         country_codes: List[str] = []
@@ -159,7 +159,9 @@ def _parse_linguameta(tsv_text: str) -> Dict[str, Dict[str, Any]]:
 
         if p3 in result:
             existing = result[p3]
-            existing["speaker_count"] = max(existing["speaker_count"], speaker_count)
+            prev = existing["speaker_count"]
+            if speaker_count is not None and (prev is None or speaker_count > prev):
+                existing["speaker_count"] = speaker_count
             existing["country_codes"] = list(
                 dict.fromkeys(existing["country_codes"] + country_codes)
             )
@@ -707,9 +709,9 @@ def _fetch_wikidata_speakers(
 
         raw_speakers = _val("speakers")
         try:
-            speaker_count = int(float(raw_speakers)) if raw_speakers else 0
+            speaker_count: Optional[int] = int(float(raw_speakers)) if raw_speakers else None
         except ValueError:
-            speaker_count = 0
+            speaker_count = None
 
         iso1 = _val("iso639_1")
         iso3 = _val("iso639_3")
@@ -798,7 +800,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
                 "part1": lang["part1"],
                 "label": lang["label"],
                 "scope": lang["scope"],
-                "speaker_count": lm.get("speaker_count", 0),
+                "speaker_count": lm.get("speaker_count"),
                 "glottocode": lang_glottocode,
                 "family_glottocode": family_glottocode,
                 "endangerment": glottocode_to_aes.get(lang_glottocode) if lang_glottocode else None,
@@ -912,14 +914,14 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     wikidata_by_part3: Dict[str, int] = {}
     for rec in wikidata_raw:
         p3 = rec.get("resolved_part3")
-        count = rec.get("speaker_count", 0)
-        if p3 and count > wikidata_by_part3.get(p3, 0):
+        count = rec.get("speaker_count")
+        if p3 and count is not None and count > wikidata_by_part3.get(p3, 0):
             wikidata_by_part3[p3] = count
 
     wikidata_applied = 0
     for lang in languages:
-        wd_count = wikidata_by_part3.get(lang["part3"], 0)
-        if wd_count > lang["speaker_count"]:
+        wd_count = wikidata_by_part3.get(lang["part3"])
+        if wd_count is not None and (lang["speaker_count"] is None or wd_count > lang["speaker_count"]):
             lang["speaker_count"] = wd_count
             wikidata_applied += 1
     print(f"  Wikidata raised speaker_count on {wikidata_applied} languages")
@@ -1033,7 +1035,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         "language_names": language_names,
     }
 
-    langs_with_speakers  = sum(1 for l in db["languages"] if l["speaker_count"] > 0)
+    langs_with_speakers  = sum(1 for l in db["languages"] if l["speaker_count"] is not None and l["speaker_count"] > 0)
     langs_with_countries = sum(1 for l in db["languages"] if l["country_codes"])
     langs_with_family    = sum(1 for l in db["languages"] if l["family_glottocode"])
     root_families        = sum(1 for f in db["families"] if not f["parent_glottocode"])

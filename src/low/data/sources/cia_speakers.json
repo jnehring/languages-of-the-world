@@ -1,77 +1,5 @@
 [
   {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Setswana",
-    "iso639_3": null,
-    "percent": 77.3,
-    "country_population": 2521534,
-    "speaker_count": 1949145
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Sekalanga",
-    "iso639_3": null,
-    "percent": 7.4,
-    "country_population": 2521534,
-    "speaker_count": 186593
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Shekgalagadi",
-    "iso639_3": null,
-    "percent": 3.4,
-    "country_population": 2521534,
-    "speaker_count": 85732
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Shona",
-    "iso639_3": "sna",
-    "percent": 2.0,
-    "country_population": 2521534,
-    "speaker_count": 50430
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Sesarwa",
-    "iso639_3": null,
-    "percent": 1.7,
-    "country_population": 2521534,
-    "speaker_count": 42866
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Sembukushu",
-    "iso639_3": null,
-    "percent": 1.6,
-    "country_population": 2521534,
-    "speaker_count": 40344
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "Ndebele",
-    "iso639_3": null,
-    "percent": 1.0,
-    "country_population": 2521534,
-    "speaker_count": 25215
-  },
-  {
-    "country_code": "BW",
-    "country_name": "Botswana",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 2.8,
-    "country_population": 2521534,
-    "speaker_count": 70602
-  },
-  {
     "country_code": "AO",
     "country_name": "Angola",
     "language_name": "Portuguese",
@@ -180,96 +108,6 @@
     "speaker_count": 1403452
   },
   {
-    "country_code": "LR",
-    "country_name": "Liberia",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 20.0,
-    "country_population": 5563541,
-    "speaker_count": 1112708
-  },
-  {
-    "country_code": "MG",
-    "country_name": "Madagascar",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 8.2,
-    "country_population": 31345040,
-    "speaker_count": 2570293
-  },
-  {
-    "country_code": "MG",
-    "country_name": "Madagascar",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 0.6,
-    "country_population": 31345040,
-    "speaker_count": 188070
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "Creole",
-    "iso639_3": null,
-    "percent": 86.5,
-    "country_population": 1311375,
-    "speaker_count": 1134339
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "Bhojpuri",
-    "iso639_3": "bho",
-    "percent": 5.3,
-    "country_population": 1311375,
-    "speaker_count": 69502
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "French",
-    "iso639_3": "fra",
-    "percent": 4.1,
-    "country_population": 1311375,
-    "speaker_count": 53766
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "two languages",
-    "iso639_3": null,
-    "percent": 1.4,
-    "country_population": 1311375,
-    "speaker_count": 18359
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 2.6,
-    "country_population": 1311375,
-    "speaker_count": 34095
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "which is spoken by less than",
-    "iso639_3": null,
-    "percent": 1.0,
-    "country_population": 1311375,
-    "speaker_count": 13113
-  },
-  {
-    "country_code": "MU",
-    "country_name": "Mauritius",
-    "language_name": "unspecified",
-    "iso639_3": null,
-    "percent": 0.1,
-    "country_population": 1311375,
-    "speaker_count": 1311
-  },
-  {
     "country_code": "GH",
     "country_name": "Ghana",
     "language_name": "Asante",
@@ -349,6 +187,186 @@
     "percent": 31.2,
     "country_population": 35336133,
     "speaker_count": 11024873
+  },
+  {
+    "country_code": "LR",
+    "country_name": "Liberia",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 20.0,
+    "country_population": 5563541,
+    "speaker_count": 1112708
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "Creole",
+    "iso639_3": null,
+    "percent": 86.5,
+    "country_population": 1311375,
+    "speaker_count": 1134339
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "Bhojpuri",
+    "iso639_3": "bho",
+    "percent": 5.3,
+    "country_population": 1311375,
+    "speaker_count": 69502
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "French",
+    "iso639_3": "fra",
+    "percent": 4.1,
+    "country_population": 1311375,
+    "speaker_count": 53766
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "two languages",
+    "iso639_3": null,
+    "percent": 1.4,
+    "country_population": 1311375,
+    "speaker_count": 18359
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 2.6,
+    "country_population": 1311375,
+    "speaker_count": 34095
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "which is spoken by less than",
+    "iso639_3": null,
+    "percent": 1.0,
+    "country_population": 1311375,
+    "speaker_count": 13113
+  },
+  {
+    "country_code": "MU",
+    "country_name": "Mauritius",
+    "language_name": "unspecified",
+    "iso639_3": null,
+    "percent": 0.1,
+    "country_population": 1311375,
+    "speaker_count": 1311
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "French",
+    "iso639_3": "fra",
+    "percent": 17.2,
+    "country_population": 22634423,
+    "speaker_count": 3893120
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Fulani",
+    "iso639_3": null,
+    "percent": 9.4,
+    "country_population": 22634423,
+    "speaker_count": 2127635
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Dogon",
+    "iso639_3": null,
+    "percent": 7.2,
+    "country_population": 22634423,
+    "speaker_count": 1629678
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Soninke",
+    "iso639_3": "snk",
+    "percent": 6.4,
+    "country_population": 22634423,
+    "speaker_count": 1448603
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Malinke",
+    "iso639_3": null,
+    "percent": 5.6,
+    "country_population": 22634423,
+    "speaker_count": 1267527
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Djerma",
+    "iso639_3": null,
+    "percent": 5.6,
+    "country_population": 22634423,
+    "speaker_count": 1267527
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Minianka",
+    "iso639_3": null,
+    "percent": 4.3,
+    "country_population": 22634423,
+    "speaker_count": 973280
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Tamacheq",
+    "iso639_3": null,
+    "percent": 3.5,
+    "country_population": 22634423,
+    "speaker_count": 792204
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Senoufo",
+    "iso639_3": null,
+    "percent": 2.6,
+    "country_population": 22634423,
+    "speaker_count": 588494
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "Bobo",
+    "iso639_3": null,
+    "percent": 2.1,
+    "country_population": 22634423,
+    "speaker_count": 475322
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 6.3,
+    "country_population": 22634423,
+    "speaker_count": 1425968
+  },
+  {
+    "country_code": "ML",
+    "country_name": "Mali",
+    "language_name": "unspecified",
+    "iso639_3": null,
+    "percent": 0.7,
+    "country_population": 22634423,
+    "speaker_count": 158440
   },
   {
     "country_code": "MZ",
@@ -441,67 +459,112 @@
     "speaker_count": 615710
   },
   {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "Portuguese",
-    "iso639_3": "por",
-    "percent": 98.4,
-    "country_population": 223561,
-    "speaker_count": 219984
-  },
-  {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "Forro",
-    "iso639_3": null,
-    "percent": 36.2,
-    "country_population": 223561,
-    "speaker_count": 80929
-  },
-  {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "Cabo Verdian",
-    "iso639_3": null,
-    "percent": 8.5,
-    "country_population": 223561,
-    "speaker_count": 19002
-  },
-  {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "French",
-    "iso639_3": "fra",
-    "percent": 6.8,
-    "country_population": 223561,
-    "speaker_count": 15202
-  },
-  {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "Angolar",
-    "iso639_3": "aoa",
-    "percent": 6.6,
-    "country_population": 223561,
-    "speaker_count": 14755
-  },
-  {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
+    "country_code": "MG",
+    "country_name": "Madagascar",
     "language_name": "English",
     "iso639_3": "eng",
-    "percent": 4.9,
-    "country_population": 223561,
-    "speaker_count": 10954
+    "percent": 8.2,
+    "country_population": 31345040,
+    "speaker_count": 2570293
   },
   {
-    "country_code": "ST",
-    "country_name": "Sao Tome and Principe",
-    "language_name": "Lunguie",
+    "country_code": "MG",
+    "country_name": "Madagascar",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 0.6,
+    "country_population": 31345040,
+    "speaker_count": 188070
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Setswana",
+    "iso639_3": null,
+    "percent": 77.3,
+    "country_population": 2521534,
+    "speaker_count": 1949145
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Sekalanga",
+    "iso639_3": null,
+    "percent": 7.4,
+    "country_population": 2521534,
+    "speaker_count": 186593
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Shekgalagadi",
+    "iso639_3": null,
+    "percent": 3.4,
+    "country_population": 2521534,
+    "speaker_count": 85732
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Shona",
+    "iso639_3": "sna",
+    "percent": 2.0,
+    "country_population": 2521534,
+    "speaker_count": 50430
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Sesarwa",
+    "iso639_3": null,
+    "percent": 1.7,
+    "country_population": 2521534,
+    "speaker_count": 42866
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Sembukushu",
+    "iso639_3": null,
+    "percent": 1.6,
+    "country_population": 2521534,
+    "speaker_count": 40344
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "Ndebele",
     "iso639_3": null,
     "percent": 1.0,
-    "country_population": 223561,
-    "speaker_count": 2235
+    "country_population": 2521534,
+    "speaker_count": 25215
+  },
+  {
+    "country_code": "BW",
+    "country_name": "Botswana",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 2.8,
+    "country_population": 2521534,
+    "speaker_count": 70602
+  },
+  {
+    "country_code": "SL",
+    "country_name": "Sierra Leone",
+    "language_name": "a first language for",
+    "iso639_3": null,
+    "percent": 10.0,
+    "country_population": 9331203,
+    "speaker_count": 933120
+  },
+  {
+    "country_code": "SL",
+    "country_name": "Sierra Leone",
+    "language_name": "of the population but understood by",
+    "iso639_3": null,
+    "percent": 95.0,
+    "country_population": 9331203,
+    "speaker_count": 8864642
   },
   {
     "country_code": "SC",
@@ -648,24 +711,6 @@
     "speaker_count": 1550359
   },
   {
-    "country_code": "SL",
-    "country_name": "Sierra Leone",
-    "language_name": "a first language for",
-    "iso639_3": null,
-    "percent": 10.0,
-    "country_population": 9331203,
-    "speaker_count": 933120
-  },
-  {
-    "country_code": "SL",
-    "country_name": "Sierra Leone",
-    "language_name": "of the population but understood by",
-    "iso639_3": null,
-    "percent": 95.0,
-    "country_population": 9331203,
-    "speaker_count": 8864642
-  },
-  {
     "country_code": "NA",
     "country_name": "Namibia",
     "language_name": "Oshiwambo languages",
@@ -747,112 +792,67 @@
     "speaker_count": 28527
   },
   {
-    "country_code": "ML",
-    "country_name": "Mali",
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "Portuguese",
+    "iso639_3": "por",
+    "percent": 98.4,
+    "country_population": 223561,
+    "speaker_count": 219984
+  },
+  {
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "Forro",
+    "iso639_3": null,
+    "percent": 36.2,
+    "country_population": 223561,
+    "speaker_count": 80929
+  },
+  {
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "Cabo Verdian",
+    "iso639_3": null,
+    "percent": 8.5,
+    "country_population": 223561,
+    "speaker_count": 19002
+  },
+  {
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
     "language_name": "French",
     "iso639_3": "fra",
-    "percent": 17.2,
-    "country_population": 22634423,
-    "speaker_count": 3893120
+    "percent": 6.8,
+    "country_population": 223561,
+    "speaker_count": 15202
   },
   {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Fulani",
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "Angolar",
+    "iso639_3": "aoa",
+    "percent": 6.6,
+    "country_population": 223561,
+    "speaker_count": 14755
+  },
+  {
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 4.9,
+    "country_population": 223561,
+    "speaker_count": 10954
+  },
+  {
+    "country_code": "ST",
+    "country_name": "Sao Tome and Principe",
+    "language_name": "Lunguie",
     "iso639_3": null,
-    "percent": 9.4,
-    "country_population": 22634423,
-    "speaker_count": 2127635
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Dogon",
-    "iso639_3": null,
-    "percent": 7.2,
-    "country_population": 22634423,
-    "speaker_count": 1629678
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Soninke",
-    "iso639_3": "snk",
-    "percent": 6.4,
-    "country_population": 22634423,
-    "speaker_count": 1448603
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Malinke",
-    "iso639_3": null,
-    "percent": 5.6,
-    "country_population": 22634423,
-    "speaker_count": 1267527
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Djerma",
-    "iso639_3": null,
-    "percent": 5.6,
-    "country_population": 22634423,
-    "speaker_count": 1267527
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Minianka",
-    "iso639_3": null,
-    "percent": 4.3,
-    "country_population": 22634423,
-    "speaker_count": 973280
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Tamacheq",
-    "iso639_3": null,
-    "percent": 3.5,
-    "country_population": 22634423,
-    "speaker_count": 792204
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Senoufo",
-    "iso639_3": null,
-    "percent": 2.6,
-    "country_population": 22634423,
-    "speaker_count": 588494
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "Bobo",
-    "iso639_3": null,
-    "percent": 2.1,
-    "country_population": 22634423,
-    "speaker_count": 475322
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 6.3,
-    "country_population": 22634423,
-    "speaker_count": 1425968
-  },
-  {
-    "country_code": "ML",
-    "country_name": "Mali",
-    "language_name": "unspecified",
-    "iso639_3": null,
-    "percent": 0.7,
-    "country_population": 22634423,
-    "speaker_count": 158440
+    "percent": 1.0,
+    "country_population": 223561,
+    "speaker_count": 2235
   },
   {
     "country_code": "ZM",
@@ -1008,6 +1008,60 @@
     "speaker_count": 44043
   },
   {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "Samoan",
+    "iso639_3": "smo",
+    "percent": 87.9,
+    "country_population": 43268,
+    "speaker_count": 38032
+  },
+  {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 3.3,
+    "country_population": 43268,
+    "speaker_count": 1427
+  },
+  {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "Tongan",
+    "iso639_3": null,
+    "percent": 2.1,
+    "country_population": 43268,
+    "speaker_count": 908
+  },
+  {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "other Pacific Islander",
+    "iso639_3": null,
+    "percent": 4.1,
+    "country_population": 43268,
+    "speaker_count": 1773
+  },
+  {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "Asian languages",
+    "iso639_3": null,
+    "percent": 2.1,
+    "country_population": 43268,
+    "speaker_count": 908
+  },
+  {
+    "country_code": "AS",
+    "country_name": "American Samoa",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 0.5,
+    "country_population": 43268,
+    "speaker_count": 216
+  },
+  {
     "country_code": "ZW",
     "country_name": "Zimbabwe",
     "language_name": "other",
@@ -1026,6 +1080,51 @@
     "speaker_count": 7387
   },
   {
+    "country_code": "MP",
+    "country_name": "Northern Mariana Islands",
+    "language_name": "Philippine languages",
+    "iso639_3": null,
+    "percent": 32.8,
+    "country_population": 51118,
+    "speaker_count": 16766
+  },
+  {
+    "country_code": "MP",
+    "country_name": "Northern Mariana Islands",
+    "language_name": "other Pacific island languages",
+    "iso639_3": null,
+    "percent": 10.1,
+    "country_population": 51118,
+    "speaker_count": 5162
+  },
+  {
+    "country_code": "MP",
+    "country_name": "Northern Mariana Islands",
+    "language_name": "Chinese",
+    "iso639_3": "zho",
+    "percent": 6.8,
+    "country_population": 51118,
+    "speaker_count": 3476
+  },
+  {
+    "country_code": "MP",
+    "country_name": "Northern Mariana Islands",
+    "language_name": "other Asian languages",
+    "iso639_3": null,
+    "percent": 7.3,
+    "country_population": 51118,
+    "speaker_count": 3731
+  },
+  {
+    "country_code": "MP",
+    "country_name": "Northern Mariana Islands",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 1.9,
+    "country_population": 51118,
+    "speaker_count": 971
+  },
+  {
     "country_code": "CK",
     "country_name": "Cook Islands",
     "language_name": "other",
@@ -1033,6 +1132,51 @@
     "percent": 8.3,
     "country_population": 7592,
     "speaker_count": 630
+  },
+  {
+    "country_code": "GU",
+    "country_name": "Guam",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 43.3,
+    "country_population": 169532,
+    "speaker_count": 73407
+  },
+  {
+    "country_code": "GU",
+    "country_name": "Guam",
+    "language_name": "Filipino",
+    "iso639_3": "fil",
+    "percent": 24.9,
+    "country_population": 169532,
+    "speaker_count": 42213
+  },
+  {
+    "country_code": "GU",
+    "country_name": "Guam",
+    "language_name": "Chamorro",
+    "iso639_3": "cha",
+    "percent": 16.0,
+    "country_population": 169532,
+    "speaker_count": 27125
+  },
+  {
+    "country_code": "GU",
+    "country_name": "Guam",
+    "language_name": "other Pacific Island languages",
+    "iso639_3": null,
+    "percent": 9.4,
+    "country_population": 169532,
+    "speaker_count": 15936
+  },
+  {
+    "country_code": "GU",
+    "country_name": "Guam",
+    "language_name": "Asian languages",
+    "iso639_3": null,
+    "percent": 6.5,
+    "country_population": 169532,
+    "speaker_count": 11019
   },
   {
     "country_code": "AU",
@@ -1096,186 +1240,6 @@
     "percent": 5.7,
     "country_population": 27490921,
     "speaker_count": 1566982
-  },
-  {
-    "country_code": "MP",
-    "country_name": "Northern Mariana Islands",
-    "language_name": "Philippine languages",
-    "iso639_3": null,
-    "percent": 32.8,
-    "country_population": 51118,
-    "speaker_count": 16766
-  },
-  {
-    "country_code": "MP",
-    "country_name": "Northern Mariana Islands",
-    "language_name": "other Pacific island languages",
-    "iso639_3": null,
-    "percent": 10.1,
-    "country_population": 51118,
-    "speaker_count": 5162
-  },
-  {
-    "country_code": "MP",
-    "country_name": "Northern Mariana Islands",
-    "language_name": "Chinese",
-    "iso639_3": "zho",
-    "percent": 6.8,
-    "country_population": 51118,
-    "speaker_count": 3476
-  },
-  {
-    "country_code": "MP",
-    "country_name": "Northern Mariana Islands",
-    "language_name": "other Asian languages",
-    "iso639_3": null,
-    "percent": 7.3,
-    "country_population": 51118,
-    "speaker_count": 3731
-  },
-  {
-    "country_code": "MP",
-    "country_name": "Northern Mariana Islands",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 1.9,
-    "country_population": 51118,
-    "speaker_count": 971
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "Samoan",
-    "iso639_3": "smo",
-    "percent": 87.9,
-    "country_population": 43268,
-    "speaker_count": 38032
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 3.3,
-    "country_population": 43268,
-    "speaker_count": 1427
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "Tongan",
-    "iso639_3": null,
-    "percent": 2.1,
-    "country_population": 43268,
-    "speaker_count": 908
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "other Pacific Islander",
-    "iso639_3": null,
-    "percent": 4.1,
-    "country_population": 43268,
-    "speaker_count": 1773
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "Asian languages",
-    "iso639_3": null,
-    "percent": 2.1,
-    "country_population": 43268,
-    "speaker_count": 908
-  },
-  {
-    "country_code": "AS",
-    "country_name": "American Samoa",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 0.5,
-    "country_population": 43268,
-    "speaker_count": 216
-  },
-  {
-    "country_code": "GU",
-    "country_name": "Guam",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 43.3,
-    "country_population": 169532,
-    "speaker_count": 73407
-  },
-  {
-    "country_code": "GU",
-    "country_name": "Guam",
-    "language_name": "Filipino",
-    "iso639_3": "fil",
-    "percent": 24.9,
-    "country_population": 169532,
-    "speaker_count": 42213
-  },
-  {
-    "country_code": "GU",
-    "country_name": "Guam",
-    "language_name": "Chamorro",
-    "iso639_3": "cha",
-    "percent": 16.0,
-    "country_population": 169532,
-    "speaker_count": 27125
-  },
-  {
-    "country_code": "GU",
-    "country_name": "Guam",
-    "language_name": "other Pacific Island languages",
-    "iso639_3": null,
-    "percent": 9.4,
-    "country_population": 169532,
-    "speaker_count": 15936
-  },
-  {
-    "country_code": "GU",
-    "country_name": "Guam",
-    "language_name": "Asian languages",
-    "iso639_3": null,
-    "percent": 6.5,
-    "country_population": 169532,
-    "speaker_count": 11019
-  },
-  {
-    "country_code": "NU",
-    "country_name": "Niue",
-    "language_name": "Niuean",
-    "iso639_3": "niu",
-    "percent": 46.0,
-    "country_population": 1815,
-    "speaker_count": 834
-  },
-  {
-    "country_code": "NU",
-    "country_name": "Niue",
-    "language_name": "Niuean and English",
-    "iso639_3": null,
-    "percent": 32.0,
-    "country_population": 1815,
-    "speaker_count": 580
-  },
-  {
-    "country_code": "NU",
-    "country_name": "Niue",
-    "language_name": "Niuean and others",
-    "iso639_3": null,
-    "percent": 5.0,
-    "country_population": 1815,
-    "speaker_count": 90
-  },
-  {
-    "country_code": "NU",
-    "country_name": "Niue",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 6.0,
-    "country_population": 1815,
-    "speaker_count": 108
   },
   {
     "country_code": "CX",
@@ -1368,51 +1332,6 @@
     "speaker_count": 107
   },
   {
-    "country_code": "NR",
-    "country_name": "Nauru",
-    "language_name": "Nauruan",
-    "iso639_3": null,
-    "percent": 93.0,
-    "country_population": 9930,
-    "speaker_count": 9234
-  },
-  {
-    "country_code": "NR",
-    "country_name": "Nauru",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 2.0,
-    "country_population": 9930,
-    "speaker_count": 198
-  },
-  {
-    "country_code": "NR",
-    "country_name": "Nauru",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 5.0,
-    "country_population": 9930,
-    "speaker_count": 496
-  },
-  {
-    "country_code": "NR",
-    "country_name": "Nauru",
-    "language_name": "includes Gilbertese",
-    "iso639_3": null,
-    "percent": 2.0,
-    "country_population": 9930,
-    "speaker_count": 198
-  },
-  {
-    "country_code": "NR",
-    "country_name": "Nauru",
-    "language_name": "and Chinese",
-    "iso639_3": null,
-    "percent": 2.0,
-    "country_population": 9930,
-    "speaker_count": 198
-  },
-  {
     "country_code": "TK",
     "country_name": "Tokelau",
     "language_name": "Tokelauan",
@@ -1485,6 +1404,114 @@
     "speaker_count": 19
   },
   {
+    "country_code": "NR",
+    "country_name": "Nauru",
+    "language_name": "Nauruan",
+    "iso639_3": null,
+    "percent": 93.0,
+    "country_population": 9930,
+    "speaker_count": 9234
+  },
+  {
+    "country_code": "NR",
+    "country_name": "Nauru",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 2.0,
+    "country_population": 9930,
+    "speaker_count": 198
+  },
+  {
+    "country_code": "NR",
+    "country_name": "Nauru",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 5.0,
+    "country_population": 9930,
+    "speaker_count": 496
+  },
+  {
+    "country_code": "NR",
+    "country_name": "Nauru",
+    "language_name": "includes Gilbertese",
+    "iso639_3": null,
+    "percent": 2.0,
+    "country_population": 9930,
+    "speaker_count": 198
+  },
+  {
+    "country_code": "NR",
+    "country_name": "Nauru",
+    "language_name": "and Chinese",
+    "iso639_3": null,
+    "percent": 2.0,
+    "country_population": 9930,
+    "speaker_count": 198
+  },
+  {
+    "country_code": "NU",
+    "country_name": "Niue",
+    "language_name": "Niuean",
+    "iso639_3": "niu",
+    "percent": 46.0,
+    "country_population": 1815,
+    "speaker_count": 834
+  },
+  {
+    "country_code": "NU",
+    "country_name": "Niue",
+    "language_name": "Niuean and English",
+    "iso639_3": null,
+    "percent": 32.0,
+    "country_population": 1815,
+    "speaker_count": 580
+  },
+  {
+    "country_code": "NU",
+    "country_name": "Niue",
+    "language_name": "Niuean and others",
+    "iso639_3": null,
+    "percent": 5.0,
+    "country_population": 1815,
+    "speaker_count": 90
+  },
+  {
+    "country_code": "NU",
+    "country_name": "Niue",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 6.0,
+    "country_population": 1815,
+    "speaker_count": 108
+  },
+  {
+    "country_code": "TO",
+    "country_name": "Tonga",
+    "language_name": "Tongan only",
+    "iso639_3": null,
+    "percent": 85.0,
+    "country_population": 104519,
+    "speaker_count": 88841
+  },
+  {
+    "country_code": "TO",
+    "country_name": "Tonga",
+    "language_name": "Tongan and other language",
+    "iso639_3": null,
+    "percent": 13.9,
+    "country_population": 104519,
+    "speaker_count": 14528
+  },
+  {
+    "country_code": "TO",
+    "country_name": "Tonga",
+    "language_name": "Tongan not used at home",
+    "iso639_3": null,
+    "percent": 1.1,
+    "country_population": 104519,
+    "speaker_count": 1149
+  },
+  {
     "country_code": "PW",
     "country_name": "Palau",
     "language_name": "other Micronesian",
@@ -1521,51 +1548,6 @@
     "speaker_count": 614
   },
   {
-    "country_code": "TO",
-    "country_name": "Tonga",
-    "language_name": "Tongan only",
-    "iso639_3": null,
-    "percent": 85.0,
-    "country_population": 104519,
-    "speaker_count": 88841
-  },
-  {
-    "country_code": "TO",
-    "country_name": "Tonga",
-    "language_name": "Tongan and other language",
-    "iso639_3": null,
-    "percent": 13.9,
-    "country_population": 104519,
-    "speaker_count": 14528
-  },
-  {
-    "country_code": "TO",
-    "country_name": "Tonga",
-    "language_name": "Tongan not used at home",
-    "iso639_3": null,
-    "percent": 1.1,
-    "country_population": 104519,
-    "speaker_count": 1149
-  },
-  {
-    "country_code": "WF",
-    "country_name": "Wallis and Futuna",
-    "language_name": "Futunian",
-    "iso639_3": null,
-    "percent": 30.1,
-    "country_population": 15998,
-    "speaker_count": 4815
-  },
-  {
-    "country_code": "WF",
-    "country_name": "Wallis and Futuna",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 0.2,
-    "country_population": 15998,
-    "speaker_count": 31
-  },
-  {
     "country_code": "AW",
     "country_name": "Aruba",
     "language_name": "Spanish",
@@ -1600,6 +1582,24 @@
     "percent": 0.4,
     "country_population": 125063,
     "speaker_count": 500
+  },
+  {
+    "country_code": "WF",
+    "country_name": "Wallis and Futuna",
+    "language_name": "Futunian",
+    "iso639_3": null,
+    "percent": 30.1,
+    "country_population": 15998,
+    "speaker_count": 4815
+  },
+  {
+    "country_code": "WF",
+    "country_name": "Wallis and Futuna",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 0.2,
+    "country_population": 15998,
+    "speaker_count": 31
   },
   {
     "country_code": "WS",
@@ -1683,42 +1683,6 @@
     "speaker_count": 887728
   },
   {
-    "country_code": "KY",
-    "country_name": "Cayman Islands",
-    "language_name": "Spanish",
-    "iso639_3": "spa",
-    "percent": 3.9,
-    "country_population": 66653,
-    "speaker_count": 2599
-  },
-  {
-    "country_code": "KY",
-    "country_name": "Cayman Islands",
-    "language_name": "Filipino",
-    "iso639_3": "fil",
-    "percent": 3.8,
-    "country_population": 66653,
-    "speaker_count": 2532
-  },
-  {
-    "country_code": "KY",
-    "country_name": "Cayman Islands",
-    "language_name": "other",
-    "iso639_3": null,
-    "percent": 2.8,
-    "country_population": 66653,
-    "speaker_count": 1866
-  },
-  {
-    "country_code": "KY",
-    "country_name": "Cayman Islands",
-    "language_name": "unspecified",
-    "iso639_3": null,
-    "percent": 0.7,
-    "country_population": 66653,
-    "speaker_count": 466
-  },
-  {
     "country_code": "SX",
     "country_name": "Sint Maarten",
     "language_name": "Spanish",
@@ -1755,6 +1719,42 @@
     "speaker_count": 1635
   },
   {
+    "country_code": "KY",
+    "country_name": "Cayman Islands",
+    "language_name": "Spanish",
+    "iso639_3": "spa",
+    "percent": 3.9,
+    "country_population": 66653,
+    "speaker_count": 2599
+  },
+  {
+    "country_code": "KY",
+    "country_name": "Cayman Islands",
+    "language_name": "Filipino",
+    "iso639_3": "fil",
+    "percent": 3.8,
+    "country_population": 66653,
+    "speaker_count": 2532
+  },
+  {
+    "country_code": "KY",
+    "country_name": "Cayman Islands",
+    "language_name": "other",
+    "iso639_3": null,
+    "percent": 2.8,
+    "country_population": 66653,
+    "speaker_count": 1866
+  },
+  {
+    "country_code": "KY",
+    "country_name": "Cayman Islands",
+    "language_name": "unspecified",
+    "iso639_3": null,
+    "percent": 0.7,
+    "country_population": 66653,
+    "speaker_count": 466
+  },
+  {
     "country_code": "VG",
     "country_name": "Virgin Islands",
     "language_name": "English",
@@ -1789,15 +1789,6 @@
     "percent": 2.5,
     "country_population": 103792,
     "speaker_count": 2594
-  },
-  {
-    "country_code": "PG",
-    "country_name": "Papua New Guinea",
-    "language_name": "about",
-    "iso639_3": null,
-    "percent": 12.0,
-    "country_population": 10273996,
-    "speaker_count": 1232879
   },
   {
     "country_code": "TL",
@@ -1935,6 +1926,15 @@
     "speaker_count": 63215
   },
   {
+    "country_code": "PG",
+    "country_name": "Papua New Guinea",
+    "language_name": "about",
+    "iso639_3": null,
+    "percent": 12.0,
+    "country_population": 10273996,
+    "speaker_count": 1232879
+  },
+  {
     "country_code": "AD",
     "country_name": "Andorra",
     "language_name": "Castilian",
@@ -1978,6 +1978,15 @@
     "percent": 6.8,
     "country_population": 85370,
     "speaker_count": 5805
+  },
+  {
+    "country_code": "IE",
+    "country_name": "Ireland",
+    "language_name": "spoken by approximately",
+    "iso639_3": null,
+    "percent": 37.7,
+    "country_population": 5233461,
+    "speaker_count": 1973014
   },
   {
     "country_code": "EE",
@@ -2034,6 +2043,15 @@
     "speaker_count": 1587
   },
   {
+    "country_code": "IM",
+    "country_name": "Isle of Man",
+    "language_name": "about",
+    "iso639_3": null,
+    "percent": 2.0,
+    "country_population": 92666,
+    "speaker_count": 1853
+  },
+  {
     "country_code": "JE",
     "country_name": "Jersey",
     "language_name": "Portuguese",
@@ -2050,24 +2068,6 @@
     "percent": 0.9,
     "country_population": 103944,
     "speaker_count": 935
-  },
-  {
-    "country_code": "IM",
-    "country_name": "Isle of Man",
-    "language_name": "about",
-    "iso639_3": null,
-    "percent": 2.0,
-    "country_population": 92666,
-    "speaker_count": 1853
-  },
-  {
-    "country_code": "IE",
-    "country_name": "Ireland",
-    "language_name": "spoken by approximately",
-    "iso639_3": null,
-    "percent": 37.7,
-    "country_population": 5233461,
-    "speaker_count": 1973014
   },
   {
     "country_code": "LU",
@@ -2178,15 +2178,6 @@
     "speaker_count": 103
   },
   {
-    "country_code": "LK",
-    "country_name": "Sri Lanka",
-    "language_name": "English",
-    "iso639_3": "eng",
-    "percent": 23.8,
-    "country_population": 22050561,
-    "speaker_count": 5248033
-  },
-  {
     "country_code": "BT",
     "country_name": "Bhutan",
     "language_name": "Sharchopkha",
@@ -2212,5 +2203,14 @@
     "percent": 26.0,
     "country_population": 892877,
     "speaker_count": 232148
+  },
+  {
+    "country_code": "LK",
+    "country_name": "Sri Lanka",
+    "language_name": "English",
+    "iso639_3": "eng",
+    "percent": 23.8,
+    "country_population": 22050561,
+    "speaker_count": 5248033
   }
 ]
