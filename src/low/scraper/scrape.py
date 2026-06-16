@@ -6,30 +6,27 @@ import os
 import sys
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, Iterator, List, Optional, Set, Tuple
 
-import requests
 from tqdm import tqdm
 
-from .aggregate import parse_speaker_count
 from .cache import FileCache
+from .fetch import (
+    USER_AGENT,
+    all_organic_urls,
+    fetch_url,
+    html_to_markdown,
+    serper_search,
+)
 from .robots import RobotsChecker
 from .rounds import batch_suffix
-
+from .tasks.speakers import SpeakerCountTask, parse_speaker_count
 
 LOG = logging.getLogger("low.scraper")
 _ROBOTS_LOG = LOG.getChild("robots")
 
-
 class _QuietChildFilter(logging.Filter):
-    """Drop INFO/DEBUG noise from child loggers (e.g. low.scraper.robots).
-
-    The parent ``low.scraper`` logger handles round-level summaries; child
-    loggers handle per-URL chatter that should stay file-only.
-    """
-
     def __init__(self, parent_name: str = "low.scraper") -> None:
         super().__init__()
         self._parent = parent_name
@@ -42,17 +39,8 @@ class _QuietChildFilter(logging.Filter):
 
 
 def configure_logging(log_file: Path, console_level: int = logging.INFO) -> None:
-    """Configure file + console logging.
-
-    * **File** (``log_file``): every record at ``INFO`` or above.
-    * **Console** (stderr): records from ``low.scraper`` at ``console_level``+.
-      Records from child loggers (e.g. ``low.scraper.robots``) are only echoed
-      to the console at ``WARNING`` or above, keeping per-URL chatter off the
-      terminal.
-    """
     log_file.parent.mkdir(parents=True, exist_ok=True)
 
-    # Reset handlers so repeated calls don't double-log.
     for h in list(LOG.handlers):
         LOG.removeHandler(h)
         h.close()
@@ -71,62 +59,23 @@ def configure_logging(log_file: Path, console_level: int = logging.INFO) -> None
     LOG.addHandler(console_handler)
 
     LOG.setLevel(logging.INFO)
-    LOG.propagate = False  # don't double-print via the root logger
+    LOG.propagate = False
 
 
-SERPER_URL = "https://google.serper.dev/search"
-USER_AGENT = (
-    "Mozilla/5.0 (compatible; low-scraper/0.1; "
-    "+https://github.com/your-org/low)"
-)
-INSTRUCTIONS = (
-    "You are given a web page (in Markdown) as context. "
-    "Extract the total number of speakers of the language {language} in {country}. "
-    "Combine L1 (native) and L2 (second-language) speakers into a single total — do not distinguish them. "
-    "Output ONLY a single integer with no thousands separators, no units, no commentary. "
-    "If the page does not contain enough information to determine the number, output exactly: UNKNOWN"
-)
+def find_missing_pairs():
+    """Legacy helper — returns SpeakerCountTask items as simple named tuples."""
+    from types import SimpleNamespace
 
-
-@dataclass(frozen=True)
-class MissingPair:
-    country_code: str
-    country: str
-    language_part3: str
-    language: str
-
-
-def find_missing_pairs() -> List[MissingPair]:
-    """Country/language pairs that have no per-country speaker count in `low`."""
-    import low
-
-    db = low.LanguagesOfTheWorld()
-    pairs: List[MissingPair] = []
-    for country in db.countries:
-        known = {sc.language.part3 for sc in country.speaker_counts}
-        for lang in country.languages:
-            if lang.part3 in known:
-                continue
-            pairs.append(
-                MissingPair(
-                    country_code=country.code,
-                    country=country.label,
-                    language_part3=lang.part3,
-                    language=lang.label,
-                )
-            )
-    return pairs
+    task = SpeakerCountTask()
+    return [
+        SimpleNamespace(**item.fields)
+        for item in task.discover_items()
+    ]
 
 
 def load_previous_results(
     paths: Iterable[Path], response_column: str
 ) -> Tuple[Set[Tuple[str, str]], Dict[Tuple[str, str], Set[str]]]:
-    """Return (solved pairs, urls already tried per pair) from previous loom CSVs.
-
-    A pair is "solved" if any row has a parseable (non-UNKNOWN) response.
-    Any URL that already appeared for a pair — regardless of outcome — counts as tried,
-    so the next round picks fresh search results.
-    """
     solved: Set[Tuple[str, str]] = set()
     tried: Dict[Tuple[str, str], Set[str]] = {}
     for path in paths:
@@ -147,133 +96,28 @@ def load_previous_results(
     return solved, tried
 
 
-SERPER_MAX_ATTEMPTS = 5  # initial try + 4 retries
-SERPER_BACKOFF_BASE = 1.5  # seconds; doubles each retry
-
-
-def _serper_call(api_key: str, query: str) -> dict:
-    """Single serper POST. Raises on non-200."""
-    resp = requests.post(
-        SERPER_URL,
-        headers={"X-API-KEY": api_key, "Content-Type": "application/json"},
-        json={"q": query, "num": 10},
-        timeout=30,
-    )
-    resp.raise_for_status()
-    return resp.json()
-
-
-def _serper_call_with_retry(api_key: str, query: str) -> dict:
-    """POST to serper with exponential backoff on transient failures.
-
-    Retries on network errors, 429 rate-limits, and 5xx responses. Returns the
-    parsed JSON on success; raises the last exception if every attempt fails.
-    """
-    last_exc: Exception | None = None
-    for attempt in range(SERPER_MAX_ATTEMPTS):
-        try:
-            return _serper_call(api_key, query)
-        except requests.HTTPError as e:
-            status = getattr(e.response, "status_code", 0)
-            # Retry rate-limits and server errors; bail immediately on 4xx auth/quota errors.
-            if status != 429 and status < 500:
-                raise
-            last_exc = e
-        except requests.RequestException as e:
-            last_exc = e
-        if attempt < SERPER_MAX_ATTEMPTS - 1:
-            time.sleep(SERPER_BACKOFF_BASE * (2 ** attempt))
-    assert last_exc is not None
-    raise last_exc
-
-
-def serper_search(cache: FileCache, api_key: str, query: str) -> dict:
-    return cache.get_or_set_json(
-        "serper", query, lambda: _serper_call_with_retry(api_key, query)
-    )
-
-
-def all_organic_urls(serper_response: dict) -> List[str]:
-    organic = serper_response.get("organic", []) or []
-    seen: Set[str] = set()
-    urls: List[str] = []
-    for item in organic:
-        link = item.get("link")
-        if link and link not in seen:
-            seen.add(link)
-            urls.append(link)
-    return urls
-
-
-HTML_FETCH_ATTEMPTS = 3
-HTML_FETCH_BACKOFF = 1.0
-
-
-def fetch_url(cache: FileCache, url: str, timeout: int = 30) -> Optional[str]:
-    """Fetch a URL with a couple of retries on transient errors.
-
-    On terminal failure (4xx, exhausted retries) returns None; the cache stores
-    an empty string so future runs don't keep retrying. Successful 200s are
-    cached as their text body.
-    """
-    def fetch() -> Optional[str]:
-        for attempt in range(HTML_FETCH_ATTEMPTS):
-            try:
-                resp = requests.get(
-                    url,
-                    timeout=timeout,
-                    headers={"User-Agent": USER_AGENT},
-                )
-            except requests.RequestException:
-                if attempt < HTML_FETCH_ATTEMPTS - 1:
-                    time.sleep(HTML_FETCH_BACKOFF * (2 ** attempt))
-                    continue
-                return None
-            if resp.status_code == 200:
-                return resp.text
-            if resp.status_code in (429,) or resp.status_code >= 500:
-                if attempt < HTML_FETCH_ATTEMPTS - 1:
-                    time.sleep(HTML_FETCH_BACKOFF * (2 ** attempt))
-                    continue
-            return None
-        return None
-
-    return cache.get_or_set_text("html", url, fetch)
-
-
-def html_to_markdown(cache: FileCache, url: str, html: str) -> Optional[str]:
-    import trafilatura
-
-    def convert() -> Optional[str]:
-        return trafilatura.extract(html, output_format="markdown", with_metadata=False) or ""
-
-    md = cache.get_or_set_text("markdown", url, convert)
-    return md or None
-
-
-def build_prompt(pair: MissingPair, markdown: str) -> str:
-    instructions = INSTRUCTIONS.format(language=pair.language, country=pair.country)
-    return (
-        f"{instructions}\n\n"
-        f"Question: What is the number of {pair.language} speakers in {pair.country}?\n\n"
-        f"--- WEB PAGE (Markdown) ---\n{markdown}\n"
-    )
-
-
 def process_pair(
-    pair: MissingPair,
+    pair,
     cache: FileCache,
     api_key: str,
     results_per_pair: int,
     already_tried: Dict[Tuple[str, str], Set[str]],
     robots: Optional[RobotsChecker] = None,
 ) -> List[Tuple[str, str, str, str]]:
-    """Return [(country, language, url, prompt), ...] for one pair.
+    task = SpeakerCountTask()
+    from .tasks.base import ScrapeItem
 
-    Diagnostic messages go through the ``low.scraper`` logger (file + ERROR-level
-    console). Failures return an empty list rather than raising.
-    """
-    query = f"{pair.language} language number of speakers in {pair.country}"
+    item = ScrapeItem(
+        fields={
+            "country_code": getattr(pair, "country_code", ""),
+            "country": pair.country,
+            "language_part3": getattr(pair, "language_part3", ""),
+            "language": pair.language,
+        }
+    )
+    query = task.search_query(item)
+    import requests
+
     try:
         response = serper_search(cache, api_key, query)
     except requests.HTTPError as e:
@@ -298,12 +142,12 @@ def process_pair(
         md = html_to_markdown(cache, url, html)
         if not md:
             continue
-        out.append((pair.country, pair.language, url, build_prompt(pair, md)))
+        out.append((pair.country, pair.language, url, task.build_prompt(item, md)))
     return out
 
 
 def iter_prompt_rows(
-    pairs: Iterable[MissingPair],
+    pairs,
     cache: FileCache,
     api_key: str,
     results_per_pair: int,
@@ -336,7 +180,7 @@ def iter_prompt_rows(
         for fut in as_completed(futures):
             try:
                 rows = fut.result()
-            except Exception as e:  # pragma: no cover - defensive
+            except Exception as e:
                 LOG.error("worker for %r: %s", futures[fut], e)
                 rows = []
             for row in rows:
@@ -346,12 +190,6 @@ def iter_prompt_rows(
 
 
 class _BatchWriter:
-    """Streams CSV rows to a sequence of files, rolling over every ``batch_size`` rows.
-
-    Files are named via ``naming(batch_letter) -> Path``; each gets the header
-    row written on first use.
-    """
-
     HEADER = ["country", "language", "url", "prompt"]
 
     def __init__(self, naming, batch_size: int) -> None:
@@ -408,12 +246,6 @@ def run_scrape(
     respect_robots: bool = True,
     log_file: Optional[Path] = None,
 ) -> List[Path]:
-    """Run one scrape round, writing prompts split across batches.
-
-    ``naming`` is a callable ``str -> Path``: it receives a batch suffix
-    (``"a"``, ``"b"``, ...) and returns the output CSV path for that batch.
-    Returns the list of paths actually written.
-    """
     if batch_size <= 0:
         raise ValueError("batch_size must be > 0")
 

@@ -473,39 +473,36 @@ Merged into `Language.speaker_count` as `max(linguameta, wikidata)`.
 The optional scraper fills in **missing per-country speaker counts** — country/language
 pairs where `low` knows the language is spoken but has no `SpeakerCount` from CLDR,
 CIA, or LinguaMeta. It searches the web via [serper.dev](https://serper.dev),
-downloads pages, and writes prompt CSVs for batch LLM extraction with
-[loom](https://github.com/jnehring/loom).
+downloads pages, extracts answers with **Google Gemini**, and writes aggregated JSON.
 
 ### Install
 
 ```bash
 pip install "languages-of-the-world[scraper]"
-echo 'SERPER_API_KEY=your-key-here' > .env
+cat >> .env <<'EOF'
+SERPER_API_KEY=your-serper-key
+GEMINI_API_KEY=your-gemini-key
+EOF
 ```
 
 ### Workflow
 
-Working files live under `scraper-data/` (gitignored). Alternate `scrape` and loom
-until satisfied, then aggregate and import:
+Working files live under `scraper-data/` (gitignored). One command runs search,
+scraping, LLM extraction, and aggregation for multiple rounds:
 
 ```bash
-# round 1
-low-scraper scrape
-for f in scraper-data/prompts1*.csv; do
-    loom run --file "$f" --provider google --model gemini-3.1-flash-lite -c prompt --sync
-done
-
-# round 2 — retries UNKNOWN pairs with the next search hit
-low-scraper scrape
-for f in scraper-data/prompts2*.csv; do loom run --file "$f" ...; done
-
-low-scraper aggregate                    # → scraper-data/speakers.json
-low-scraper import                       # → src/low/data/sources/low_scraper_speakers.json
-python -m low.bootstrap                  # bake into low_db.json
+low-scraper run --rounds 3          # → round1_results.csv … speakers.json
+low-scraper import                  # → src/low/data/sources/low_scraper_speakers.json
+python -m low.bootstrap             # bake into low_db.json
 ```
 
-`low-scraper status` shows which rounds are complete and what scrape would do next.
-See [`examples/02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) for
+Each round retries **UNKNOWN** pairs with fresh search results. Serper and Gemini
+responses are cached under `scraper-data/.cache` (use `--no-cache` to bypass).
+
+`low-scraper status` shows completed rounds, resolved counts, and cache stats.
+
+Legacy loom CSV workflow (`scrape` / `aggregate`) remains for old `promptsN_results_*.csv`
+files. See [`examples/02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) for
 per-round resolution statistics.
 
 ---

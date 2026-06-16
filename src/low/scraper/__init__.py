@@ -1,1 +1,1 @@
-"""Web scraper to fill in missing speaker counts in the `low` database."""
+"""Web scraper to fill in missing data in the `low` database."""

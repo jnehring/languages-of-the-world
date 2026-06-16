@@ -31,6 +31,7 @@ scraper = [
     "click>=8.1",
     "python-dotenv>=1.0",
     "tqdm>=4.66",
+    "google-genai>=1.0",
 ]
 dev = ["pytest>=7.0", "pytest-cov>=4.0", "requests>=2.28"]
 

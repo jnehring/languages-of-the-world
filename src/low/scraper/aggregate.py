@@ -2,10 +2,9 @@ from __future__ import annotations
 
 import csv
 import json
-import re
 import sys
 from pathlib import Path
-from typing import Dict, Iterable, Optional, Tuple
+from typing import Dict, Iterable, Tuple
 
 # Loom result rows include the full prompt (with embedded markdown), which
 # routinely exceeds Python's default 131 KB per-field cap. Raise it to the
@@ -18,28 +17,7 @@ while True:
     except OverflowError:
         _limit //= 2
 
-_INT_RE = re.compile(r"-?\d[\d,_.\s]*")
-
-
-def parse_speaker_count(raw: str) -> Optional[int]:
-    """Parse a loom response into an integer count, or None for UNKNOWN/garbage."""
-    if raw is None:
-        return None
-    s = raw.strip()
-    if not s or s.upper().startswith("UNKNOWN"):
-        return None
-    match = _INT_RE.search(s)
-    if not match:
-        return None
-    cleaned = re.sub(r"[,_\s]", "", match.group(0))
-    try:
-        if "." in cleaned:
-            value = int(float(cleaned))
-        else:
-            value = int(cleaned)
-    except ValueError:
-        return None
-    return value if value >= 0 else None
+from .tasks.speakers import parse_speaker_count
 
 
 def aggregate(loom_csvs: Iterable[Path], output_json: Path, response_column: str) -> None:
