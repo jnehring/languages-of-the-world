@@ -1,0 +1,78 @@
+name: Update scraped speakers
+
+# Manual-only: run scraper + import, open PR with low_scraper_speakers.json.
+# Not part of the release workflow (Serper/Gemini are too expensive per release).
+
+on:
+  workflow_dispatch:
+    inputs:
+      rounds:
+        description: "Number of search+scrape+LLM rounds"
+        required: true
+        default: "3"
+      limit:
+        description: "Max unresolved items (leave empty for no limit)"
+        required: false
+        default: ""
+
+jobs:
+  scrape:
+    name: Scrape and open PR
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install scraper
+        run: pip install -e ".[scraper]"
+
+      - name: Run scraper and import
+        env:
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          if [ -z "$SERPER_API_KEY" ] || [ -z "$GEMINI_API_KEY" ]; then
+            echo "SERPER_API_KEY and GEMINI_API_KEY repository secrets are required."
+            exit 1
+          fi
+          ARGS=(run --rounds "${{ inputs.rounds }}")
+          if [ -n "${{ inputs.limit }}" ]; then
+            ARGS+=(--limit "${{ inputs.limit }}")
+          fi
+          low-scraper "${ARGS[@]}"
+          low-scraper import
+
+      - name: Create pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/low/data/sources/low_scraper_speakers.json
+          if git diff --staged --quiet; then
+            echo "No changes to low_scraper_speakers.json — skipping PR."
+            exit 0
+          fi
+          BRANCH="update-scraped-speakers-$(date -u +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git commit -m "Update scraped speaker counts (${{ inputs.rounds }} rounds)"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "Update scraped speaker counts" \
+            --body "$(cat <<EOF
+Automated scraper run via [\`scraper.yml\`](.github/workflows/scraper.yml).
+
+- Rounds: ${{ inputs.rounds }}
+- Limit: ${{ inputs.limit || 'none' }}
+
+Merge this PR before cutting a PyPI release so the release workflow includes the updated data.
+EOF
+)"

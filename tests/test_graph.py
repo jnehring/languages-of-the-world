@@ -196,12 +196,13 @@ class TestGraphInit:
 
 
 class TestSpeakerCount:
-    def test_source_url_round_trip(self, db):
-        sc = db.speaker_counts.by_source("low_scraper")[0]
+    def test_scraped_source_has_no_url(self, db):
+        sc = db.speaker_counts.by_source("scraped")[0]
         assert sc.country.code == "UG"
         assert sc.language.part3 == "kin"
         assert sc.speaker_count == 450_000
-        assert sc.source_url == "https://example.org/kinyarwanda-uganda"
+        assert sc.source == "scraped"
+        assert sc.source_url is None
 
     def test_source_url_absent_for_cldr(self, db):
         sc = db.speaker_counts.by_source("cldr")[0]

@@ -49,7 +49,6 @@ def import_speakers(
         country_label = rec.get("country", "")
         language_label = rec.get("language", "")
         count = rec.get("number_of_speakers")
-        source_url = rec.get("source_url", "")
 
         cc = country_by_label.get(country_label)
         p3 = language_by_label.get(language_label)
@@ -69,7 +68,6 @@ def import_speakers(
                 "iso639_3": p3,
                 "speaker_count": count,
                 "speaker_fraction": fraction,
-                "source_url": source_url,
             }
         )
 

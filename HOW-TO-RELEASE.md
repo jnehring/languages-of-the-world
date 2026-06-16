@@ -89,8 +89,9 @@ If you need to re-publish without cutting a new tag (rare — versions are immut
 1. **build job**
    - Checks out the tag.
    - Installs `.[bootstrap]` (gets the bootstrap dependencies) and `build`.
-   - Runs `python -m low.bootstrap` to regenerate `src/low/data/low_db.json` and the raw source files in `src/low/data/sources/` from upstream (SIL, UN M49, LinguaMeta, Glottolog, CLDR, CIA Factbook, Wikidata).
-   - Verifies the DB JSON is non-empty.
+   - Verifies `src/low/data/sources/low_scraper_speakers.json` exists (committed scraped data — **not** fetched from the web).
+   - Runs `python -m low.bootstrap` to regenerate `src/low/data/low_db.json` and the raw source files in `src/low/data/sources/` from upstream (SIL, UN M49, LinguaMeta, Glottolog, CLDR, CIA Factbook, Wikidata), **plus** the committed scraped speaker file.
+   - Verifies the DB JSON is non-empty and contains scraped speaker records (`source: "scraped"`).
    - Runs `python -m build` to produce wheel + sdist in `dist/`.
    - Uploads `dist/` as an artifact.
 
@@ -98,7 +99,31 @@ If you need to re-publish without cutting a new tag (rare — versions are immut
    - Downloads the `dist/` artifact.
    - Calls `pypa/gh-action-pypi-publish@release/v1` which authenticates via OIDC and uploads.
 
-Database regeneration happens inside the workflow so every release ships fresh data. The committed `low_db.json` is overwritten in-build; you don't need to regenerate locally before tagging.
+Database regeneration happens inside the workflow so every release ships fresh upstream data. The committed `low_db.json` is overwritten in-build; you don't need to regenerate locally before tagging.
+
+**Exception — scraped speaker counts:** unlike CLDR/CIA/LinguaMeta/Wikidata, bootstrap does **not** download scraped data. It reads the versioned file `src/low/data/sources/low_scraper_speakers.json` from the repo checkout. The scraper is never run in this workflow.
+
+---
+
+## Refreshing Scraped Speaker Data
+
+Run locally (or via the optional *Update scraped speakers* workflow in Actions) when you want new web-scraped counts:
+
+```bash
+pip install "languages-of-the-world[scraper]"
+# SERPER_API_KEY and GEMINI_API_KEY in .env
+
+low-scraper run --rounds 3
+low-scraper import    # → src/low/data/sources/low_scraper_speakers.json
+
+git add src/low/data/sources/low_scraper_speakers.json
+git commit -m "Update scraped speaker counts"
+git push
+```
+
+Then cut a release as usual. Scraper updates are decoupled from release cadence — only commit the JSON when you re-scrape.
+
+Working files under `scraper-data/` are gitignored and are **not** used by bootstrap or the release workflow.
 
 ---
 
@@ -119,6 +144,14 @@ PyPI does not allow re-uploading the same version. If a release is broken, yank 
 ### "User 'github-actions' is not allowed to upload"
 
 Trusted publisher isn't configured or the environment name in the workflow doesn't match the one registered on PyPI. Re-check step 2 of one-time setup.
+
+### Release fails: missing scraped speaker records
+
+The build job checks that `src/low/data/sources/low_scraper_speakers.json` exists and that `low_db.json` contains records with `source: "scraped"` after bootstrap. If this fails:
+
+1. Run `low-scraper import` locally (after a scrape) or restore the file from git history.
+2. Commit and push `src/low/data/sources/low_scraper_speakers.json`.
+3. Re-run the release workflow.
 
 ### Bootstrap fails on Wikidata (HTTP 429)
 

@@ -15,8 +15,8 @@ class SpeakerCount:
     language: "Language"
     speaker_count: int
     speaker_fraction: float   # share of country population, 0.0–1.0
-    source: str  # "cldr", "cia", "linguameta", or "low_scraper"
-    source_url: Optional[str] = None
+    source: str  # "cldr", "cia", "linguameta", or "scraped"
+    source_url: Optional[str] = None  # unused; kept for backward-compatible JSON loads
 
     def __repr__(self) -> str:
         url_part = f", source_url={self.source_url!r}" if self.source_url else ""

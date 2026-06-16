@@ -983,12 +983,13 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     low_scraper_path = sources_dir / "low_scraper_speakers.json"
     if low_scraper_path.exists():
         low_scraper_raw = json.loads(low_scraper_path.read_text(encoding="utf-8"))
+        scraped_before = sum(1 for k in seen_keys if k[2] == "scraped")
         for rec in low_scraper_raw:
             cc = rec.get("country_code")
             p3 = rec.get("iso639_3")
             if not cc or not p3:
                 continue
-            key = (cc, p3, "low_scraper")
+            key = (cc, p3, "scraped")
             existing = seen_keys.get(key)
             if existing is None or rec["speaker_count"] > existing["speaker_count"]:
                 seen_keys[key] = {
@@ -996,9 +997,20 @@ def build_db(output_path: Optional[Path] = None) -> Path:
                     "language_code": p3,
                     "speaker_count": rec["speaker_count"],
                     "speaker_fraction": rec.get("speaker_fraction", 0.0),
-                    "source": "low_scraper",
-                    "source_url": rec.get("source_url"),
+                    "source": "scraped",
                 }
+        scraped_merged = sum(1 for k in seen_keys if k[2] == "scraped")
+        print(
+            f"  Loaded {len(low_scraper_raw)} scraped speaker records "
+            f"from {low_scraper_path.name} "
+            f"({scraped_merged - scraped_before} new/updated in merge)"
+        )
+    else:
+        print(
+            f"  WARNING: {low_scraper_path.name} not found — "
+            "no scraped speaker counts will be included. "
+            "Run `low-scraper import` and commit the file before releasing."
+        )
 
     country_language_speakers = sorted(
         seen_keys.values(),
@@ -1062,7 +1074,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     cldr_entries         = sum(1 for r in country_language_speakers if r["source"] == "cldr")
     cia_entries          = sum(1 for r in country_language_speakers if r["source"] == "cia")
     linguameta_entries   = sum(1 for r in country_language_speakers if r["source"] == "linguameta")
-    low_scraper_entries  = sum(1 for r in country_language_speakers if r["source"] == "low_scraper")
+    scraped_entries      = sum(1 for r in country_language_speakers if r["source"] == "scraped")
     official_counts      = {s: sum(1 for r in country_official_languages if r["status"] == s)
                             for s in _TRACKED_STATUSES}
 
@@ -1079,7 +1091,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         f"  {len(db['families'])} family tree nodes ({root_families} root families)\n"
         f"  {len(country_language_speakers)} country-language speaker records "
         f"({cldr_entries} CLDR, {cia_entries} CIA, {linguameta_entries} LinguaMeta"
-        f"{f', {low_scraper_entries} low_scraper' if low_scraper_entries else ''})\n"
+        f"{f', {scraped_entries} scraped' if scraped_entries else ''})\n"
         f"  {len(language_names)} canonical language names (LinguaMeta)\n"
         f"  {len(country_official_languages)} official-language entries "
         f"(official: {official_counts['official']}, "
