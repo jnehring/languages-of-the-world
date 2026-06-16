@@ -15,14 +15,16 @@ class SpeakerCount:
     language: "Language"
     speaker_count: int
     speaker_fraction: float   # share of country population, 0.0–1.0
-    source: str  # "cldr", "cia", or "linguameta"
+    source: str  # "cldr", "cia", "linguameta", or "low_scraper"
+    source_url: Optional[str] = None
 
     def __repr__(self) -> str:
+        url_part = f", source_url={self.source_url!r}" if self.source_url else ""
         return (
             f"SpeakerCount(country={self.country.code!r}, "
             f"language={self.language.part3!r}, "
             f"speaker_count={self.speaker_count}, "
-            f"speaker_fraction={self.speaker_fraction:.4f}, source={self.source!r})"
+            f"speaker_fraction={self.speaker_fraction:.4f}, source={self.source!r}{url_part})"
         )
 
     def __hash__(self) -> int:

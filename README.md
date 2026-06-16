@@ -138,7 +138,7 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 | `family` | `Optional[LanguageFamily]` | Glottolog | Immediate parent node in the Glottolog tree |
 | `glottocode` | `Optional[str]` | Glottolog | Glottolog identifier (e.g. `"kin1248"`) |
 | `endangerment` | `Optional[str]` | Glottolog | Agglomerated Endangerment Status (AES). One of `"not_endangered"`, `"threatened"`, `"shifting"`, `"moribund"`, `"nearly_extinct"`, `"extinct"`; `None` if Glottolog has no assessment |
-| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-country speaker counts for this language |
+| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta / low_scraper | Per-country speaker counts for this language |
 | `names` | `List[LanguageName]` | LinguaMeta | Canonical names for this language in other languages |
 | `endonym` | `Optional[LanguageName]` *(property)* | LinguaMeta | The name expressed in the language itself, if available |
 
@@ -169,7 +169,7 @@ A single canonical name for a language, expressed in some (possibly different) l
 | `official_languages` | `List[Language]` | CLDR | Nationally official languages (`officialStatus="official"`) |
 | `official_regional_languages` | `List[Language]` | CLDR | Regionally official languages (`officialStatus="official_regional"`) |
 | `de_facto_official_languages` | `List[Language]` | CLDR | De facto official languages (`officialStatus="de_facto_official"`) |
-| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta | Per-language speaker counts in this country |
+| `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta / low_scraper | Per-language speaker counts in this country |
 
 ### SpeakerCount
 
@@ -181,9 +181,10 @@ according to a specific data source. Both `country.speaker_counts` and
 |---|---|---|---|
 | `country` | `Country` | — | The country |
 | `language` | `Language` | — | The language |
-| `speaker_count` | `int` | CLDR / CIA / LinguaMeta | Estimated number of speakers |
-| `speaker_fraction` | `float` | CLDR / CIA / LinguaMeta | Share of country population (0.0–1.0; derived from `Country.population` for LinguaMeta) |
-| `source` | `str` | — | `"cldr"`, `"cia"`, or `"linguameta"` |
+| `speaker_count` | `int` | CLDR / CIA / LinguaMeta / low_scraper | Estimated number of speakers |
+| `speaker_fraction` | `float` | CLDR / CIA / LinguaMeta / low_scraper | Share of country population (0.0–1.0; derived from `Country.population` for LinguaMeta and low_scraper) |
+| `source` | `str` | — | `"cldr"`, `"cia"`, `"linguameta"`, or `"low_scraper"` |
+| `source_url` | `Optional[str]` | low_scraper | Web page the count was extracted from (only set for `low_scraper` records) |
 
 ### Region
 
@@ -266,6 +267,7 @@ db.speaker_counts.for_language("deu")  # List[SpeakerCount] — all entries for 
 db.speaker_counts.by_source("cldr")        # List[SpeakerCount] — CLDR entries only
 db.speaker_counts.by_source("cia")         # List[SpeakerCount] — CIA entries only
 db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] — LinguaMeta entries only
+db.speaker_counts.by_source("low_scraper")  # List[SpeakerCount] — web-scraped entries only
 ```
 
 ### LanguageNameCollection (`db.language_names`)
@@ -466,6 +468,48 @@ Merged into `Language.speaker_count` as `max(linguameta, wikidata)`.
 
 ---
 
+## Speaker-count scraper (`low-scraper`)
+
+The optional scraper fills in **missing per-country speaker counts** — country/language
+pairs where `low` knows the language is spoken but has no `SpeakerCount` from CLDR,
+CIA, or LinguaMeta. It searches the web via [serper.dev](https://serper.dev),
+downloads pages, and writes prompt CSVs for batch LLM extraction with
+[loom](https://github.com/jnehring/loom).
+
+### Install
+
+```bash
+pip install "languages-of-the-world[scraper]"
+echo 'SERPER_API_KEY=your-key-here' > .env
+```
+
+### Workflow
+
+Working files live under `scraper-data/` (gitignored). Alternate `scrape` and loom
+until satisfied, then aggregate and import:
+
+```bash
+# round 1
+low-scraper scrape
+for f in scraper-data/prompts1*.csv; do
+    loom run --file "$f" --provider google --model gemini-3.1-flash-lite -c prompt --sync
+done
+
+# round 2 — retries UNKNOWN pairs with the next search hit
+low-scraper scrape
+for f in scraper-data/prompts2*.csv; do loom run --file "$f" ...; done
+
+low-scraper aggregate                    # → scraper-data/speakers.json
+low-scraper import                       # → src/low/data/sources/low_scraper_speakers.json
+python -m low.bootstrap                  # bake into low_db.json
+```
+
+`low-scraper status` shows which rounds are complete and what scrape would do next.
+See [`examples/02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) for
+per-round resolution statistics.
+
+---
+
 ## Regenerating the Database
 
 The baked JSON (`src/low/data/low_db.json`) is shipped with the package. To re-pull from upstream sources (requires internet access):
@@ -485,6 +529,7 @@ The bootstrap writes three files:
 | `src/low/data/sources/linguameta_speakers.json` | Raw LinguaMeta per-locale speaker-count records |
 | `src/low/data/sources/linguameta_names.json` | Raw LinguaMeta canonical language-name records |
 | `src/low/data/sources/wikidata_speakers.json` | Raw Wikidata SPARQL global speaker-count records |
+| `src/low/data/sources/low_scraper_speakers.json` | Normalized web-scraped per-country speaker counts with source URLs |
 
 The two source files preserve the original data exactly as parsed, before
 deduplication and ISO-code resolution, so they can be used independently.
@@ -498,6 +543,7 @@ See the [`examples/`](examples/) directory for Jupyter notebooks:
 | Notebook | Description |
 |---|---|
 | [`01_languages_per_country.ipynb`](examples/01_languages_per_country.ipynb) | World choropleth map — number of languages per country |
+| [`02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) | Scraper per-round resolution rate analysis |
 
 ---
 

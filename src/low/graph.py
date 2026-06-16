@@ -177,6 +177,7 @@ class LanguagesOfTheWorld:
                 speaker_count=row.get("speaker_count", 0),
                 speaker_fraction=row.get("speaker_fraction", 0.0),
                 source=row.get("source", ""),
+                source_url=row.get("source_url"),
             )
             country._speaker_count_ref.append(sc)
             lang._speaker_count_ref.append(sc)

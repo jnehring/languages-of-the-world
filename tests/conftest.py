@@ -98,6 +98,14 @@ _MINIMAL_DB = {
         {"country_code": "IN", "language_code": "hin", "speaker_count": 528000000, "speaker_fraction": 0.383,  "source": "cldr"},
         {"country_code": "DE", "language_code": "deu", "speaker_count": 72000000,  "speaker_fraction": 0.866,  "source": "cldr"},
         {"country_code": "RW", "language_code": "kin", "speaker_count": 9900000,   "speaker_fraction": 0.718,  "source": "cia"},
+        {
+            "country_code": "UG",
+            "language_code": "kin",
+            "speaker_count": 450000,
+            "speaker_fraction": 0.009838,
+            "source": "low_scraper",
+            "source_url": "https://example.org/kinyarwanda-uganda",
+        },
         {"country_code": "DE", "language_code": "deu", "speaker_count": 74000000,  "speaker_fraction": 0.886,  "source": "cia"},
     ],
     "country_official_languages": [

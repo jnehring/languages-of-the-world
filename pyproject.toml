@@ -25,7 +25,17 @@ dependencies = []
 
 [project.optional-dependencies]
 bootstrap = ["requests>=2.28"]
+scraper = [
+    "requests>=2.31",
+    "trafilatura>=1.8",
+    "click>=8.1",
+    "python-dotenv>=1.0",
+    "tqdm>=4.66",
+]
 dev = ["pytest>=7.0", "pytest-cov>=4.0", "requests>=2.28"]
+
+[project.scripts]
+low-scraper = "low.scraper.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/low"]

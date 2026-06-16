@@ -193,3 +193,16 @@ class TestGraphInit:
         r = repr(db)
         assert "LanguagesOfTheWorld" in r
         assert "languages=6" in r
+
+
+class TestSpeakerCount:
+    def test_source_url_round_trip(self, db):
+        sc = db.speaker_counts.by_source("low_scraper")[0]
+        assert sc.country.code == "UG"
+        assert sc.language.part3 == "kin"
+        assert sc.speaker_count == 450_000
+        assert sc.source_url == "https://example.org/kinyarwanda-uganda"
+
+    def test_source_url_absent_for_cldr(self, db):
+        sc = db.speaker_counts.by_source("cldr")[0]
+        assert sc.source_url is None

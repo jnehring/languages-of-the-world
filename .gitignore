@@ -218,3 +218,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Scraper working data (prompts, loom results, cache, logs)
+scraper-data/
