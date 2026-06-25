@@ -79,3 +79,10 @@ class TestRealDB:
         assert ie is not None
         assert ie.label == "Indo-European"
         assert ie.parent is None
+
+    def test_punjabi_has_multiple_scripts(self, real_db):
+        pan = real_db.languages.get("pan")
+        assert pan is not None
+        codes = {s.code for s in pan.scripts}
+        assert "guru" in codes
+        assert "arab" in codes

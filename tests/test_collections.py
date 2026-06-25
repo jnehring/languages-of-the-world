@@ -3,8 +3,8 @@ from __future__ import annotations
 
 import pytest
 
-from low.collections import LanguageCollection
-from low.models import Language
+from low.collections import LanguageCollection, ScriptCollection
+from low.models import Language, Script
 
 
 # ---------------------------------------------------------------------------
@@ -106,3 +106,36 @@ class TestSequenceProtocol:
     def test_getitem_negative(self, db):
         last = db.languages[-1]
         assert isinstance(last, Language)
+
+
+# ---------------------------------------------------------------------------
+# ScriptCollection
+# ---------------------------------------------------------------------------
+
+class TestScriptCollection:
+    def test_get_by_code(self, db):
+        script = db.scripts.get("deva")
+        assert script is not None
+        assert script.label == "Devanagari"
+
+    def test_get_case_insensitive(self, db):
+        assert db.scripts.get("DEVA") == db.scripts.get("deva")
+
+    def test_get_missing_returns_none(self, db):
+        assert db.scripts.get("zzzz") is None
+
+    def test_for_language(self, db):
+        scripts = db.scripts.for_language("deu")
+        assert len(scripts) == 1
+        assert scripts[0].code == "latn"
+
+    def test_for_language_missing(self, db):
+        assert db.scripts.for_language("zzz") == []
+
+    def test_len(self, db):
+        assert len(db.scripts) == 2
+
+    def test_iter(self, db):
+        items = list(db.scripts)
+        assert len(items) == 2
+        assert all(isinstance(s, Script) for s in items)

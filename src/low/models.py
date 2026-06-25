@@ -159,6 +159,30 @@ class LanguageFamily:
 
 
 @dataclass
+class Script:
+    """A writing system identified by ISO 15924."""
+
+    code: str   # ISO 15924 four-letter code (lowercase)
+    label: str  # English display name
+    _languages_ref: List["Language"] = field(default_factory=list, repr=False, compare=False)
+
+    @property
+    def languages(self) -> List["Language"]:
+        return self._languages_ref
+
+    def __repr__(self) -> str:
+        return f"Script(code={self.code!r}, label={self.label!r})"
+
+    def __hash__(self) -> int:
+        return hash(self.code)
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, Script):
+            return self.code == other.code
+        return NotImplemented
+
+
+@dataclass
 class LanguageName:
     """
     A canonical name for a language, expressed in some (possibly different) language.
@@ -202,6 +226,7 @@ class Language:
     'extinct'. None if Glottolog has no AES assessment for this language."""
     _speaker_count_ref: List["SpeakerCount"] = field(default_factory=list, repr=False, compare=False)
     _names_ref: List["LanguageName"] = field(default_factory=list, repr=False, compare=False)
+    _scripts_ref: List["Script"] = field(default_factory=list, repr=False, compare=False)
 
     @property
     def speaker_counts(self) -> List["SpeakerCount"]:
@@ -211,6 +236,16 @@ class Language:
     def names(self) -> List["LanguageName"]:
         """All canonical names for this language, across other languages."""
         return self._names_ref
+
+    @property
+    def scripts(self) -> List["Script"]:
+        """Writing systems used for this language (canonical scripts first)."""
+        return self._scripts_ref
+
+    @property
+    def primary_script(self) -> Optional["Script"]:
+        """The primary script for this language, if known."""
+        return self._scripts_ref[0] if self._scripts_ref else None
 
     @property
     def endonym(self) -> Optional["LanguageName"]:

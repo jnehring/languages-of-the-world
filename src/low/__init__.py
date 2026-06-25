@@ -16,6 +16,7 @@ from .models import (
     LanguageFamily,
     LanguageName,
     Region,
+    Script,
     SpeakerCount,
 )
 
@@ -23,6 +24,7 @@ __all__ = [
     "LanguagesOfTheWorld",
     "Language",
     "LanguageName",
+    "Script",
     "Country",
     "Continent",
     "Region",

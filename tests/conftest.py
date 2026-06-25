@@ -114,6 +114,15 @@ _MINIMAL_DB = {
         {"country_code": "DE", "language_code": "deu", "status": "official"},
         {"country_code": "IN", "language_code": "hin", "status": "de_facto_official"},
     ],
+    "scripts": [
+        {"code": "deva", "label": "Devanagari"},
+        {"code": "latn", "label": "Latin"},
+    ],
+    "language_scripts": [
+        {"language_part3": "hin", "script_code": "deva", "is_canonical": True},
+        {"language_part3": "hin", "script_code": "latn", "is_canonical": False},
+        {"language_part3": "deu", "script_code": "latn", "is_canonical": True},
+    ],
 }
 
 

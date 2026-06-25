@@ -140,7 +140,19 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 | `endangerment` | `Optional[str]` | Glottolog | Agglomerated Endangerment Status (AES). One of `"not_endangered"`, `"threatened"`, `"shifting"`, `"moribund"`, `"nearly_extinct"`, `"extinct"`; `None` if Glottolog has no assessment |
 | `speaker_counts` | `List[SpeakerCount]` | CLDR / CIA / LinguaMeta / scraped | Per-country speaker counts for this language |
 | `names` | `List[LanguageName]` | LinguaMeta | Canonical names for this language in other languages |
+| `scripts` | `List[Script]` | LinguaMeta | Writing systems used for this language (canonical first) |
+| `primary_script` | `Optional[Script]` *(property)* | derived | First canonical script, or first script alphabetically |
 | `endonym` | `Optional[LanguageName]` *(property)* | LinguaMeta | The name expressed in the language itself, if available |
+
+### Script
+
+A writing system identified by [ISO 15924](https://unicode.org/iso15924/). Sourced from LinguaMeta's `language_script_locale` entries (all distinct script codes per language).
+
+| Property | Type | Source | Description |
+|---|---|---|---|
+| `code` | `str` | LinguaMeta | ISO 15924 four-letter code (lowercase, e.g. `"deva"`) |
+| `label` | `str` | Unicode CLDR | English display name (e.g. `"Devanagari"`) |
+| `languages` | `List[Language]` | derived | Languages that use this script |
 
 ### LanguageName
 
@@ -223,7 +235,7 @@ family like Indo-European — is a `LanguageFamily` instance.
 
 ## Collection Interface
 
-Every entity collection (`db.languages`, `db.countries`, `db.continents`, `db.regions`, `db.families`, `db.speaker_counts`, `db.language_names`) implements the Python sequence protocol:
+Every entity collection (`db.languages`, `db.countries`, `db.continents`, `db.regions`, `db.families`, `db.scripts`, `db.speaker_counts`, `db.language_names`) implements the Python sequence protocol:
 
 ```python
 len(db.languages)        # int
@@ -238,6 +250,7 @@ for lang in db.languages: ...
 |---|---|
 | 2-char string | ISO 639-1 / ISO 3166-1 alpha-2 |
 | 3-char string | ISO 639-3 |
+| 4-char string (scripts) | ISO 15924 |
 | 8-char string (families) | Glottolog code |
 | Longer string | Case-insensitive label |
 
@@ -267,6 +280,13 @@ db.speaker_counts.by_source("cldr")        # List[SpeakerCount] — CLDR entries
 db.speaker_counts.by_source("cia")         # List[SpeakerCount] — CIA entries only
 db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] — LinguaMeta entries only
 db.speaker_counts.by_source("scraped")  # List[SpeakerCount] — web-scraped entries only
+```
+
+### ScriptCollection (`db.scripts`)
+
+```python
+db.scripts.get("deva")           # Script — by ISO 15924 code
+db.scripts.for_language("hin")   # List[Script] — all scripts for Hindi
 ```
 
 ### LanguageNameCollection (`db.language_names`)
@@ -339,7 +359,7 @@ Countries, regions, and continents are entirely built from this CSV.
 **TSV URL:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/linguameta.tsv`
 **Per-language JSON base:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/data/<bcp47>.json`
 **Licence:** [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
-**Raw output:** `src/low/data/sources/linguameta_speakers.json`
+**Raw output:** `src/low/data/sources/linguameta_speakers.json`, `linguameta_names.json`, `linguameta_scripts.json`
 **Fields provided:**
 
 | Field | Source path |
@@ -354,6 +374,9 @@ Countries, regions, and continents are entirely built from this CSV.
 | `LanguageName.in_language_bcp47` | `name_data[].bcp_47_code` |
 | `LanguageName.script` | `name_data[].iso_15924_code` (optional) |
 | `LanguageName.source` | `name_data[].source` (e.g. `"CLDR"`, `"GOOGLE_RESEARCH"`) |
+| `Script.code` | `language_script_locale[].script.iso_15924_code` |
+| `Language.scripts` | all distinct scripts per language from `language_script_locale` |
+| `Script.label` | Unicode CLDR `en.xml` (English) |
 
 The TSV is the authoritative table for the global per-language total
 (`estimated_number_of_speakers`, order-of-magnitude rounded). Multiple BCP-47
@@ -361,10 +384,11 @@ rows mapping to the same ISO 639-3 code are merged (max speakers, union of
 country codes).
 
 The per-language JSON files under `linguameta/data/` are fetched in parallel
-(~7 000 files, up to 20 threads) in a single pass that produces two record sets:
+(~7 000 files, up to 20 threads) in a single pass that produces three record sets:
 
 - **Per-locale speaker counts** from `language_script_locale[].speaker_data.number_of_speakers` → merged into `SpeakerCount` with `source="linguameta"`.
 - **Canonical names** from `name_data[]` (rows with `is_canonical=true`) → `LanguageName` collection. Names are deduplicated on `(language, in_language_bcp47, script)`; the first occurrence wins.
+- **Language scripts** from `language_script_locale[].script.iso_15924_code` → distinct `(language, script)` pairs deduplicated across locales; `is_canonical` is true if any locale entry marked the script canonical.
 
 The repo file tree is discovered via a single GitHub trees API call; individual
 files come from `raw.githubusercontent.com` (no rate-limit).
@@ -399,6 +423,7 @@ and 246 root families.
 ### [Unicode CLDR — supplementalData.xml](https://github.com/unicode-org/cldr)
 
 **URL:** `https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml`  
+**Scripts URL:** `https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/en.xml`  
 **Licence:** [Unicode License v3](https://www.unicode.org/license.txt)  
 **Raw output:** `src/low/data/sources/cldr_speakers.json`  
 **Fields provided:**

@@ -9,6 +9,7 @@ from .models import (
     LanguageFamily,
     LanguageName,
     Region,
+    Script,
     SpeakerCount,
 )
 
@@ -203,3 +204,21 @@ class LanguageNameCollection(_BaseCollection[LanguageName]):
     def endonyms(self) -> List[LanguageName]:
         """All names that are endonyms (expressed in the language itself)."""
         return [n for n in self._items if n.is_endonym]
+
+
+class ScriptCollection(_BaseCollection[Script]):
+    def __init__(self, scripts: List[Script], languages: List[Language]) -> None:
+        super().__init__(scripts)
+        self._idx_code = {s.code.lower(): s for s in scripts}
+        self._languages = {l.part3: l for l in languages}
+
+    def get(self, code: str) -> Optional[Script]:
+        """Lookup by ISO 15924 four-letter code."""
+        if not isinstance(code, str) or not code:
+            return None
+        return self._idx_code.get(code.strip().lower())
+
+    def for_language(self, part3: str) -> List[Script]:
+        """All scripts associated with an ISO 639-3 language code."""
+        lang = self._languages.get(part3.lower())
+        return lang.scripts if lang is not None else []

@@ -193,6 +193,33 @@ class TestGraphInit:
         r = repr(db)
         assert "LanguagesOfTheWorld" in r
         assert "languages=6" in r
+        assert "scripts=2" in r
+
+
+class TestScriptGraph:
+    def test_language_scripts_populated(self, db):
+        hin = db.languages.get("hin")
+        assert [s.code for s in hin.scripts] == ["deva", "latn"]
+
+    def test_primary_script(self, db):
+        hin = db.languages.get("hin")
+        assert hin.primary_script is not None
+        assert hin.primary_script.code == "deva"
+        assert hin.primary_script.label == "Devanagari"
+
+    def test_script_languages_back_reference(self, db):
+        deva = db.scripts.get("deva")
+        assert deva is not None
+        assert any(l.part3 == "hin" for l in deva.languages)
+
+    def test_script_collection_for_language(self, db):
+        scripts = db.scripts.for_language("hin")
+        assert [s.code for s in scripts] == ["deva", "latn"]
+
+    def test_language_without_scripts(self, db):
+        kin = db.languages.get("kin")
+        assert kin.scripts == []
+        assert kin.primary_script is None
 
 
 class TestSpeakerCount:
