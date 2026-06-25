@@ -28,6 +28,9 @@ jobs:
       - name: Install package + build tools
         run: pip install -e ".[bootstrap]" build
 
+      - name: Verify scraped speaker source file is present
+        run: test -s src/low/data/sources/low_scraper_speakers.json
+
       - name: Regenerate database from upstream sources
         run: python -m low.bootstrap
 
@@ -35,6 +38,16 @@ jobs:
         run: |
           test -s src/low/data/low_db.json
           python -c "import json,sys; d=json.load(open('src/low/data/low_db.json')); print('languages:', len(d['languages']), 'countries:', len(d['countries']))"
+
+      - name: Verify scraped speaker counts were merged
+        run: |
+          python -c "
+          import json, sys
+          d = json.load(open('src/low/data/low_db.json'))
+          n = sum(1 for r in d['country_language_speakers'] if r.get('source') == 'scraped')
+          assert n > 0, f'expected scraped records in low_db.json, got {n}'
+          print('scraped records:', n)
+          "
 
       - name: Build wheel + sdist
         run: python -m build

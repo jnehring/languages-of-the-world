@@ -1,0 +1,8114 @@
+[
+  {
+    "country_code": "AF",
+    "iso639_3": "ask",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.000997
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "isk",
+    "speaker_count": 2500,
+    "speaker_fraction": 6.2e-05
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "mhj",
+    "speaker_count": 200,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "oru",
+    "speaker_count": 50,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "sdg",
+    "speaker_count": 3000,
+    "speaker_fraction": 7.5e-05
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "tra",
+    "speaker_count": 100,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "wsv",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AF",
+    "iso639_3": "xvi",
+    "speaker_count": 18000,
+    "speaker_fraction": 0.000449
+  },
+  {
+    "country_code": "AO",
+    "iso639_3": "kwz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "axb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "mtp",
+    "speaker_count": 100,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "ona",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "pue",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "teh",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "tpj",
+    "speaker_count": 100,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "ule",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AR",
+    "iso639_3": "vil",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "adg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "aid",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "amg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "amz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "avm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "awg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "axe",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ayd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bdy",
+    "speaker_count": 139,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bjy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bpl",
+    "speaker_count": 9,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bpt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bxi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bxn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bym",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "bzr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dda",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ddj",
+    "speaker_count": 217,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ddr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dgn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dgt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dhu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dhx",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dja",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "djb",
+    "speaker_count": 53,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "djf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dji",
+    "speaker_count": 100,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "djw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dmd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dth",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "dze",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "err",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "fln",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gbw",
+    "speaker_count": 24,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gcd",
+    "speaker_count": 4,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gdc",
+    "speaker_count": 4,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gdj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ggd",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ggk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "giy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gko",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gma",
+    "speaker_count": 5,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gnl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gnr",
+    "speaker_count": 9,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gtu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "guf",
+    "speaker_count": 108,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gwm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gwu",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gyf",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "gyy",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "hrp",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ikr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ilg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "jan",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "jay",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "jbi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "jbw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "jui",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "kda",
+    "speaker_count": 1000,
+    "speaker_fraction": 3.7e-05
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "kgl",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "kld",
+    "speaker_count": 92,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ktg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "lja",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ljw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ljx",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "lku",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "lmc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "mhg",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "mvl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nam",
+    "speaker_count": 180,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nbj",
+    "speaker_count": 313,
+    "speaker_fraction": 1.2e-05
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ngk",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nha",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nhf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nid",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nig",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nji",
+    "speaker_count": 5,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nju",
+    "speaker_count": 20,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nlw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nmp",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nmv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nrk",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nug",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nwo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nxn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nyt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nyv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "nyx",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pit",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pkn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pmd",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pnj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pnv",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "pti",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "rbp",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "rit",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "rnr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "rrt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "rxw",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "tgz",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "thd",
+    "speaker_count": 200,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "tjj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "tju",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "tjw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "typ",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ugb",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "uln",
+    "speaker_count": 100,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "umd",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "umg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "umr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ung",
+    "speaker_count": 59,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "urc",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "urf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "vma",
+    "speaker_count": 5,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "vmb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "vmi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "vml",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "vmu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wdk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wdu",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "weg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wga",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wgu",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wie",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wif",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wil",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wkr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wkw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wlg",
+    "speaker_count": 19,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wlu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wmi",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wnd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wnm",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wnn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wny",
+    "speaker_count": 16,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wrb",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wrg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wrw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wth",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wur",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wwb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wwr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wxw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wyb",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "wyi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xbe",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xdk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xgd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xgg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xgm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xgu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xgw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xmp",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xmu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xmy",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xni",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpa",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xph",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpx",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xpz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xrd",
+    "speaker_count": 80,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xtv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xud",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xul",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xut",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xwd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xwj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xwk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xwt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xww",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xxm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xya",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xyb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xyj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xyk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "xyt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yga",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ygu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yil",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ylr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ynd",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yry",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yub",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "ywg",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yww",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yxm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yxu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yxy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "yyr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zku",
+    "speaker_count": 46,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zmc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zmk",
+    "speaker_count": 5,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zml",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zmu",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "zmv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AU",
+    "iso639_3": "znk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "AZ",
+    "iso639_3": "bdk",
+    "speaker_count": 200,
+    "speaker_fraction": 1.9e-05
+  },
+  {
+    "country_code": "AZ",
+    "iso639_3": "kry",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000469
+  },
+  {
+    "country_code": "BA",
+    "iso639_3": "lad",
+    "speaker_count": 2,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "aml",
+    "speaker_count": 16000,
+    "speaker_fraction": 9.5e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "aot",
+    "speaker_count": 5400,
+    "speaker_fraction": 3.2e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "cdz",
+    "speaker_count": 1300,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "ckh",
+    "speaker_count": 3000,
+    "speaker_fraction": 1.8e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "ctg",
+    "speaker_count": 16000000,
+    "speaker_fraction": 0.094845
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "kdq",
+    "speaker_count": 36000,
+    "speaker_fraction": 0.000213
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "mef",
+    "speaker_count": 6870,
+    "speaker_fraction": 4.1e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "mjt",
+    "speaker_count": 7000,
+    "speaker_fraction": 4.1e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "pkh",
+    "speaker_count": 2500,
+    "speaker_fraction": 1.5e-05
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "tpe",
+    "speaker_count": 150000,
+    "speaker_fraction": 0.000889
+  },
+  {
+    "country_code": "BD",
+    "iso639_3": "usi",
+    "speaker_count": 22400,
+    "speaker_fraction": 0.000133
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "dgs",
+    "speaker_count": 9000,
+    "speaker_fraction": 0.000391
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "dos",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000868
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "jow",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000434
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "kqg",
+    "speaker_count": 1300,
+    "speaker_fraction": 5.6e-05
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "kqm",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000217
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "nuv",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.002604
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "sen",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.00217
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "sep",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.001519
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "seq",
+    "speaker_count": 210000,
+    "speaker_fraction": 0.009114
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "sym",
+    "speaker_count": 52732,
+    "speaker_fraction": 0.002288
+  },
+  {
+    "country_code": "BF",
+    "iso639_3": "xkt",
+    "speaker_count": 2300,
+    "speaker_fraction": 0.0001
+  },
+  {
+    "country_code": "BG",
+    "iso639_3": "rmn",
+    "speaker_count": 481000,
+    "speaker_fraction": 0.070916
+  },
+  {
+    "country_code": "BG",
+    "iso639_3": "rom",
+    "speaker_count": 281217,
+    "speaker_fraction": 0.041461
+  },
+  {
+    "country_code": "BJ",
+    "iso639_3": "mql",
+    "speaker_count": 131000,
+    "speaker_fraction": 0.008913
+  },
+  {
+    "country_code": "BJ",
+    "iso639_3": "nqk",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.002041
+  },
+  {
+    "country_code": "BN",
+    "iso639_3": "beg",
+    "speaker_count": 200,
+    "speaker_fraction": 0.000407
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "ayo",
+    "speaker_count": 1400,
+    "speaker_fraction": 0.000114
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "caw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "caz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "cyb",
+    "speaker_count": 1246,
+    "speaker_fraction": 0.000101
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "mpd",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000325
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "puq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "tpj",
+    "speaker_count": 33000,
+    "speaker_fraction": 0.00268
+  },
+  {
+    "country_code": "BO",
+    "iso639_3": "yaa",
+    "speaker_count": 2800,
+    "speaker_fraction": 0.000227
+  },
+  {
+    "country_code": "BQ",
+    "iso639_3": "eng",
+    "speaker_count": 3031,
+    "speaker_fraction": 0.15155
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "acs",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "ait",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "api",
+    "speaker_count": 1050,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "apv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "arj",
+    "speaker_count": 328,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "arx",
+    "speaker_count": 20,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "atr",
+    "speaker_count": 2394,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "atx",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "aux",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "avo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "axg",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "dny",
+    "speaker_count": 750,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "grn",
+    "speaker_count": 37300,
+    "speaker_fraction": 0.00017
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "gvo",
+    "speaker_count": 340,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "gvp",
+    "speaker_count": 650,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "hir",
+    "speaker_count": 40,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "irn",
+    "speaker_count": 190,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "jup",
+    "speaker_count": 1700,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "knm",
+    "speaker_count": 600,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "knt",
+    "speaker_count": 1154,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "kpn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "kui",
+    "speaker_count": 1100,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "kyr",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "mht",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "mmh",
+    "speaker_count": 227,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "mmv",
+    "speaker_count": 95,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "myp",
+    "speaker_count": 380,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "mzo",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "nuc",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "oti",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "otu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "paz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "pth",
+    "speaker_count": 3285,
+    "speaker_fraction": 1.5e-05
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "swo",
+    "speaker_count": 23,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tae",
+    "speaker_count": 100,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tgv",
+    "speaker_count": 469,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tka",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tme",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tri",
+    "speaker_count": 700,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "trz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "tux",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "twt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "uru",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "waf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "waw",
+    "speaker_count": 2020,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xai",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xak",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xbw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xet",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xir",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xkr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xoo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xpn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "xxr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "ybn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "yui",
+    "speaker_count": 687,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "ywn",
+    "speaker_count": 450,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "BR",
+    "iso639_3": "zkp",
+    "speaker_count": 27482,
+    "speaker_fraction": 0.000125
+  },
+  {
+    "country_code": "BS",
+    "iso639_3": "tnq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "bro",
+    "speaker_count": 300,
+    "speaker_fraction": 0.000339
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "kjz",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.02261
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "neh",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.011305
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "ole",
+    "speaker_count": 3,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "tgf",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.001131
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "xkf",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.045221
+  },
+  {
+    "country_code": "BT",
+    "iso639_3": "xkz",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.011305
+  },
+  {
+    "country_code": "BW",
+    "iso639_3": "gwj",
+    "speaker_count": 800,
+    "speaker_fraction": 0.000326
+  },
+  {
+    "country_code": "BW",
+    "iso639_3": "huc",
+    "speaker_count": 50,
+    "speaker_fraction": 2e-05
+  },
+  {
+    "country_code": "BW",
+    "iso639_3": "ktz",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.004897
+  },
+  {
+    "country_code": "BW",
+    "iso639_3": "nmn",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.001632
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "bue",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ciw",
+    "speaker_count": 33251,
+    "speaker_fraction": 0.000857
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "geh",
+    "speaker_count": 28900,
+    "speaker_fraction": 0.000745
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ikt",
+    "speaker_count": 790,
+    "speaker_fraction": 2e-05
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "lre",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ojc",
+    "speaker_count": 15360,
+    "speaker_fraction": 0.000396
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ojg",
+    "speaker_count": 25900,
+    "speaker_fraction": 0.000668
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "one",
+    "speaker_count": 210,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ono",
+    "speaker_count": 40,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "ptw",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "tau",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "tgx",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "tsi",
+    "speaker_count": 600,
+    "speaker_fraction": 1.5e-05
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "tus",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "txc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "wdt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CA",
+    "iso639_3": "xsl",
+    "speaker_count": 1000,
+    "speaker_fraction": 2.6e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "agh",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.000121
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bcp",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.00013
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bhy",
+    "speaker_count": 47000,
+    "speaker_fraction": 0.000407
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bip",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.000347
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "biz",
+    "speaker_count": 8000,
+    "speaker_fraction": 6.9e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bkg",
+    "speaker_count": 5000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bkt",
+    "speaker_count": 4000,
+    "speaker_fraction": 3.5e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bmg",
+    "speaker_count": 8000,
+    "speaker_fraction": 6.9e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "boh",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.000303
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "bws",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.00013
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "cjk",
+    "speaker_count": 500000,
+    "speaker_fraction": 0.004333
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "dzn",
+    "speaker_count": 6000,
+    "speaker_fraction": 5.2e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "fuu",
+    "speaker_count": 5000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "gix",
+    "speaker_count": 6000,
+    "speaker_fraction": 5.2e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "gox",
+    "speaker_count": 8000,
+    "speaker_fraction": 6.9e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "hol",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000173
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "hoo",
+    "speaker_count": 16000,
+    "speaker_fraction": 0.000139
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "hum",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.000347
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "kbj",
+    "speaker_count": 5000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "kbo",
+    "speaker_count": 80000,
+    "speaker_fraction": 0.000693
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "kpl",
+    "speaker_count": 10000,
+    "speaker_fraction": 8.7e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "kwy",
+    "speaker_count": 5464000,
+    "speaker_fraction": 0.047347
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "luj",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.000433
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "mkw",
+    "speaker_count": 18200000,
+    "speaker_fraction": 0.157708
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "moj",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.000217
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "nlj",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.000867
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "nyc",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.000347
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "nzk",
+    "speaker_count": 300000,
+    "speaker_fraction": 0.0026
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "oml",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.00013
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "pae",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.000217
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "rwm",
+    "speaker_count": 4500,
+    "speaker_fraction": 3.9e-05
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "skt",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.000217
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "slx",
+    "speaker_count": 244000,
+    "speaker_fraction": 0.002114
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "sub",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.000867
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "tii",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.000867
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "tor",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.00013
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "yaf",
+    "speaker_count": 200000,
+    "speaker_fraction": 0.001733
+  },
+  {
+    "country_code": "CD",
+    "iso639_3": "zmf",
+    "speaker_count": 150000,
+    "speaker_fraction": 0.0013
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "bbp",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.00177
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "bkj",
+    "speaker_count": 8870,
+    "speaker_fraction": 0.00157
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "bvq",
+    "speaker_count": 200,
+    "speaker_fraction": 3.5e-05
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "kcm",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.0023
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "rou",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.003539
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "sbz",
+    "speaker_count": 13600,
+    "speaker_fraction": 0.002407
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "snj",
+    "speaker_count": 5500000,
+    "speaker_fraction": 0.973286
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "tor",
+    "speaker_count": 22500,
+    "speaker_fraction": 0.003982
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "ukh",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.000354
+  },
+  {
+    "country_code": "CF",
+    "iso639_3": "vae",
+    "speaker_count": 5400,
+    "speaker_fraction": 0.000956
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "biz",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.001312
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "bkw",
+    "speaker_count": 9600,
+    "speaker_fraction": 0.001574
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "bmw",
+    "speaker_count": 61000,
+    "speaker_fraction": 0.010004
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "bui",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.001968
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "bwz",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.0082
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "kkw",
+    "speaker_count": 39000,
+    "speaker_fraction": 0.006396
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "koh",
+    "speaker_count": 2980,
+    "speaker_fraction": 0.000489
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "mhb",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.000164
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "mkw",
+    "speaker_count": 2830000,
+    "speaker_fraction": 0.464112
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "moj",
+    "speaker_count": 19000,
+    "speaker_fraction": 0.003116
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "ngz",
+    "speaker_count": 45000,
+    "speaker_fraction": 0.00738
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "njy",
+    "speaker_count": 7900,
+    "speaker_fraction": 0.001296
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "tii",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.0164
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "tsa",
+    "speaker_count": 28000,
+    "speaker_fraction": 0.004592
+  },
+  {
+    "country_code": "CG",
+    "iso639_3": "zmn",
+    "speaker_count": 3500,
+    "speaker_fraction": 0.000574
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "abi",
+    "speaker_count": 85000,
+    "speaker_fraction": 0.002835
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "das",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000133
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "esm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "ggu",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.002001
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "glr",
+    "speaker_count": 4270,
+    "speaker_fraction": 0.000142
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "god",
+    "speaker_count": 26400,
+    "speaker_fraction": 0.000881
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "kqm",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000167
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "kqo",
+    "speaker_count": 16000,
+    "speaker_fraction": 0.000534
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "lig",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000133
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "nhb",
+    "speaker_count": 17000,
+    "speaker_fraction": 0.000567
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "oub",
+    "speaker_count": 2500,
+    "speaker_fraction": 8.3e-05
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "plr",
+    "speaker_count": 17000,
+    "speaker_fraction": 0.000567
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "pye",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000667
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "sep",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.001167
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "seq",
+    "speaker_count": 210000,
+    "speaker_fraction": 0.007004
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "sev",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.002001
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "tjn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CI",
+    "iso639_3": "xgb",
+    "speaker_count": 1000,
+    "speaker_fraction": 3.3e-05
+  },
+  {
+    "country_code": "CL",
+    "iso639_3": "alc",
+    "speaker_count": 7,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CL",
+    "iso639_3": "huh",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.000107
+  },
+  {
+    "country_code": "CL",
+    "iso639_3": "kuz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CL",
+    "iso639_3": "yag",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "aal",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000969
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "abo",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000161
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "add",
+    "speaker_count": 2600,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "aku",
+    "speaker_count": 1400,
+    "speaker_fraction": 4.5e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ass",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "beb",
+    "speaker_count": 24000,
+    "speaker_fraction": 0.000775
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bec",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.000388
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bfm",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.00113
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bgf",
+    "speaker_count": 2700,
+    "speaker_fraction": 8.7e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bju",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "boe",
+    "speaker_count": 500,
+    "speaker_fraction": 1.6e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bqd",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bwh",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bwt",
+    "speaker_count": 8400,
+    "speaker_fraction": 0.000271
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "bzz",
+    "speaker_count": 2200,
+    "speaker_fraction": 7.1e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "dbq",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.000807
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "dkx",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.00113
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "duz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "fak",
+    "speaker_count": 130000,
+    "speaker_fraction": 0.004198
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "fli",
+    "speaker_count": 119000,
+    "speaker_fraction": 0.003843
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "fll",
+    "speaker_count": 16000,
+    "speaker_fraction": 0.000517
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "fub",
+    "speaker_count": 5700000,
+    "speaker_fraction": 0.184072
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "gdi",
+    "speaker_count": 9000,
+    "speaker_fraction": 0.000291
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "gid",
+    "speaker_count": 70000,
+    "speaker_fraction": 0.002261
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "gyi",
+    "speaker_count": 4250,
+    "speaker_fraction": 0.000137
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "hya",
+    "speaker_count": 1800,
+    "speaker_fraction": 5.8e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "iyo",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.000452
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "jie",
+    "speaker_count": 100,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "kmp",
+    "speaker_count": 3000,
+    "speaker_fraction": 9.7e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "kvj",
+    "speaker_count": 52500,
+    "speaker_fraction": 0.001695
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "kzr",
+    "speaker_count": 32000,
+    "speaker_fraction": 0.001033
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "lfa",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.000484
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "mcs",
+    "speaker_count": 16000,
+    "speaker_fraction": 0.000517
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "mff",
+    "speaker_count": 2000,
+    "speaker_fraction": 6.5e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "mgg",
+    "speaker_count": 75000,
+    "speaker_fraction": 0.002422
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "mhk",
+    "speaker_count": 50100,
+    "speaker_fraction": 0.001618
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "mij",
+    "speaker_count": 2000,
+    "speaker_fraction": 6.5e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "msv",
+    "speaker_count": 250,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ndi",
+    "speaker_count": 58000,
+    "speaker_fraction": 0.001873
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ndn",
+    "speaker_count": 9000,
+    "speaker_fraction": 0.000291
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ndu",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000226
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "nfu",
+    "speaker_count": 24000,
+    "speaker_fraction": 0.000775
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ngj",
+    "speaker_count": 37000,
+    "speaker_fraction": 0.001195
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ngn",
+    "speaker_count": 38000,
+    "speaker_fraction": 0.001227
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "nja",
+    "speaker_count": 29000,
+    "speaker_fraction": 0.000937
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "nmr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "usk",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000323
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "www",
+    "speaker_count": 1500,
+    "speaker_fraction": 4.8e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "xmb",
+    "speaker_count": 1490,
+    "speaker_fraction": 4.8e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "xmj",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000161
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ybl",
+    "speaker_count": 1000,
+    "speaker_fraction": 3.2e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "yei",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "ziz",
+    "speaker_count": 300,
+    "speaker_fraction": 1e-05
+  },
+  {
+    "country_code": "CM",
+    "iso639_3": "zuy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "aih",
+    "speaker_count": 2700,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "bfc",
+    "speaker_count": 2000000,
+    "speaker_fraction": 0.001412
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "bje",
+    "speaker_count": 45000,
+    "speaker_fraction": 3.2e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "bmt",
+    "speaker_count": 23000,
+    "speaker_fraction": 1.6e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "bxu",
+    "speaker_count": 65000,
+    "speaker_fraction": 4.6e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "cng",
+    "speaker_count": 57800,
+    "speaker_fraction": 4.1e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "cpi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "cuu",
+    "speaker_count": 136000,
+    "speaker_fraction": 9.6e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "czo",
+    "speaker_count": 3500000,
+    "speaker_fraction": 0.002472
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "eee",
+    "speaker_count": 1100000000,
+    "speaker_fraction": 0.776814
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "ero",
+    "speaker_count": 50000,
+    "speaker_fraction": 3.5e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "ers",
+    "speaker_count": 16800,
+    "speaker_fraction": 1.2e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "gir",
+    "speaker_count": 5000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "giu",
+    "speaker_count": 86000,
+    "speaker_fraction": 6.1e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "hmy",
+    "speaker_count": 3000,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "huj",
+    "speaker_count": 84000,
+    "speaker_fraction": 5.9e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "juc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "mhu",
+    "speaker_count": 1500,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "muq",
+    "speaker_count": 900000,
+    "speaker_fraction": 0.000636
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "nos",
+    "speaker_count": 75000,
+    "speaker_fraction": 5.3e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "nsv",
+    "speaker_count": 15000,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "peh",
+    "speaker_count": 8000,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "srh",
+    "speaker_count": 33000,
+    "speaker_fraction": 2.3e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "szy",
+    "speaker_count": 590,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "twm",
+    "speaker_count": 1300,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "yha",
+    "speaker_count": 2000,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "yig",
+    "speaker_count": 500000,
+    "speaker_fraction": 0.000353
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "ymc",
+    "speaker_count": 26000,
+    "speaker_fraction": 1.8e-05
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "ymi",
+    "speaker_count": 2000,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "ypn",
+    "speaker_count": 10000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "zgb",
+    "speaker_count": 1300000,
+    "speaker_fraction": 0.000918
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "zlq",
+    "speaker_count": 20000000,
+    "speaker_fraction": 0.014124
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "zyg",
+    "speaker_count": 765000,
+    "speaker_fraction": 0.00054
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "zyn",
+    "speaker_count": 1800000,
+    "speaker_fraction": 0.001271
+  },
+  {
+    "country_code": "CN",
+    "iso639_3": "zzj",
+    "speaker_count": 1384000,
+    "speaker_fraction": 0.000977
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "ana",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "ans",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "bwi",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000141
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "chb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "cod",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "crf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "gae",
+    "speaker_count": 120000,
+    "speaker_fraction": 0.00242
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "mot",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000101
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "pij",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "slc",
+    "speaker_count": 200,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "ttk",
+    "speaker_count": 239,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "CO",
+    "iso639_3": "yui",
+    "speaker_count": 687,
+    "speaker_fraction": 1.4e-05
+  },
+  {
+    "country_code": "CY",
+    "iso639_3": "acy",
+    "speaker_count": 900,
+    "speaker_fraction": 0.000682
+  },
+  {
+    "country_code": "DE",
+    "iso639_3": "pox",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "DE",
+    "iso639_3": "wep",
+    "speaker_count": 2000000,
+    "speaker_fraction": 0.023776
+  },
+  {
+    "country_code": "DE",
+    "iso639_3": "yih",
+    "speaker_count": 5400,
+    "speaker_fraction": 6.4e-05
+  },
+  {
+    "country_code": "DZ",
+    "iso639_3": "cnu",
+    "speaker_count": 56300,
+    "speaker_fraction": 0.001197
+  },
+  {
+    "country_code": "DZ",
+    "iso639_3": "oua",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000425
+  },
+  {
+    "country_code": "DZ",
+    "iso639_3": "tia",
+    "speaker_count": 1000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "EC",
+    "iso639_3": "teb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "EE",
+    "iso639_3": "ekk",
+    "speaker_count": 1106850,
+    "speaker_fraction": 0.927173
+  },
+  {
+    "country_code": "EG",
+    "iso639_3": "siz",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.00018
+  },
+  {
+    "country_code": "ES",
+    "iso639_3": "gnc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "agj",
+    "speaker_count": 44000,
+    "speaker_fraction": 0.000371
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "ahg",
+    "speaker_count": 1600,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "gaz",
+    "speaker_count": 19100000,
+    "speaker_fraction": 0.161113
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "gdl",
+    "speaker_count": 117000,
+    "speaker_fraction": 0.000987
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "gft",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "mdx",
+    "speaker_count": 34000,
+    "speaker_fraction": 0.000287
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "myf",
+    "speaker_count": 2300,
+    "speaker_fraction": 1.9e-05
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "mys",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "nnj",
+    "speaker_count": 40500,
+    "speaker_fraction": 0.000342
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "rer",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "ssy",
+    "speaker_count": 170000,
+    "speaker_fraction": 0.001434
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "woy",
+    "speaker_count": 20,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ET",
+    "iso639_3": "zay",
+    "speaker_count": 34000,
+    "speaker_fraction": 0.000287
+  },
+  {
+    "country_code": "FI",
+    "iso639_3": "sjk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "FJ",
+    "iso639_3": "bwb",
+    "speaker_count": 1600,
+    "speaker_fraction": 0.001681
+  },
+  {
+    "country_code": "FM",
+    "iso639_3": "mrl",
+    "speaker_count": 5900,
+    "speaker_fraction": 0.059235
+  },
+  {
+    "country_code": "FM",
+    "iso639_3": "ngm",
+    "speaker_count": 700,
+    "speaker_fraction": 0.007028
+  },
+  {
+    "country_code": "FM",
+    "iso639_3": "woe",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.050199
+  },
+  {
+    "country_code": "FR",
+    "iso639_3": "emx",
+    "speaker_count": 500,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "FR",
+    "iso639_3": "sdt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "FR",
+    "iso639_3": "zrp",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "bkw",
+    "speaker_count": 2500,
+    "speaker_fraction": 0.001018
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "bwz",
+    "speaker_count": 3020,
+    "speaker_fraction": 0.00123
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "kkw",
+    "speaker_count": 38800,
+    "speaker_fraction": 0.015804
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "koq",
+    "speaker_count": 34442,
+    "speaker_fraction": 0.014029
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "mhb",
+    "speaker_count": 11000,
+    "speaker_fraction": 0.00448
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "swj",
+    "speaker_count": 74000,
+    "speaker_fraction": 0.030141
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "tsa",
+    "speaker_count": 21000,
+    "speaker_fraction": 0.008554
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "wum",
+    "speaker_count": 45000,
+    "speaker_fraction": 0.018329
+  },
+  {
+    "country_code": "GA",
+    "iso639_3": "zmn",
+    "speaker_count": 4200,
+    "speaker_fraction": 0.001711
+  },
+  {
+    "country_code": "GB",
+    "iso639_3": "nrn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GB",
+    "iso639_3": "sth",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000438
+  },
+  {
+    "country_code": "GD",
+    "iso639_3": "gcl",
+    "speaker_count": 89000,
+    "speaker_fraction": 0.776472
+  },
+  {
+    "country_code": "GE",
+    "iso639_3": "bhn",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.000204
+  },
+  {
+    "country_code": "GE",
+    "iso639_3": "jge",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.007141
+  },
+  {
+    "country_code": "GE",
+    "iso639_3": "kap",
+    "speaker_count": 700,
+    "speaker_fraction": 0.000143
+  },
+  {
+    "country_code": "GH",
+    "iso639_3": "adq",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000116
+  },
+  {
+    "country_code": "GH",
+    "iso639_3": "gwx",
+    "speaker_count": 156200,
+    "speaker_fraction": 0.004516
+  },
+  {
+    "country_code": "GH",
+    "iso639_3": "lig",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.000434
+  },
+  {
+    "country_code": "GH",
+    "iso639_3": "xkt",
+    "speaker_count": 2000,
+    "speaker_fraction": 5.8e-05
+  },
+  {
+    "country_code": "GM",
+    "iso639_3": "krx",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.001982
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "bqf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "bsv",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "cou",
+    "speaker_count": 18400,
+    "speaker_fraction": 0.001316
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "jad",
+    "speaker_count": 12600,
+    "speaker_fraction": 0.000901
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "kke",
+    "speaker_count": 4100,
+    "speaker_fraction": 0.000293
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "lma",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000286
+  },
+  {
+    "country_code": "GN",
+    "iso639_3": "pbp",
+    "speaker_count": 6300,
+    "speaker_fraction": 0.00045
+  },
+  {
+    "country_code": "GQ",
+    "iso639_3": "fab",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.002784
+  },
+  {
+    "country_code": "GQ",
+    "iso639_3": "fpe",
+    "speaker_count": 76000,
+    "speaker_fraction": 0.04232
+  },
+  {
+    "country_code": "GQ",
+    "iso639_3": "nmg",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.007239
+  },
+  {
+    "country_code": "GQ",
+    "iso639_3": "nui",
+    "speaker_count": 9200,
+    "speaker_fraction": 0.005123
+  },
+  {
+    "country_code": "GQ",
+    "iso639_3": "syi",
+    "speaker_count": 11000,
+    "speaker_fraction": 0.006125
+  },
+  {
+    "country_code": "GR",
+    "iso639_3": "cpg",
+    "speaker_count": 2800,
+    "speaker_fraction": 0.000268
+  },
+  {
+    "country_code": "GR",
+    "iso639_3": "rge",
+    "speaker_count": 30,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "GT",
+    "iso639_3": "cob",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GW",
+    "iso639_3": "kcj",
+    "speaker_count": 636,
+    "speaker_fraction": 0.000298
+  },
+  {
+    "country_code": "GW",
+    "iso639_3": "naj",
+    "speaker_count": 15208,
+    "speaker_fraction": 0.007132
+  },
+  {
+    "country_code": "GY",
+    "iso639_3": "arw",
+    "speaker_count": 1500,
+    "speaker_fraction": 0.001889
+  },
+  {
+    "country_code": "GY",
+    "iso639_3": "brc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GY",
+    "iso639_3": "skw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "GY",
+    "iso639_3": "waw",
+    "speaker_count": 170,
+    "speaker_fraction": 0.000214
+  },
+  {
+    "country_code": "HM",
+    "iso639_3": "eng",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "HR",
+    "iso639_3": "dlm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "adr",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.000355
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "akg",
+    "speaker_count": 25000,
+    "speaker_fraction": 8.9e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "asc",
+    "speaker_count": 9000,
+    "speaker_fraction": 3.2e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "asl",
+    "speaker_count": 8800,
+    "speaker_fraction": 3.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "beu",
+    "speaker_count": 10000,
+    "speaker_fraction": 3.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "bkz",
+    "speaker_count": 22000,
+    "speaker_fraction": 7.8e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "bvk",
+    "speaker_count": 400,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "bwp",
+    "speaker_count": 2000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "cia",
+    "speaker_count": 105000,
+    "speaker_fraction": 0.000373
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "cns",
+    "speaker_count": 22000,
+    "speaker_fraction": 7.8e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "dms",
+    "speaker_count": 2000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "dna",
+    "speaker_count": 5000,
+    "speaker_fraction": 1.8e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "dni",
+    "speaker_count": 20000,
+    "speaker_fraction": 7.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "dnk",
+    "speaker_count": 20000,
+    "speaker_fraction": 7.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "duq",
+    "speaker_count": 4500,
+    "speaker_fraction": 1.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "ges",
+    "speaker_count": 82000,
+    "speaker_fraction": 0.000291
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "gop",
+    "speaker_count": 500,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "hik",
+    "speaker_count": 10000,
+    "speaker_fraction": 3.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "hov",
+    "speaker_count": 2000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "hrk",
+    "speaker_count": 28000,
+    "speaker_fraction": 9.9e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "huw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "irh",
+    "speaker_count": 4000,
+    "speaker_fraction": 1.4e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "itx",
+    "speaker_count": 80,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "jbr",
+    "speaker_count": 200,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kcd",
+    "speaker_count": 100,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kkl",
+    "speaker_count": 2300,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kod",
+    "speaker_count": 20000,
+    "speaker_fraction": 7.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kqv",
+    "speaker_count": 4700,
+    "speaker_fraction": 1.7e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "krz",
+    "speaker_count": 100,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kts",
+    "speaker_count": 2000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kxq",
+    "speaker_count": 150,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "kzb",
+    "speaker_count": 500,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "lox",
+    "speaker_count": 260000000,
+    "speaker_fraction": 0.92342
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "lwt",
+    "speaker_count": 6000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "mrz",
+    "speaker_count": 12000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "mvv",
+    "speaker_count": 2000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "nil",
+    "speaker_count": 109,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "nul",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "nxg",
+    "speaker_count": 65000,
+    "speaker_fraction": 0.000231
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "pby",
+    "speaker_count": 150,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "pel",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000107
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "pku",
+    "speaker_count": 50,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "ptt",
+    "speaker_count": 94000,
+    "speaker_fraction": 0.000334
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "saj",
+    "speaker_count": 12000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "sbr",
+    "speaker_count": 3180,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "sdu",
+    "speaker_count": 6300,
+    "speaker_fraction": 2.2e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "sko",
+    "speaker_count": 2500,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "slg",
+    "speaker_count": 900,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "smr",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000107
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "spi",
+    "speaker_count": 4,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "sws",
+    "speaker_count": 2840,
+    "speaker_fraction": 1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "tlu",
+    "speaker_count": 10000,
+    "speaker_fraction": 3.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "tlv",
+    "speaker_count": 4900,
+    "speaker_fraction": 1.7e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "tve",
+    "speaker_count": 65,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "tvo",
+    "speaker_count": 46000,
+    "speaker_fraction": 0.000163
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "vms",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "wlo",
+    "speaker_count": 65000,
+    "speaker_fraction": 0.000231
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "wnk",
+    "speaker_count": 10000,
+    "speaker_fraction": 3.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "wno",
+    "speaker_count": 1000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "woi",
+    "speaker_count": 6000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "wow",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000107
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "wul",
+    "speaker_count": 5000,
+    "speaker_fraction": 1.8e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "xem",
+    "speaker_count": 11000,
+    "speaker_fraction": 3.9e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "xkl",
+    "speaker_count": 18600,
+    "speaker_fraction": 6.6e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "xxt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "yac",
+    "speaker_count": 5000,
+    "speaker_fraction": 1.8e-05
+  },
+  {
+    "country_code": "ID",
+    "iso639_3": "zka",
+    "speaker_count": 2200,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "IE",
+    "iso639_3": "sth",
+    "speaker_count": 90000,
+    "speaker_fraction": 0.017197
+  },
+  {
+    "country_code": "IL",
+    "iso639_3": "jge",
+    "speaker_count": 59800,
+    "speaker_fraction": 0.00636
+  },
+  {
+    "country_code": "IL",
+    "iso639_3": "jpr",
+    "speaker_count": 55000,
+    "speaker_fraction": 0.005849
+  },
+  {
+    "country_code": "IL",
+    "iso639_3": "lsd",
+    "speaker_count": 1600,
+    "speaker_fraction": 0.00017
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "abj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "aci",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "ack",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "acl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "agi",
+    "speaker_count": 30000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "aim",
+    "speaker_count": 2643,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "akj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "akm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "akx",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "aot",
+    "speaker_count": 4600,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "apq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "bee",
+    "speaker_count": 2829,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "bfu",
+    "speaker_count": 4000,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "bhd",
+    "speaker_count": 120000,
+    "speaker_fraction": 8.5e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "bhu",
+    "speaker_count": 12000,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "bhx",
+    "speaker_count": 8672,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "cdn",
+    "speaker_count": 1800,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "der",
+    "speaker_count": 32376,
+    "speaker_fraction": 2.3e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "dhi",
+    "speaker_count": 1015,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "drd",
+    "speaker_count": 1750,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "dwk",
+    "speaker_count": 941488,
+    "speaker_fraction": 0.000668
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "gac",
+    "speaker_count": 4,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "gok",
+    "speaker_count": 35000,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "haj",
+    "speaker_count": 71792,
+    "speaker_fraction": 5.1e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "hkh",
+    "speaker_count": 200000,
+    "speaker_fraction": 0.000142
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "hmr",
+    "speaker_count": 100000,
+    "speaker_fraction": 7.1e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "idb",
+    "speaker_count": 10000,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "jnl",
+    "speaker_count": 2926,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "kfk",
+    "speaker_count": 82712,
+    "speaker_fraction": 5.9e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "kfv",
+    "speaker_count": 3000,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "kkf",
+    "speaker_count": 8000,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "lhm",
+    "speaker_count": 1000,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "mhu",
+    "speaker_count": 35000,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "mjt",
+    "speaker_count": 159215,
+    "speaker_fraction": 0.000113
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "mjz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "mxj",
+    "speaker_count": 18000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "ncb",
+    "speaker_count": 10100,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "nct",
+    "speaker_count": 3600,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "nll",
+    "speaker_count": 2500,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "okj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "pci",
+    "speaker_count": 52349,
+    "speaker_fraction": 3.7e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "pgg",
+    "speaker_count": 19000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "pkh",
+    "speaker_count": 234,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "ral",
+    "speaker_count": 900,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "sgt",
+    "speaker_count": 5000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "ssi",
+    "speaker_count": 60000,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "thf",
+    "speaker_count": 500,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "tpe",
+    "speaker_count": 1011294,
+    "speaker_fraction": 0.000718
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "twm",
+    "speaker_count": 9100,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "txo",
+    "speaker_count": 1600,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "url",
+    "speaker_count": 12986,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "xub",
+    "speaker_count": 32000,
+    "speaker_fraction": 2.3e-05
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "ybh",
+    "speaker_count": 1000,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "IN",
+    "iso639_3": "zkr",
+    "speaker_count": 376,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IQ",
+    "iso639_3": "bjm",
+    "speaker_count": 59000,
+    "speaker_fraction": 0.001402
+  },
+  {
+    "country_code": "IR",
+    "iso639_3": "bsg",
+    "speaker_count": 7000,
+    "speaker_fraction": 7.9e-05
+  },
+  {
+    "country_code": "IR",
+    "iso639_3": "faz",
+    "speaker_count": 100000,
+    "speaker_fraction": 0.001131
+  },
+  {
+    "country_code": "IR",
+    "iso639_3": "jdg",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.000283
+  },
+  {
+    "country_code": "IT",
+    "iso639_3": "itk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "IT",
+    "iso639_3": "wae",
+    "speaker_count": 1500,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "JP",
+    "iso639_3": "kzg",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.000106
+  },
+  {
+    "country_code": "JP",
+    "iso639_3": "mvi",
+    "speaker_count": 68000,
+    "speaker_fraction": 0.000552
+  },
+  {
+    "country_code": "JP",
+    "iso639_3": "okn",
+    "speaker_count": 3200,
+    "speaker_fraction": 2.6e-05
+  },
+  {
+    "country_code": "JP",
+    "iso639_3": "ryn",
+    "speaker_count": 37000,
+    "speaker_fraction": 0.0003
+  },
+  {
+    "country_code": "JP",
+    "iso639_3": "rys",
+    "speaker_count": 8500,
+    "speaker_fraction": 6.9e-05
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "bob",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.000137
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "elo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "ikx",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000172
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "kcn",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000172
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "omt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "KE",
+    "iso639_3": "tvs",
+    "speaker_count": 21000,
+    "speaker_fraction": 0.000361
+  },
+  {
+    "country_code": "KH",
+    "iso639_3": "cog",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "KH",
+    "iso639_3": "krv",
+    "speaker_count": 7569,
+    "speaker_fraction": 0.000444
+  },
+  {
+    "country_code": "KH",
+    "iso639_3": "stt",
+    "speaker_count": 4540,
+    "speaker_fraction": 0.000266
+  },
+  {
+    "country_code": "KH",
+    "iso639_3": "tpu",
+    "speaker_count": 57000,
+    "speaker_fraction": 0.00334
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "aem",
+    "speaker_count": 20,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "khf",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.001006
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "mra",
+    "speaker_count": 28,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "pho",
+    "speaker_count": 35600,
+    "speaker_fraction": 0.004476
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "pnx",
+    "speaker_count": 30700,
+    "speaker_fraction": 0.00386
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "thm",
+    "speaker_count": 1200,
+    "speaker_fraction": 0.000151
+  },
+  {
+    "country_code": "LA",
+    "iso639_3": "ycp",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.000251
+  },
+  {
+    "country_code": "LK",
+    "iso639_3": "ved",
+    "speaker_count": 300,
+    "speaker_fraction": 1.4e-05
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "das",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000736
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "glr",
+    "speaker_count": 4300,
+    "speaker_fraction": 0.000791
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "grj",
+    "speaker_count": 28700,
+    "speaker_fraction": 0.005278
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "kqo",
+    "speaker_count": 99000,
+    "speaker_fraction": 0.018208
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "krw",
+    "speaker_count": 98000,
+    "speaker_fraction": 0.018024
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "oub",
+    "speaker_count": 3500,
+    "speaker_fraction": 0.000644
+  },
+  {
+    "country_code": "LR",
+    "iso639_3": "pye",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.003678
+  },
+  {
+    "country_code": "LV",
+    "iso639_3": "liv",
+    "speaker_count": 251,
+    "speaker_fraction": 0.000139
+  },
+  {
+    "country_code": "LV",
+    "iso639_3": "zkv",
+    "speaker_count": 20,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "LY",
+    "iso639_3": "swn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MA",
+    "iso639_3": "gho",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000267
+  },
+  {
+    "country_code": "MA",
+    "iso639_3": "sjs",
+    "speaker_count": 85000,
+    "speaker_fraction": 0.002273
+  },
+  {
+    "country_code": "MG",
+    "iso639_3": "plt",
+    "speaker_count": 10893000,
+    "speaker_fraction": 0.369847
+  },
+  {
+    "country_code": "MG",
+    "iso639_3": "tdx",
+    "speaker_count": 1300000,
+    "speaker_fraction": 0.044139
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "bbo",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.001819
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "dbu",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.001137
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "ful",
+    "speaker_count": 1714000,
+    "speaker_fraction": 0.077942
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "jad",
+    "speaker_count": 500,
+    "speaker_fraction": 2.3e-05
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "jod",
+    "speaker_count": 120000,
+    "speaker_fraction": 0.005457
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "jow",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000455
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "kga",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.002728
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "mey",
+    "speaker_count": 123000,
+    "speaker_fraction": 0.005593
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "mlq",
+    "speaker_count": 1300000,
+    "speaker_fraction": 0.059116
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "sef",
+    "speaker_count": 605000,
+    "speaker_fraction": 0.027512
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "sen",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.002274
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "sep",
+    "speaker_count": 3000,
+    "speaker_fraction": 0.000136
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "seq",
+    "speaker_count": 605000,
+    "speaker_fraction": 0.027512
+  },
+  {
+    "country_code": "ML",
+    "iso639_3": "sev",
+    "speaker_count": 605000,
+    "speaker_fraction": 0.027512
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "anl",
+    "speaker_count": 3700,
+    "speaker_fraction": 6.4e-05
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "ckh",
+    "speaker_count": 1000,
+    "speaker_fraction": 1.7e-05
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "clj",
+    "speaker_count": 37000,
+    "speaker_fraction": 0.000643
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "dao",
+    "speaker_count": 37000,
+    "speaker_fraction": 0.000643
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "kxf",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000174
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "lay",
+    "speaker_count": 3000,
+    "speaker_fraction": 5.2e-05
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "lzn",
+    "speaker_count": 22617,
+    "speaker_fraction": 0.000393
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "npg",
+    "speaker_count": 5200,
+    "speaker_fraction": 9e-05
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "nqq",
+    "speaker_count": 9000,
+    "speaker_fraction": 0.000156
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "nrr",
+    "speaker_count": 6210,
+    "speaker_fraction": 0.000108
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "pkh",
+    "speaker_count": 230,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "pzn",
+    "speaker_count": 1600,
+    "speaker_fraction": 2.8e-05
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "tcl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MM",
+    "iso639_3": "wea",
+    "speaker_count": 23900,
+    "speaker_fraction": 0.000415
+  },
+  {
+    "country_code": "MR",
+    "iso639_3": "zen",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.000462
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "afs",
+    "speaker_count": 200,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "cip",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "cob",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "coc",
+    "speaker_count": 180,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "coj",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "cuy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "emm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "kic",
+    "speaker_count": 423,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "mii",
+    "speaker_count": 1400,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "mtx",
+    "speaker_count": 530000,
+    "speaker_fraction": 0.004054
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "pbf",
+    "speaker_count": 500,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "pca",
+    "speaker_count": 5000,
+    "speaker_fraction": 3.8e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "pow",
+    "speaker_count": 3000,
+    "speaker_fraction": 2.3e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "tbu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "tep",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "vmj",
+    "speaker_count": 6380,
+    "speaker_fraction": 4.9e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "vmm",
+    "speaker_count": 2800,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "vmq",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xcm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xcn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xgr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtb",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtj",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtl",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtp",
+    "speaker_count": 460,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xts",
+    "speaker_count": 34,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtt",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xtu",
+    "speaker_count": 2600,
+    "speaker_fraction": 2e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "xty",
+    "speaker_count": 480000,
+    "speaker_fraction": 0.003671
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "zoo",
+    "speaker_count": 100,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "zpk",
+    "speaker_count": 28000,
+    "speaker_fraction": 0.000214
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "zpx",
+    "speaker_count": 1500,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "ztm",
+    "speaker_count": 59,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "ztn",
+    "speaker_count": 1000,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "ztp",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.000382
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "ztt",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MX",
+    "iso639_3": "ztx",
+    "speaker_count": 550,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "abf",
+    "speaker_count": 390,
+    "speaker_fraction": 1.1e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "bdg",
+    "speaker_count": 1500,
+    "speaker_fraction": 4.3e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "bdr",
+    "speaker_count": 55000,
+    "speaker_fraction": 0.001591
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "beg",
+    "speaker_count": 1000,
+    "speaker_fraction": 2.9e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "bkn",
+    "speaker_count": 400,
+    "speaker_fraction": 1.2e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "btq",
+    "speaker_count": 1000,
+    "speaker_fraction": 2.9e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "bvk",
+    "speaker_count": 400,
+    "speaker_fraction": 1.2e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "ccm",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000145
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "dmg",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000145
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "dtb",
+    "speaker_count": 16000,
+    "speaker_fraction": 0.000463
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "dtr",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000145
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "grm",
+    "speaker_count": 2900,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "knq",
+    "speaker_count": 160,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kns",
+    "speaker_count": 300,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kqv",
+    "speaker_count": 3390,
+    "speaker_fraction": 9.8e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kve",
+    "speaker_count": 2200,
+    "speaker_fraction": 6.4e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kxi",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000203
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kxn",
+    "speaker_count": 200,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kyi",
+    "speaker_count": 450,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "kzs",
+    "speaker_count": 12200,
+    "speaker_fraction": 0.000353
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "lnh",
+    "speaker_count": 360,
+    "speaker_fraction": 1e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "lra",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.000347
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "mhe",
+    "speaker_count": 3675,
+    "speaker_fraction": 0.000106
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "mvv",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000579
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "mxr",
+    "speaker_count": 1300,
+    "speaker_fraction": 3.8e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "orn",
+    "speaker_count": 80,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "pna",
+    "speaker_count": 6200,
+    "speaker_fraction": 0.000179
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "ree",
+    "speaker_count": 3030,
+    "speaker_fraction": 8.8e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "sbo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "sbr",
+    "speaker_count": 3180,
+    "speaker_fraction": 9.2e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "sdx",
+    "speaker_count": 420,
+    "speaker_fraction": 1.2e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "sib",
+    "speaker_count": 1730,
+    "speaker_fraction": 5e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "slg",
+    "speaker_count": 1000,
+    "speaker_fraction": 2.9e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "snv",
+    "speaker_count": 2000,
+    "speaker_fraction": 5.8e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "srk",
+    "speaker_count": 350,
+    "speaker_fraction": 1e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "tea",
+    "speaker_count": 37489,
+    "speaker_fraction": 0.001085
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "tmo",
+    "speaker_count": 300,
+    "speaker_fraction": 9e-06
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "xbn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "xkl",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000579
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "zbw",
+    "speaker_count": 1430,
+    "speaker_fraction": 4.1e-05
+  },
+  {
+    "country_code": "MY",
+    "iso639_3": "zlm",
+    "speaker_count": 20766000,
+    "speaker_fraction": 0.600785
+  },
+  {
+    "country_code": "NA",
+    "iso639_3": "hgm",
+    "speaker_count": 7500,
+    "speaker_fraction": 0.002675
+  },
+  {
+    "country_code": "NA",
+    "iso639_3": "ktz",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.001427
+  },
+  {
+    "country_code": "NA",
+    "iso639_3": "ttl",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.004993
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "cir",
+    "speaker_count": 600,
+    "speaker_fraction": 0.001973
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "mkt",
+    "speaker_count": 100,
+    "speaker_fraction": 0.000329
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "msq",
+    "speaker_count": 1200,
+    "speaker_fraction": 0.003945
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "nem",
+    "speaker_count": 910,
+    "speaker_fraction": 0.002992
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "pme",
+    "speaker_count": 220,
+    "speaker_fraction": 0.000723
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "sih",
+    "speaker_count": 19,
+    "speaker_fraction": 6.2e-05
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "wmn",
+    "speaker_count": 100,
+    "speaker_fraction": 0.000329
+  },
+  {
+    "country_code": "NC",
+    "iso639_3": "yly",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.006575
+  },
+  {
+    "country_code": "NE",
+    "iso639_3": "bms",
+    "speaker_count": 47000,
+    "speaker_fraction": 0.001784
+  },
+  {
+    "country_code": "NE",
+    "iso639_3": "krt",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.002278
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "aab",
+    "speaker_count": 7000,
+    "speaker_fraction": 3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "aal",
+    "speaker_count": 31000,
+    "speaker_fraction": 0.000131
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "abo",
+    "speaker_count": 1000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "acp",
+    "speaker_count": 22000,
+    "speaker_fraction": 9.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ajw",
+    "speaker_count": 50,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "akf",
+    "speaker_count": 55000,
+    "speaker_fraction": 0.000232
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "aqg",
+    "speaker_count": 48000,
+    "speaker_fraction": 0.000203
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "atg",
+    "speaker_count": 20000,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "auo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ayk",
+    "speaker_count": 3000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "brt",
+    "speaker_count": 46300,
+    "speaker_fraction": 0.000196
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bsf",
+    "speaker_count": 20000,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bsj",
+    "speaker_count": 6000,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bsl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bsr",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bte",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "buj",
+    "speaker_count": 3000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "buz",
+    "speaker_count": 1000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bvj",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bxq",
+    "speaker_count": 120,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "bzz",
+    "speaker_count": 19000,
+    "speaker_fraction": 8e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "cet",
+    "speaker_count": 200,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "dgh",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000127
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "dot",
+    "speaker_count": 8800,
+    "speaker_fraction": 3.7e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "fli",
+    "speaker_count": 20000,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "gdu",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "hod",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ibe",
+    "speaker_count": 7000,
+    "speaker_fraction": 3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ijs",
+    "speaker_count": 2600000,
+    "speaker_fraction": 0.010982
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "iko",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000127
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "iyo",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "jib",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000127
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "jub",
+    "speaker_count": 4000,
+    "speaker_fraction": 1.7e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "khj",
+    "speaker_count": 14000,
+    "speaker_fraction": 5.9e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "kka",
+    "speaker_count": 20000,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "klo",
+    "speaker_count": 200,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "kmp",
+    "speaker_count": 3000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "kmy",
+    "speaker_count": 35000,
+    "speaker_fraction": 0.000148
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "koc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "kof",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "lan",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ldh",
+    "speaker_count": 3420,
+    "speaker_fraction": 1.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "mgj",
+    "speaker_count": 4000,
+    "speaker_fraction": 1.7e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "mma",
+    "speaker_count": 20000,
+    "speaker_fraction": 8.4e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ndi",
+    "speaker_count": 62000,
+    "speaker_fraction": 0.000262
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ndr",
+    "speaker_count": 63000,
+    "speaker_fraction": 0.000266
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "nfu",
+    "speaker_count": 27500,
+    "speaker_fraction": 0.000116
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ngs",
+    "speaker_count": 43000,
+    "speaker_fraction": 0.000182
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "nja",
+    "speaker_count": 184000,
+    "speaker_fraction": 0.000777
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "njr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "pbn",
+    "speaker_count": 3000,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "pcw",
+    "speaker_count": 13500,
+    "speaker_fraction": 5.7e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "pgs",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "rin",
+    "speaker_count": 106000,
+    "speaker_fraction": 0.000448
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "sir",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "sqa",
+    "speaker_count": 5000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "sqh",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "tuq",
+    "speaker_count": 2000,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "twc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "uiv",
+    "speaker_count": 1000,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "uya",
+    "speaker_count": 200,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "vkz",
+    "speaker_count": 40000,
+    "speaker_fraction": 0.000169
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "wma",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "xab",
+    "speaker_count": 6,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "xoc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "xsh",
+    "speaker_count": 10000,
+    "speaker_fraction": 4.2e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "yay",
+    "speaker_count": 15000,
+    "speaker_fraction": 6.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ybl",
+    "speaker_count": 16000,
+    "speaker_fraction": 6.8e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "yes",
+    "speaker_count": 32000,
+    "speaker_fraction": 0.000135
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "zaz",
+    "speaker_count": 20700,
+    "speaker_fraction": 8.7e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "zhi",
+    "speaker_count": 15000,
+    "speaker_fraction": 6.3e-05
+  },
+  {
+    "country_code": "NG",
+    "iso639_3": "ziz",
+    "speaker_count": 9000,
+    "speaker_fraction": 3.8e-05
+  },
+  {
+    "country_code": "NI",
+    "iso639_3": "cab",
+    "speaker_count": 2600,
+    "speaker_fraction": 0.000389
+  },
+  {
+    "country_code": "NI",
+    "iso639_3": "mom",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NI",
+    "iso639_3": "mtn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NI",
+    "iso639_3": "sut",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "NO",
+    "iso639_3": "rmu",
+    "speaker_count": 6000,
+    "speaker_fraction": 0.001089
+  },
+  {
+    "country_code": "NO",
+    "iso639_3": "sma",
+    "speaker_count": 500,
+    "speaker_fraction": 9.1e-05
+  },
+  {
+    "country_code": "NO",
+    "iso639_3": "smj",
+    "speaker_count": 1500,
+    "speaker_fraction": 0.000272
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "aim",
+    "speaker_count": 2640,
+    "speaker_fraction": 8.5e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "aph",
+    "speaker_count": 5500,
+    "speaker_fraction": 0.000177
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "bee",
+    "speaker_count": 1734,
+    "speaker_fraction": 5.6e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "bhj",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.000386
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "brd",
+    "speaker_count": 1846,
+    "speaker_fraction": 5.9e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "dhi",
+    "speaker_count": 20430,
+    "speaker_fraction": 0.000656
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "drq",
+    "speaker_count": 2269,
+    "speaker_fraction": 7.3e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "dry",
+    "speaker_count": 12747,
+    "speaker_fraction": 0.00041
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "hut",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000161
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "jnl",
+    "speaker_count": 3758,
+    "speaker_fraction": 0.000121
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "kle",
+    "speaker_count": 33000,
+    "speaker_fraction": 0.00106
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "kte",
+    "speaker_count": 2000,
+    "speaker_fraction": 6.4e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "kyv",
+    "speaker_count": 3508,
+    "speaker_fraction": 0.000113
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "lhm",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000225
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "mjz",
+    "speaker_count": 32917,
+    "speaker_fraction": 0.001058
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "ola",
+    "speaker_count": 4500,
+    "speaker_fraction": 0.000145
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "rau",
+    "speaker_count": 460,
+    "speaker_fraction": 1.5e-05
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "tge",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000129
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "thf",
+    "speaker_count": 23200,
+    "speaker_fraction": 0.000745
+  },
+  {
+    "country_code": "NP",
+    "iso639_3": "wly",
+    "speaker_count": 849,
+    "speaker_fraction": 2.7e-05
+  },
+  {
+    "country_code": "OM",
+    "iso639_3": "hoh",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.000256
+  },
+  {
+    "country_code": "OM",
+    "iso639_3": "hss",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.000256
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "atc",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "cah",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "cod",
+    "speaker_count": 2000,
+    "speaker_fraction": 6.1e-05
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "iqu",
+    "speaker_count": 50,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "myr",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "omc",
+    "speaker_count": 80,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "puq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "qxt",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000307
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "rem",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "rgr",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PE",
+    "iso639_3": "yme",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PF",
+    "iso639_3": "pmt",
+    "speaker_count": 6000,
+    "speaker_fraction": 0.019767
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "aah",
+    "speaker_count": 2600,
+    "speaker_fraction": 0.000259
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "aew",
+    "speaker_count": 770,
+    "speaker_fraction": 7.7e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "alx",
+    "speaker_count": 270,
+    "speaker_fraction": 2.7e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "amt",
+    "speaker_count": 200,
+    "speaker_fraction": 2e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "aun",
+    "speaker_count": 500,
+    "speaker_fraction": 5e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "aya",
+    "speaker_count": 900,
+    "speaker_fraction": 9e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "bjh",
+    "speaker_count": 700,
+    "speaker_fraction": 7e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "foi",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.000796
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "fqs",
+    "speaker_count": 2500,
+    "speaker_fraction": 0.000249
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "goi",
+    "speaker_count": 1400,
+    "speaker_fraction": 0.000139
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "ham",
+    "speaker_count": 6500,
+    "speaker_fraction": 0.000647
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "hao",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000498
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "hgw",
+    "speaker_count": 2200,
+    "speaker_fraction": 0.000219
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "kbv",
+    "speaker_count": 900,
+    "speaker_fraction": 9e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "kcd",
+    "speaker_count": 80,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "krz",
+    "speaker_count": 100,
+    "speaker_fraction": 1e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "kxq",
+    "speaker_count": 80,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "laz",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "lbu",
+    "speaker_count": 1600,
+    "speaker_fraction": 0.000159
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "lbv",
+    "speaker_count": 1300,
+    "speaker_fraction": 0.000129
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "llf",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "luf",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "mpl",
+    "speaker_count": 1700,
+    "speaker_fraction": 0.000169
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "mwh",
+    "speaker_count": 630,
+    "speaker_fraction": 6.3e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "oum",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "pnn",
+    "speaker_count": 650,
+    "speaker_fraction": 6.5e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "smz",
+    "speaker_count": 3000,
+    "speaker_fraction": 0.000299
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "tbc",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.002489
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "tbj",
+    "speaker_count": 790,
+    "speaker_fraction": 7.9e-05
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "tgi",
+    "speaker_count": 2000,
+    "speaker_fraction": 0.000199
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "uln",
+    "speaker_count": 10,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "urv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "xar",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "xeu",
+    "speaker_count": 6000,
+    "speaker_fraction": 0.000597
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "yob",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "ywa",
+    "speaker_count": 2600,
+    "speaker_fraction": 0.000259
+  },
+  {
+    "country_code": "PG",
+    "iso639_3": "zeg",
+    "speaker_count": 1820,
+    "speaker_fraction": 0.000181
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "agz",
+    "speaker_count": 1500,
+    "speaker_fraction": 1.3e-05
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "atk",
+    "speaker_count": 930,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "atl",
+    "speaker_count": 500,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "atm",
+    "speaker_count": 475,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "ays",
+    "speaker_count": 15,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "ayt",
+    "speaker_count": 1000,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "bjx",
+    "speaker_count": 3500,
+    "speaker_fraction": 3e-05
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "duy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "dyg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "ilk",
+    "speaker_count": 6000,
+    "speaker_fraction": 5.1e-05
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "inn",
+    "speaker_count": 5360,
+    "speaker_fraction": 4.5e-05
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "itv",
+    "speaker_count": 170000,
+    "speaker_fraction": 0.001437
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "kml",
+    "speaker_count": 11200,
+    "speaker_fraction": 9.5e-05
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "knb",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000254
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "ktq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "loc",
+    "speaker_count": 86000,
+    "speaker_fraction": 0.000727
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "stb",
+    "speaker_count": 108000,
+    "speaker_fraction": 0.000913
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "tgl",
+    "speaker_count": 87000000,
+    "speaker_fraction": 0.735561
+  },
+  {
+    "country_code": "PH",
+    "iso639_3": "tiu",
+    "speaker_count": 4000,
+    "speaker_fraction": 3.4e-05
+  },
+  {
+    "country_code": "PK",
+    "iso639_3": "jdg",
+    "speaker_count": 15600,
+    "speaker_fraction": 6.2e-05
+  },
+  {
+    "country_code": "PK",
+    "iso639_3": "odk",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.000198
+  },
+  {
+    "country_code": "PK",
+    "iso639_3": "oru",
+    "speaker_count": 6380,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "PK",
+    "iso639_3": "phl",
+    "speaker_count": 10000,
+    "speaker_fraction": 4e-05
+  },
+  {
+    "country_code": "PK",
+    "iso639_3": "sbn",
+    "speaker_count": 86500,
+    "speaker_fraction": 0.000343
+  },
+  {
+    "country_code": "PW",
+    "iso639_3": "sov",
+    "speaker_count": 360,
+    "speaker_fraction": 0.016465
+  },
+  {
+    "country_code": "RO",
+    "iso639_3": "rom",
+    "speaker_count": 241617,
+    "speaker_fraction": 0.013314
+  },
+  {
+    "country_code": "RS",
+    "iso639_3": "rsk",
+    "speaker_count": 15626,
+    "speaker_fraction": 0.002349
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "akv",
+    "speaker_count": 5000,
+    "speaker_fraction": 3.6e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "ale",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "ani",
+    "speaker_count": 5800,
+    "speaker_fraction": 4.1e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "bph",
+    "speaker_count": 8000,
+    "speaker_fraction": 5.7e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "bxr",
+    "speaker_count": 265000,
+    "speaker_fraction": 0.001882
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "bxu",
+    "speaker_count": 368807,
+    "speaker_fraction": 0.002619
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "cji",
+    "speaker_count": 4900,
+    "speaker_fraction": 3.5e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "ddo",
+    "speaker_count": 12500,
+    "speaker_fraction": 8.9e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "gdo",
+    "speaker_count": 3000,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "huz",
+    "speaker_count": 3466,
+    "speaker_fraction": 2.5e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "kap",
+    "speaker_count": 8138,
+    "speaker_fraction": 5.8e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "khv",
+    "speaker_count": 8500,
+    "speaker_fraction": 6e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "krk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "kva",
+    "speaker_count": 6500,
+    "speaker_fraction": 4.6e-05
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "mud",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "oaa",
+    "speaker_count": 116,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "oac",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "sia",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "ynk",
+    "speaker_count": 70,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "ysr",
+    "speaker_count": 5,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "RU",
+    "iso639_3": "zko",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SB",
+    "iso639_3": "bvd",
+    "speaker_count": 5900,
+    "speaker_fraction": 0.008118
+  },
+  {
+    "country_code": "SB",
+    "iso639_3": "ksg",
+    "speaker_count": 2400,
+    "speaker_fraction": 0.003302
+  },
+  {
+    "country_code": "SB",
+    "iso639_3": "kzk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SB",
+    "iso639_3": "lgb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SB",
+    "iso639_3": "piv",
+    "speaker_count": 1675,
+    "speaker_fraction": 0.002305
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "atu",
+    "speaker_count": 90000,
+    "speaker_fraction": 0.001783
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "bfa",
+    "speaker_count": 595000,
+    "speaker_fraction": 0.01179
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "bot",
+    "speaker_count": 10100,
+    "speaker_fraction": 0.0002
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "byg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "byt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "dau",
+    "speaker_count": 51000,
+    "speaker_fraction": 0.001011
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "dil",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.000258
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "eli",
+    "speaker_count": 400,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "kcp",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.000159
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "kec",
+    "speaker_count": 6100,
+    "speaker_fraction": 0.000121
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "mwu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "nnj",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.000238
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "sys",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000396
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "tag",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.000258
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "tbr",
+    "speaker_count": 17000,
+    "speaker_fraction": 0.000337
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "tey",
+    "speaker_count": 2500,
+    "speaker_fraction": 5e-05
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "tgy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "thu",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000139
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "tor",
+    "speaker_count": 4000,
+    "speaker_fraction": 7.9e-05
+  },
+  {
+    "country_code": "SD",
+    "iso639_3": "xel",
+    "speaker_count": 200,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "SE",
+    "iso639_3": "ovd",
+    "speaker_count": 3000,
+    "speaker_fraction": 0.000283
+  },
+  {
+    "country_code": "SE",
+    "iso639_3": "sje",
+    "speaker_count": 20,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "bcb",
+    "speaker_count": 6220,
+    "speaker_fraction": 0.00033
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "bcz",
+    "speaker_count": 6220,
+    "speaker_fraction": 0.00033
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "ccj",
+    "speaker_count": 690,
+    "speaker_fraction": 3.7e-05
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "cou",
+    "speaker_count": 18400,
+    "speaker_fraction": 0.000976
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "hhr",
+    "speaker_count": 13200,
+    "speaker_fraction": 0.0007
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "kcj",
+    "speaker_count": 400,
+    "speaker_fraction": 2.1e-05
+  },
+  {
+    "country_code": "SN",
+    "iso639_3": "krx",
+    "speaker_count": 15000,
+    "speaker_fraction": 0.000796
+  },
+  {
+    "country_code": "SO",
+    "iso639_3": "bob",
+    "speaker_count": 400,
+    "speaker_fraction": 3.1e-05
+  },
+  {
+    "country_code": "SO",
+    "iso639_3": "dbr",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.003841
+  },
+  {
+    "country_code": "SR",
+    "iso639_3": "ako",
+    "speaker_count": 3,
+    "speaker_fraction": 5e-06
+  },
+  {
+    "country_code": "SR",
+    "iso639_3": "tri",
+    "speaker_count": 1300,
+    "speaker_fraction": 0.00201
+  },
+  {
+    "country_code": "SY",
+    "iso639_3": "lhs",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "bdm",
+    "speaker_count": 54800,
+    "speaker_fraction": 0.00287
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "bdo",
+    "speaker_count": 4500,
+    "speaker_fraction": 0.000236
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "bid",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.000733
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "btf",
+    "speaker_count": 10400,
+    "speaker_fraction": 0.000545
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "bva",
+    "speaker_count": 6000,
+    "speaker_fraction": 0.000314
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "bxv",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "dai",
+    "speaker_count": 49900,
+    "speaker_fraction": 0.002613
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "dau",
+    "speaker_count": 97000,
+    "speaker_fraction": 0.00508
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "dgk",
+    "speaker_count": 34000,
+    "speaker_fraction": 0.001781
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "djc",
+    "speaker_count": 60000,
+    "speaker_fraction": 0.003142
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "fgr",
+    "speaker_count": 1000,
+    "speaker_fraction": 5.2e-05
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "gab",
+    "speaker_count": 34400,
+    "speaker_fraction": 0.001802
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "glu",
+    "speaker_count": 10300,
+    "speaker_fraction": 0.000539
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "hor",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "jia",
+    "speaker_count": 1500,
+    "speaker_fraction": 7.9e-05
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "kot",
+    "speaker_count": 1500,
+    "speaker_fraction": 7.9e-05
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "kth",
+    "speaker_count": 10000,
+    "speaker_fraction": 0.000524
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "kvi",
+    "speaker_count": 16800,
+    "speaker_fraction": 0.00088
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "mcw",
+    "speaker_count": 9720,
+    "speaker_fraction": 0.000509
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "mes",
+    "speaker_count": 26000,
+    "speaker_fraction": 0.001362
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "mmy",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.001047
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "mou",
+    "speaker_count": 7000,
+    "speaker_fraction": 0.000367
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "mwm",
+    "speaker_count": 183000,
+    "speaker_fraction": 0.009584
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "ndm",
+    "speaker_count": 6500,
+    "speaker_fraction": 0.00034
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "nie",
+    "speaker_count": 6500,
+    "speaker_fraction": 0.00034
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "nnc",
+    "speaker_count": 81000,
+    "speaker_fraction": 0.004242
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "sok",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.000262
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "sys",
+    "speaker_count": 12000,
+    "speaker_fraction": 0.000628
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "xmj",
+    "speaker_count": 2300,
+    "speaker_fraction": 0.00012
+  },
+  {
+    "country_code": "TD",
+    "iso639_3": "zim",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.001047
+  },
+  {
+    "country_code": "TG",
+    "iso639_3": "ahl",
+    "speaker_count": 6000,
+    "speaker_fraction": 0.000673
+  },
+  {
+    "country_code": "TG",
+    "iso639_3": "kef",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000449
+  },
+  {
+    "country_code": "TG",
+    "iso639_3": "mql",
+    "speaker_count": 134000,
+    "speaker_fraction": 0.015026
+  },
+  {
+    "country_code": "TG",
+    "iso639_3": "nqk",
+    "speaker_count": 25000,
+    "speaker_fraction": 0.002803
+  },
+  {
+    "country_code": "TG",
+    "iso639_3": "xwl",
+    "speaker_count": 400000,
+    "speaker_fraction": 0.044853
+  },
+  {
+    "country_code": "TH",
+    "iso639_3": "cog",
+    "speaker_count": 500,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "TH",
+    "iso639_3": "mra",
+    "speaker_count": 300,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "TH",
+    "iso639_3": "msa",
+    "speaker_count": 2580000,
+    "speaker_fraction": 0.036899
+  },
+  {
+    "country_code": "TH",
+    "iso639_3": "nyw",
+    "speaker_count": 500000,
+    "speaker_fraction": 0.007151
+  },
+  {
+    "country_code": "TJ",
+    "iso639_3": "paq",
+    "speaker_count": 4000,
+    "speaker_fraction": 0.000385
+  },
+  {
+    "country_code": "TJ",
+    "iso639_3": "yah",
+    "speaker_count": 9000,
+    "speaker_fraction": 0.000866
+  },
+  {
+    "country_code": "TL",
+    "iso639_3": "mjb",
+    "speaker_count": 9760,
+    "speaker_fraction": 0.006477
+  },
+  {
+    "country_code": "TN",
+    "iso639_3": "sds",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TO",
+    "iso639_3": "nkp",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TR",
+    "iso639_3": "hrt",
+    "speaker_count": 4,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TR",
+    "iso639_3": "kmr",
+    "speaker_count": 10000000,
+    "speaker_fraction": 0.118879
+  },
+  {
+    "country_code": "TR",
+    "iso639_3": "uby",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "dhs",
+    "speaker_count": 5000,
+    "speaker_fraction": 7.4e-05
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "gwe",
+    "speaker_count": 2500,
+    "speaker_fraction": 3.7e-05
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "hka",
+    "speaker_count": 9130,
+    "speaker_fraction": 0.000135
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "mjh",
+    "speaker_count": 470000,
+    "speaker_fraction": 0.006967
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "mpa",
+    "speaker_count": 80000,
+    "speaker_fraction": 0.001186
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "ntk",
+    "speaker_count": 36000,
+    "speaker_fraction": 0.000534
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "swh",
+    "speaker_count": 61000000,
+    "speaker_fraction": 0.904211
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "tvs",
+    "speaker_count": 8000,
+    "speaker_fraction": 0.000119
+  },
+  {
+    "country_code": "TZ",
+    "iso639_3": "wka",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "UG",
+    "iso639_3": "ikx",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.000284
+  },
+  {
+    "country_code": "UG",
+    "iso639_3": "kcn",
+    "speaker_count": 28800,
+    "speaker_fraction": 0.000584
+  },
+  {
+    "country_code": "UG",
+    "iso639_3": "mxh",
+    "speaker_count": 400,
+    "speaker_fraction": 8e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "acv",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "afs",
+    "speaker_count": 200,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ale",
+    "speaker_count": 1014,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "apk",
+    "speaker_count": 100,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ats",
+    "speaker_count": 45,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "atw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "boi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "cea",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "chh",
+    "speaker_count": 58,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "cid",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ciw",
+    "speaker_count": 8791,
+    "speaker_fraction": 2.6e-05
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "cjh",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "col",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "cow",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "crr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "csi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ctm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "cup",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ems",
+    "speaker_count": 1000,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "eya",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "fla",
+    "speaker_count": 114,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "gce",
+    "speaker_count": 22279,
+    "speaker_fraction": 6.5e-05
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "hoi",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "iml",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "inz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "iow",
+    "speaker_count": 34,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "kic",
+    "speaker_count": 840,
+    "speaker_fraction": 2e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "kla",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "krb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ksk",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "kyl",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "lmw",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "lui",
+    "speaker_count": 75,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "mhq",
+    "speaker_count": 104,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "mkq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "mvb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ncz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nmu",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nnt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nok",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nol",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nrt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nsq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nsz",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ntw",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "nwa",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "obi",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ojc",
+    "speaker_count": 8371,
+    "speaker_fraction": 2.4e-05
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ono",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "peb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "pef",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "pej",
+    "speaker_count": 3,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "peq",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "pie",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "pmw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "poo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "pqm",
+    "speaker_count": 100,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "psy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "puy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "qwt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ser",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "sht",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "sis",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "sno",
+    "speaker_count": 10,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "spo",
+    "speaker_count": 20,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "sqn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "taa",
+    "speaker_count": 30,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tau",
+    "speaker_count": 105,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tcb",
+    "speaker_count": 65,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tfn",
+    "speaker_count": 11,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "til",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tjm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tkm",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tsi",
+    "speaker_count": 70,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tta",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tub",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tun",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tus",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "tuu",
+    "speaker_count": 84,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "unm",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "veo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "vmv",
+    "speaker_count": 12,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wac",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wao",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wic",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "win",
+    "speaker_count": 250,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wiy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wlk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wnw",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "wyn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xch",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xcw",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xcy",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xlo",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xrt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "xup",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "ynn",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "yok",
+    "speaker_count": 70,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "yur",
+    "speaker_count": 350,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "US",
+    "iso639_3": "zkk",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "UZ",
+    "iso639_3": "paq",
+    "speaker_count": 3000,
+    "speaker_fraction": 8.2e-05
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "arw",
+    "speaker_count": 140,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "bae",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "bvv",
+    "speaker_count": 3460,
+    "speaker_fraction": 0.000111
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "bwi",
+    "speaker_count": 3460,
+    "speaker_fraction": 0.000111
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "cuo",
+    "speaker_count": 112,
+    "speaker_fraction": 4e-06
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "mcg",
+    "speaker_count": 2,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "mht",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "slc",
+    "speaker_count": 79,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "spc",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "yae",
+    "speaker_count": 5420,
+    "speaker_fraction": 0.000173
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "yar",
+    "speaker_count": 30,
+    "speaker_fraction": 1e-06
+  },
+  {
+    "country_code": "VE",
+    "iso639_3": "yvt",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VI",
+    "iso639_3": "dcr",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "brb",
+    "speaker_count": 300,
+    "speaker_fraction": 3e-06
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "gir",
+    "speaker_count": 50,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "hal",
+    "speaker_count": 13000,
+    "speaker_fraction": 0.000123
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "hld",
+    "speaker_count": 3700,
+    "speaker_fraction": 3.5e-05
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "jeh",
+    "speaker_count": 27000,
+    "speaker_fraction": 0.000255
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "kuf",
+    "speaker_count": 23000,
+    "speaker_fraction": 0.000217
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "laq",
+    "speaker_count": 710,
+    "speaker_fraction": 7e-06
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "lbt",
+    "speaker_count": 9500,
+    "speaker_fraction": 9e-05
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "pha",
+    "speaker_count": 8248,
+    "speaker_fraction": 7.8e-05
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "pkt",
+    "speaker_count": 633,
+    "speaker_fraction": 6e-06
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "sti",
+    "speaker_count": 100752,
+    "speaker_fraction": 0.000953
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "tmm",
+    "speaker_count": 20000,
+    "speaker_fraction": 0.000189
+  },
+  {
+    "country_code": "VN",
+    "iso639_3": "tyt",
+    "speaker_count": 1630000,
+    "speaker_fraction": 0.015412
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "alm",
+    "speaker_count": 300,
+    "speaker_fraction": 0.000943
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "aor",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "etn",
+    "speaker_count": 500,
+    "speaker_fraction": 0.001572
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "fut",
+    "speaker_count": 1500,
+    "speaker_fraction": 0.004717
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "iff",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "lmb",
+    "speaker_count": 1000,
+    "speaker_fraction": 0.003145
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "mrp",
+    "speaker_count": 500,
+    "speaker_fraction": 0.001572
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "nkk",
+    "speaker_count": 250,
+    "speaker_fraction": 0.000786
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "nrg",
+    "speaker_count": 400,
+    "speaker_fraction": 0.001258
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "onu",
+    "speaker_count": 520,
+    "speaker_fraction": 0.001635
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "pgk",
+    "speaker_count": 380,
+    "speaker_fraction": 0.001195
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "psw",
+    "speaker_count": 1200,
+    "speaker_fraction": 0.003774
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "ptr",
+    "speaker_count": 250,
+    "speaker_fraction": 0.000786
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "sww",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "tmb",
+    "speaker_count": 700,
+    "speaker_fraction": 0.002201
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "vao",
+    "speaker_count": 1900,
+    "speaker_fraction": 0.005975
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "vnm",
+    "speaker_count": 500,
+    "speaker_fraction": 0.001572
+  },
+  {
+    "country_code": "VU",
+    "iso639_3": "wlr",
+    "speaker_count": 500,
+    "speaker_fraction": 0.001572
+  },
+  {
+    "country_code": "YE",
+    "iso639_3": "sqt",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.001556
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "brl",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.000496
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "cmt",
+    "speaker_count": 5000,
+    "speaker_fraction": 8.3e-05
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "fng",
+    "speaker_count": 5000,
+    "speaker_fraction": 8.3e-05
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "gku",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "kqu",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "ngh",
+    "speaker_count": 1,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "nsb",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "xam",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZA",
+    "iso639_3": "xeg",
+    "speaker_count": 0,
+    "speaker_fraction": 0.0
+  },
+  {
+    "country_code": "ZM",
+    "iso639_3": "nyr",
+    "speaker_count": 5000,
+    "speaker_fraction": 0.00024
+  },
+  {
+    "country_code": "ZM",
+    "iso639_3": "sie",
+    "speaker_count": 17000,
+    "speaker_fraction": 0.000817
+  },
+  {
+    "country_code": "ZM",
+    "iso639_3": "ttl",
+    "speaker_count": 14000,
+    "speaker_fraction": 0.000673
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "brl",
+    "speaker_count": 30000,
+    "speaker_fraction": 0.001749
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "fng",
+    "speaker_count": 5100,
+    "speaker_fraction": 0.000297
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "hio",
+    "speaker_count": 3500,
+    "speaker_fraction": 0.000204
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "sot",
+    "speaker_count": 50000,
+    "speaker_fraction": 0.002915
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "twx",
+    "speaker_count": 255430,
+    "speaker_fraction": 0.014894
+  },
+  {
+    "country_code": "ZW",
+    "iso639_3": "xho",
+    "speaker_count": 200000,
+    "speaker_fraction": 0.011662
+  }
+]

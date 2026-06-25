@@ -98,6 +98,13 @@ _MINIMAL_DB = {
         {"country_code": "IN", "language_code": "hin", "speaker_count": 528000000, "speaker_fraction": 0.383,  "source": "cldr"},
         {"country_code": "DE", "language_code": "deu", "speaker_count": 72000000,  "speaker_fraction": 0.866,  "source": "cldr"},
         {"country_code": "RW", "language_code": "kin", "speaker_count": 9900000,   "speaker_fraction": 0.718,  "source": "cia"},
+        {
+            "country_code": "UG",
+            "language_code": "kin",
+            "speaker_count": 450000,
+            "speaker_fraction": 0.009838,
+            "source": "scraped",
+        },
         {"country_code": "DE", "language_code": "deu", "speaker_count": 74000000,  "speaker_fraction": 0.886,  "source": "cia"},
     ],
     "country_official_languages": [
@@ -106,6 +113,15 @@ _MINIMAL_DB = {
         {"country_code": "BR", "language_code": "por", "status": "official"},
         {"country_code": "DE", "language_code": "deu", "status": "official"},
         {"country_code": "IN", "language_code": "hin", "status": "de_facto_official"},
+    ],
+    "scripts": [
+        {"code": "deva", "label": "Devanagari"},
+        {"code": "latn", "label": "Latin"},
+    ],
+    "language_scripts": [
+        {"language_part3": "hin", "script_code": "deva", "is_canonical": True},
+        {"language_part3": "hin", "script_code": "latn", "is_canonical": False},
+        {"language_part3": "deu", "script_code": "latn", "is_canonical": True},
     ],
 }
 

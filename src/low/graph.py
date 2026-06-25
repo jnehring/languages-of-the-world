@@ -11,6 +11,7 @@ from .collections import (
     LanguageCollection,
     LanguageNameCollection,
     RegionCollection,
+    ScriptCollection,
     SpeakerCountCollection,
 )
 from .models import (
@@ -20,6 +21,7 @@ from .models import (
     LanguageFamily,
     LanguageName,
     Region,
+    Script,
     SpeakerCount,
 )
 
@@ -56,6 +58,7 @@ class LanguagesOfTheWorld:
             self.countries,
             self.families,
             self.languages,
+            self.scripts,
             self.speaker_counts,
             self.language_names,
         ) = self._assemble(raw)
@@ -150,6 +153,37 @@ class LanguagesOfTheWorld:
 
         languages_map: dict[str, Language] = {l.part3: l for l in languages_list}
 
+        # --- Scripts -----------------------------------------------------
+        scripts_map: dict[str, Script] = {}
+        for row in raw.get("scripts", []):
+            obj = Script(code=row["code"], label=row["label"])
+            scripts_map[row["code"]] = obj
+
+        # Group language-script links per language for ordered wiring
+        lang_script_entries: dict[str, list[tuple[str, bool]]] = {}
+        for row in raw.get("language_scripts", []):
+            p3 = row.get("language_part3")
+            code = row.get("script_code")
+            if not p3 or not code:
+                continue
+            lang_script_entries.setdefault(p3, []).append(
+                (code, bool(row.get("is_canonical")))
+            )
+
+        for p3, entries in lang_script_entries.items():
+            lang = languages_map.get(p3)
+            if lang is None:
+                continue
+            merged: dict[str, bool] = {}
+            for code, is_canonical in entries:
+                merged[code] = merged.get(code, False) or is_canonical
+            for code in sorted(merged.keys(), key=lambda c: (not merged[c], c)):
+                script = scripts_map.get(code)
+                if script is None:
+                    continue
+                lang._scripts_ref.append(script)
+                script._languages_ref.append(lang)
+
         # --- Official language status (CLDR) ------------------------------
         _STATUS_ATTR = {
             "official":          "_official_languages_ref",
@@ -177,6 +211,7 @@ class LanguagesOfTheWorld:
                 speaker_count=row.get("speaker_count", 0),
                 speaker_fraction=row.get("speaker_fraction", 0.0),
                 source=row.get("source", ""),
+                source_url=row.get("source_url"),
             )
             country._speaker_count_ref.append(sc)
             lang._speaker_count_ref.append(sc)
@@ -207,6 +242,7 @@ class LanguagesOfTheWorld:
             CountryCollection(list(countries.values())),
             FamilyCollection(list(families.values())),
             LanguageCollection(languages_list),
+            ScriptCollection(list(scripts_map.values()), languages_list),
             SpeakerCountCollection(speaker_counts_list),
             LanguageNameCollection(language_names_list),
         )
@@ -221,6 +257,7 @@ class LanguagesOfTheWorld:
             f"languages={len(self.languages)}, "
             f"countries={len(self.countries)}, "
             f"continents={len(self.continents)}, "
+            f"scripts={len(self.scripts)}, "
             f"speaker_counts={len(self.speaker_counts)}, "
             f"language_names={len(self.language_names)})"
         )

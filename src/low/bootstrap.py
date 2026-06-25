@@ -62,6 +62,10 @@ _CLDR_SUPPLEMENTAL = (
     "https://raw.githubusercontent.com/unicode-org/cldr"
     "/main/common/supplemental/supplementalData.xml"
 )
+_CLDR_SCRIPTS = (
+    "https://raw.githubusercontent.com/unicode-org/cldr"
+    "/main/common/main/en.xml"
+)
 # Single API call that returns every file path in the repo tree.
 # Subsequent country fetches hit raw.githubusercontent.com (no API rate limit).
 _FACTBOOK_TREE_API = (
@@ -556,13 +560,26 @@ def _fetch_linguameta_country(path: str) -> Optional[Dict[str, Any]]:
         return None
 
 
+def _parse_cldr_script_labels(xml_text: str) -> Dict[str, str]:
+    """Return {iso15924_lowercase: English label} from CLDR locale en.xml."""
+    root = ET.fromstring(xml_text)
+    labels: Dict[str, str] = {}
+    for script_el in root.findall(".//script"):
+        code = _normalize(script_el.get("type", ""))
+        if len(code) != 4:
+            continue
+        if script_el.text:
+            labels[code.lower()] = _normalize(script_el.text)
+    return labels
+
+
 def _parse_linguameta_per_language(
     known_country_codes: set,
     known_part3: set,
     iso1_to_part3: Dict[str, str],
 ):
     """
-    Fetch every LinguaMeta per-language JSON file once and extract two record sets:
+    Fetch every LinguaMeta per-language JSON file once and extract three record sets:
 
     speaker_records: per-(country, language) speaker counts from
         language_script_locale[].speaker_data.number_of_speakers
@@ -575,6 +592,12 @@ def _parse_linguameta_per_language(
             in_language_part3   resolved ISO 639-3 (or null)
             script              ISO 15924 code (or null)
             source              originating source string (e.g. "CLDR")
+
+    script_records: per-(language, script) associations from
+        language_script_locale[].script.iso_15924_code. Each record:
+            language_part3      ISO 639-3
+            script_code         ISO 15924 (lowercase)
+            is_canonical        True if any locale entry marked the script canonical
     """
     print("  Fetching LinguaMeta file tree…")
     try:
@@ -582,7 +605,7 @@ def _parse_linguameta_per_language(
         tree_data: Dict[str, Any] = json.loads(tree_text)
     except Exception as exc:
         print(f"  WARNING: Could not fetch LinguaMeta tree: {exc}")
-        return []
+        return [], [], []
 
     paths: List[str] = []
     for item in tree_data.get("tree", []):
@@ -609,6 +632,7 @@ def _parse_linguameta_per_language(
 
     speaker_records: List[Dict[str, Any]] = []
     name_records: List[Dict[str, Any]] = []
+    script_records: List[Dict[str, Any]] = []
 
     for data in fetched:
         p3 = _normalize(data.get("iso_639_3_code", ""))
@@ -639,6 +663,18 @@ def _parse_linguameta_per_language(
                 "has_official_status": official.get("has_official_status"),
             })
 
+        # --- Scripts (all distinct ISO 15924 codes per language) ---
+        for entry in data.get("language_script_locale", []) or []:
+            script_obj = entry.get("script") or {}
+            code = _normalize(script_obj.get("iso_15924_code", "")).lower()
+            if not code or code == "xxxx" or len(code) != 4:
+                continue
+            script_records.append({
+                "language_part3": p3,
+                "script_code": code,
+                "is_canonical": bool(script_obj.get("is_canonical")),
+            })
+
         # --- Language names (canonical only) ---
         for entry in data.get("name_data", []) or []:
             if not entry.get("is_canonical"):
@@ -667,7 +703,7 @@ def _parse_linguameta_per_language(
                 "source": _normalize(entry.get("source", "")) or None,
             })
 
-    return speaker_records, name_records
+    return speaker_records, name_records, script_records
 
 
 def _fetch_wikidata_speakers(
@@ -864,15 +900,17 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     )
     print(f"  Stored {len(cia_raw)} CIA records → {cia_path}")
 
-    # --- LinguaMeta per-country speaker counts + canonical names ----------
+    # --- LinguaMeta per-country speaker counts + canonical names + scripts ---
     print("Fetching LinguaMeta per-language JSON files…")
     try:
-        linguameta_country_raw, linguameta_names_raw = _parse_linguameta_per_language(
-            known_country_codes, known_part3, iso1_to_part3
+        linguameta_country_raw, linguameta_names_raw, linguameta_scripts_raw = (
+            _parse_linguameta_per_language(
+                known_country_codes, known_part3, iso1_to_part3
+            )
         )
     except Exception as exc:
         print(f"  WARNING: LinguaMeta per-language fetch failed: {exc}")
-        linguameta_country_raw, linguameta_names_raw = [], []
+        linguameta_country_raw, linguameta_names_raw, linguameta_scripts_raw = [], [], []
 
     linguameta_country_path = sources_dir / "linguameta_speakers.json"
     linguameta_country_path.write_text(
@@ -892,6 +930,16 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     print(
         f"  Stored {len(linguameta_names_raw)} LinguaMeta canonical-name records "
         f"→ {linguameta_names_path}"
+    )
+
+    linguameta_scripts_path = sources_dir / "linguameta_scripts.json"
+    linguameta_scripts_path.write_text(
+        json.dumps(linguameta_scripts_raw, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    print(
+        f"  Stored {len(linguameta_scripts_raw)} LinguaMeta language-script records "
+        f"→ {linguameta_scripts_path}"
     )
 
     # --- Wikidata global speaker counts -----------------------------------
@@ -980,6 +1028,38 @@ def build_db(output_path: Optional[Path] = None) -> Path:
                 "source": "linguameta",
             }
 
+    low_scraper_path = sources_dir / "low_scraper_speakers.json"
+    if low_scraper_path.exists():
+        low_scraper_raw = json.loads(low_scraper_path.read_text(encoding="utf-8"))
+        scraped_before = sum(1 for k in seen_keys if k[2] == "scraped")
+        for rec in low_scraper_raw:
+            cc = rec.get("country_code")
+            p3 = rec.get("iso639_3")
+            if not cc or not p3:
+                continue
+            key = (cc, p3, "scraped")
+            existing = seen_keys.get(key)
+            if existing is None or rec["speaker_count"] > existing["speaker_count"]:
+                seen_keys[key] = {
+                    "country_code": cc,
+                    "language_code": p3,
+                    "speaker_count": rec["speaker_count"],
+                    "speaker_fraction": rec.get("speaker_fraction", 0.0),
+                    "source": "scraped",
+                }
+        scraped_merged = sum(1 for k in seen_keys if k[2] == "scraped")
+        print(
+            f"  Loaded {len(low_scraper_raw)} scraped speaker records "
+            f"from {low_scraper_path.name} "
+            f"({scraped_merged - scraped_before} new/updated in merge)"
+        )
+    else:
+        print(
+            f"  WARNING: {low_scraper_path.name} not found — "
+            "no scraped speaker counts will be included. "
+            "Run `low-scraper import` and commit the file before releasing."
+        )
+
     country_language_speakers = sorted(
         seen_keys.values(),
         key=lambda x: (x["country_code"], x["source"], x["language_code"]),
@@ -1023,6 +1103,42 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         key=lambda x: (x["language_part3"], x["in_language_bcp47"], x.get("script") or "")
     )
 
+    # --- Language scripts (LinguaMeta) ------------------------------------
+    # Dedupe on (language_part3, script_code); is_canonical if any entry had it.
+    seen_lang_scripts: Dict[tuple, Dict[str, Any]] = {}
+    for rec in linguameta_scripts_raw:
+        key = (rec["language_part3"], rec["script_code"])
+        existing = seen_lang_scripts.get(key)
+        if existing is None:
+            seen_lang_scripts[key] = {
+                "language_part3": rec["language_part3"],
+                "script_code": rec["script_code"],
+                "is_canonical": bool(rec.get("is_canonical")),
+            }
+        elif rec.get("is_canonical"):
+            existing["is_canonical"] = True
+    language_scripts = sorted(
+        seen_lang_scripts.values(),
+        key=lambda x: (x["language_part3"], x["script_code"]),
+    )
+
+    # --- Script labels (CLDR) ---------------------------------------------
+    print("Fetching Unicode CLDR en.xml (script labels)…")
+    try:
+        cldr_script_labels = _parse_cldr_script_labels(_fetch_text(_CLDR_SCRIPTS))
+    except Exception as exc:
+        print(f"  WARNING: CLDR scripts fetch failed: {exc}")
+        cldr_script_labels = {}
+
+    all_script_codes = {rec["script_code"] for rec in language_scripts}
+    scripts = [
+        {
+            "code": code,
+            "label": cldr_script_labels.get(code, code.upper()),
+        }
+        for code in sorted(all_script_codes)
+    ]
+
     # --- Assemble final DB ------------------------------------------------
     db = {
         "continents": sorted(raw_conts.values(), key=lambda x: x["id"]),
@@ -1030,6 +1146,8 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         "countries":  sorted(raw_countries.values(), key=lambda x: x["code"]),
         "families":   families_list,
         "languages":  sorted(languages, key=lambda x: x["label"]),
+        "scripts": scripts,
+        "language_scripts": language_scripts,
         "country_language_speakers": country_language_speakers,
         "country_official_languages": country_official_languages,
         "language_names": language_names,
@@ -1042,6 +1160,7 @@ def build_db(output_path: Optional[Path] = None) -> Path:
     cldr_entries         = sum(1 for r in country_language_speakers if r["source"] == "cldr")
     cia_entries          = sum(1 for r in country_language_speakers if r["source"] == "cia")
     linguameta_entries   = sum(1 for r in country_language_speakers if r["source"] == "linguameta")
+    scraped_entries      = sum(1 for r in country_language_speakers if r["source"] == "scraped")
     official_counts      = {s: sum(1 for r in country_official_languages if r["status"] == s)
                             for s in _TRACKED_STATUSES}
 
@@ -1057,8 +1176,10 @@ def build_db(output_path: Optional[Path] = None) -> Path:
         f"{len(db['continents'])} continents\n"
         f"  {len(db['families'])} family tree nodes ({root_families} root families)\n"
         f"  {len(country_language_speakers)} country-language speaker records "
-        f"({cldr_entries} CLDR, {cia_entries} CIA, {linguameta_entries} LinguaMeta)\n"
+        f"({cldr_entries} CLDR, {cia_entries} CIA, {linguameta_entries} LinguaMeta"
+        f"{f', {scraped_entries} scraped' if scraped_entries else ''})\n"
         f"  {len(language_names)} canonical language names (LinguaMeta)\n"
+        f"  {len(scripts)} scripts, {len(language_scripts)} language-script links\n"
         f"  {len(country_official_languages)} official-language entries "
         f"(official: {official_counts['official']}, "
         f"regional: {official_counts['official_regional']}, "

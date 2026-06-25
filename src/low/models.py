@@ -15,14 +15,16 @@ class SpeakerCount:
     language: "Language"
     speaker_count: int
     speaker_fraction: float   # share of country population, 0.0–1.0
-    source: str  # "cldr", "cia", or "linguameta"
+    source: str  # "cldr", "cia", "linguameta", or "scraped"
+    source_url: Optional[str] = None  # unused; kept for backward-compatible JSON loads
 
     def __repr__(self) -> str:
+        url_part = f", source_url={self.source_url!r}" if self.source_url else ""
         return (
             f"SpeakerCount(country={self.country.code!r}, "
             f"language={self.language.part3!r}, "
             f"speaker_count={self.speaker_count}, "
-            f"speaker_fraction={self.speaker_fraction:.4f}, source={self.source!r})"
+            f"speaker_fraction={self.speaker_fraction:.4f}, source={self.source!r}{url_part})"
         )
 
     def __hash__(self) -> int:
@@ -157,6 +159,30 @@ class LanguageFamily:
 
 
 @dataclass
+class Script:
+    """A writing system identified by ISO 15924."""
+
+    code: str   # ISO 15924 four-letter code (lowercase)
+    label: str  # English display name
+    _languages_ref: List["Language"] = field(default_factory=list, repr=False, compare=False)
+
+    @property
+    def languages(self) -> List["Language"]:
+        return self._languages_ref
+
+    def __repr__(self) -> str:
+        return f"Script(code={self.code!r}, label={self.label!r})"
+
+    def __hash__(self) -> int:
+        return hash(self.code)
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, Script):
+            return self.code == other.code
+        return NotImplemented
+
+
+@dataclass
 class LanguageName:
     """
     A canonical name for a language, expressed in some (possibly different) language.
@@ -200,6 +226,7 @@ class Language:
     'extinct'. None if Glottolog has no AES assessment for this language."""
     _speaker_count_ref: List["SpeakerCount"] = field(default_factory=list, repr=False, compare=False)
     _names_ref: List["LanguageName"] = field(default_factory=list, repr=False, compare=False)
+    _scripts_ref: List["Script"] = field(default_factory=list, repr=False, compare=False)
 
     @property
     def speaker_counts(self) -> List["SpeakerCount"]:
@@ -209,6 +236,16 @@ class Language:
     def names(self) -> List["LanguageName"]:
         """All canonical names for this language, across other languages."""
         return self._names_ref
+
+    @property
+    def scripts(self) -> List["Script"]:
+        """Writing systems used for this language (canonical scripts first)."""
+        return self._scripts_ref
+
+    @property
+    def primary_script(self) -> Optional["Script"]:
+        """The primary script for this language, if known."""
+        return self._scripts_ref[0] if self._scripts_ref else None
 
     @property
     def endonym(self) -> Optional["LanguageName"]:
