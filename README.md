@@ -163,7 +163,7 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 
 ## Examples
 
-Story-driven Jupyter notebooks in [`examples/`](examples/) walk through the
+Jupyter notebooks in [`examples/`](examples/) walk through the
 full `low` API - from geography and speaker counts to families, scripts, and
 names. Install notebook dependencies with:
 
