@@ -24,6 +24,7 @@ classifiers = [
 dependencies = []
 
 [project.optional-dependencies]
+examples = ["pandas>=2.0", "plotly>=5.0", "matplotlib>=3.7", "nbformat>=4.2.0"]
 bootstrap = ["requests>=2.28"]
 scraper = [
     "requests>=2.31",
@@ -33,7 +34,7 @@ scraper = [
     "tqdm>=4.66",
     "google-genai>=1.0",
 ]
-dev = ["pytest>=7.0", "pytest-cov>=4.0", "requests>=2.28"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0", "requests>=2.28", "pandas>=2.0", "plotly>=5.0", "matplotlib>=3.7"]
 
 [project.scripts]
 low-scraper = "low.scraper.cli:main"

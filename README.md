@@ -1,46 +1,60 @@
-# low — Languages of the World
+# low - Languages of the World
 
 [![CI](https://github.com/your-org/low/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/low/actions/workflows/ci.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
-`low` is a lightweight, read-only Python utility that aggregates and normalises global **language**, **country**, **continent**, **regional**, and **per-country speaker count data** into a connected in-memory object graph.
+`low` is a lightweight, read-only Python utility that aggregates and normalises seven open linguistic datasets — SIL ISO 639-3, UN M49, LinguaMeta, Glottolog, Unicode CLDR, the CIA World Factbook, and Wikidata — into a connected in-memory object graph. Instead of wrapping data behind traditional repository classes, `low` exposes everything through idiomatic Python sequences, smart multi-key lookups, and direct dot-notation object navigation. `low` contains
 
-Instead of wrapping data behind traditional repository classes, `low` exposes everything through idiomatic Python sequences, smart multi-key lookups, and direct dot-notation object navigation.
+- **~7,900 languages** - ISO 639-3 codes, labels, scope (individual / macrolanguage), and optional ISO 639-1 codes
+- **Country assignments** - languages linked to the countries where they are spoken
+- **247 countries** - ISO 3166-1 alpha-2 codes, population, and back-references to spoken languages
+- **5 continents & 17 UN M49 regions** - geographic hierarchy from country up to continent
+- **~4,800 Glottolog family nodes** - navigable parent/child tree with 246 root families
+- **Endangerment status** - Glottolog Agglomerated Endangerment Scale (AES) per language
+- **106 writing systems** - ISO 15924 scripts with primary-script assignment per language
+- **Cross-lingual names** - canonical endonyms and exonyms across languages
+- **Per-country speaker counts** - from CLDR, CIA World Factbook, LinguaMeta, and optional web-scraped data
+- **Global speaker totals** - merged across LinguaMeta and Wikidata
+- **Official language status** - nationally official, regionally official, and de facto official languages per country
+- **Queryable collections** - polymorphic `.get()`, `.filter()`, and indexed access on every entity type
 
-[Installation](#installation)
-[Quick Start](#quick-start)
-[Entity Model](#entity-model)
-  [Language](#language)
-  [Script](#script)
-  [LanguageName](#languagename)
-  [Country](#country)
-  [SpeakerCount](#speakercount)
-  [Region](#region)
-  [Continent](#continent)
-  [LanguageFamily](#languagefamily)
-[Collection Interface](#collection-interface)
-  [`.get(query)` — Polymorphic lookup](#getquery--polymorphic-lookup)
-  [`.filter()` (LanguageCollection only)](#filter-languagecollection-only)
-  [`.roots()` (FamilyCollection only)](#roots-familycollection-only)
-  [SpeakerCountCollection (`db.speaker_counts`)](#speakercountcollection-dbspeaker_counts)
-  [ScriptCollection (`db.scripts`)](#scriptcollection-dbscripts)
-  [LanguageNameCollection (`db.language_names`)](#languagenamecollection-dblanguage_names)
-[Data Provenance](#data-provenance)
-  [SIL International — ISO 639-3](#sil-international--iso-639-3)
-  [UN M49 — ISO-3166-Countries-with-Regional-Codes](#un-m49--iso-3166-countries-with-regional-codes)
-  [Google Research — LinguaMeta](#google-research--linguameta)
-  [Glottolog CLDF](#glottolog-cldf)
-  [Unicode CLDR — supplementalData.xml](#unicode-cldr--supplementaldataxml)
-  [CIA World Factbook — factbook.json](#cia-world-factbook--factbookjson)
-  [Wikidata — SPARQL Query Service](#wikidata--sparql-query-service)
-  [Web-scraped speaker counts (`low-scraper`)](#web-scraped-speaker-counts-low-scraper)
-[Speaker-count scraper (`low-scraper`)](#speaker-count-scraper-low-scraper)
-  [Install](#install)
-  [Workflow](#workflow)
-[Regenerating the Database](#regenerating-the-database)
-[Examples](#examples)
-[Development](#development)
-[License](#license)
+**Table of contents**
+
+- [low - Languages of the World](#low---languages-of-the-world)
+  - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [Examples](#examples)
+  - [Entity Model](#entity-model)
+    - [Language](#language)
+    - [Script](#script)
+    - [LanguageName](#languagename)
+    - [Country](#country)
+    - [SpeakerCount](#speakercount)
+    - [Region](#region)
+    - [Continent](#continent)
+    - [LanguageFamily](#languagefamily)
+  - [Collection Interface](#collection-interface)
+    - [`.get(query)` - Polymorphic lookup](#getquery---polymorphic-lookup)
+    - [`.filter()` (LanguageCollection only)](#filter-languagecollection-only)
+    - [`.roots()` (FamilyCollection only)](#roots-familycollection-only)
+    - [SpeakerCountCollection (`db.speaker_counts`)](#speakercountcollection-dbspeaker_counts)
+    - [ScriptCollection (`db.scripts`)](#scriptcollection-dbscripts)
+    - [LanguageNameCollection (`db.language_names`)](#languagenamecollection-dblanguage_names)
+  - [Data Provenance](#data-provenance)
+    - [SIL International - ISO 639-3](#sil-international---iso-639-3)
+    - [UN M49 - ISO-3166-Countries-with-Regional-Codes](#un-m49---iso-3166-countries-with-regional-codes)
+    - [Google Research - LinguaMeta](#google-research---linguameta)
+    - [Glottolog CLDF](#glottolog-cldf)
+    - [Unicode CLDR - supplementalData.xml](#unicode-cldr---supplementaldataxml)
+    - [CIA World Factbook - factbook.json](#cia-world-factbook---factbookjson)
+    - [Wikidata - SPARQL Query Service](#wikidata---sparql-query-service)
+    - [Web-scraped speaker counts (`low-scraper`)](#web-scraped-speaker-counts-low-scraper)
+  - [Speaker-count scraper (`low-scraper`)](#speaker-count-scraper-low-scraper)
+    - [Install](#install)
+    - [Workflow](#workflow)
+  - [Regenerating the Database](#regenerating-the-database)
+  - [Development](#development)
+  - [License](#license)
 
 
 ## Installation
@@ -71,10 +85,10 @@ db.languages.get("Kinyarwanda") # Label (case-insensitive) → Kinyarwanda
 # Navigate the object graph with dot notation
 lang = db.languages.get("kin")
 for country in lang.countries:
-    print(f"{country.label} — {country.region.label} ({country.continent.label})")
-# Rwanda — Eastern Africa (Africa)
-# DR Congo — Eastern Africa (Africa)
-# Uganda — Eastern Africa (Africa)
+    print(f"{country.label} - {country.region.label} ({country.continent.label})")
+# Rwanda - Eastern Africa (Africa)
+# DR Congo - Eastern Africa (Africa)
+# Uganda - Eastern Africa (Africa)
 
 # Country → back-reference to languages
 rw = db.countries.get("RW")
@@ -112,7 +126,7 @@ print([l.label for l in ch.official_regional_languages])
 print([l.label for l in ch.de_facto_official_languages])
 # e.g. de facto official languages with no formal legal status
 
-# Per-country speaker counts — how many people speak a language in each country
+# Per-country speaker counts - how many people speak a language in each country
 rw = db.countries.get("RW")
 print(f"Rwanda population: {rw.population:,}")
 for sc in rw.speaker_counts:
@@ -145,6 +159,31 @@ db.speaker_counts.by_source("cia")         # all CIA-sourced entries
 db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 ```
 
+---
+
+## Examples
+
+Story-driven Jupyter notebooks in [`examples/`](examples/) walk through the
+full `low` API - from geography and speaker counts to families, scripts, and
+names. Install notebook dependencies with:
+
+```bash
+pip install "languages-of-the-world[examples]"
+```
+
+- **[`01_languages_per_country.ipynb`](examples/01_languages_per_country.ipynb)** - Count languages spoken in each country and map global linguistic diversity as a choropleth and bar chart.
+- **[`02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb)** - Track how many `(country, language)` pairs the optional `low-scraper` resolves per scrape round.
+- **[`03_endangered_languages_by_continent.ipynb`](examples/03_endangered_languages_by_continent.ipynb)** - Map Glottolog endangerment tiers by continent and highlight countries with the most at-risk languages.
+- **[`04_language_families.ipynb`](examples/04_language_families.ipynb)** - Explore the Glottolog family tree: root-family sizes, descendant counts, and a lineage walk for German.
+- **[`05_speaker_source_disagreement.ipynb`](examples/05_speaker_source_disagreement.ipynb)** - Compare CLDR, CIA, and LinguaMeta speaker estimates for the same country–language pairs.
+- **[`06_official_vs_spoken.ipynb`](examples/06_official_vs_spoken.ipynb)** - Find countries where the most-spoken language is not the legally official one.
+- **[`07_endonyms_and_exonyms.ipynb`](examples/07_endonyms_and_exonyms.ipynb)** - Report endonym coverage and build cross-lingual name lookup tables.
+- **[`08_scripts_of_the_world.ipynb`](examples/08_scripts_of_the_world.ipynb)** - Chart how ISO 15924 writing systems are distributed across languages and speaker totals.
+- **[`09_languages_without_borders.ipynb`](examples/09_languages_without_borders.ipynb)** - Rank languages by how many countries they span and map their geographic spread.
+- **[`10_top_languages_by_speakers.ipynb`](examples/10_top_languages_by_speakers.ipynb)** - Rank global speaker totals, explore macrolanguages, and demo `get()` / `filter()`.
+
+---
+
 ## Entity Model
 
 ```
@@ -161,7 +200,7 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 
 | Property | Type | Source | Description |
 |---|---|---|---|
-| `part3` | `str` | SIL ISO 639-3 | ISO 639-3 three-letter code — primary key |
+| `part3` | `str` | SIL ISO 639-3 | ISO 639-3 three-letter code - primary key |
 | `part1` | `Optional[str]` | SIL ISO 639-3 | ISO 639-1 two-letter code (if assigned) |
 | `label` | `str` | SIL ISO 639-3 | Reference name |
 | `scope` | `str` | SIL ISO 639-3 | `"I"` Individual · `"M"` Macrolanguage · `"S"` Special |
@@ -192,7 +231,7 @@ A single canonical name for a language, expressed in some (possibly different) l
 
 | Property | Type | Source | Description |
 |---|---|---|---|
-| `language` | `Language` | — | The language being named |
+| `language` | `Language` | - | The language being named |
 | `name` | `str` | LinguaMeta | The name string (e.g. `"Deutsch"`, `"German"`, `"Allemand"`) |
 | `in_language_bcp47` | `str` | LinguaMeta | BCP 47 code of the language the name is expressed in |
 | `in_language` | `Optional[Language]` | derived | Resolved `Language`, when the BCP 47 base maps to a known ISO 639-3 |
@@ -223,11 +262,11 @@ according to a specific data source. Both `country.speaker_counts` and
 
 | Property | Type | Source | Description |
 |---|---|---|---|
-| `country` | `Country` | — | The country |
-| `language` | `Language` | — | The language |
+| `country` | `Country` | - | The country |
+| `language` | `Language` | - | The language |
 | `speaker_count` | `int` | CLDR / CIA / LinguaMeta / scraped | Estimated number of speakers |
 | `speaker_fraction` | `float` | CLDR / CIA / LinguaMeta / scraped | Share of country population (0.0–1.0; derived from `Country.population` for LinguaMeta and scraped) |
-| `source` | `str` | — | `"cldr"`, `"cia"`, `"linguameta"`, or `"scraped"` |
+| `source` | `str` | - | `"cldr"`, `"cia"`, `"linguameta"`, or `"scraped"` |
 
 ### Region
 
@@ -249,8 +288,8 @@ according to a specific data source. Both `country.speaker_counts` and
 ### LanguageFamily
 
 Represents a node in the [Glottolog](https://glottolog.org/) genealogical
-classification tree.  Every node — from the deepest sub-branch to a top-level
-family like Indo-European — is a `LanguageFamily` instance.
+classification tree.  Every node - from the deepest sub-branch to a top-level
+family like Indo-European - is a `LanguageFamily` instance.
 
 | Property | Type | Source | Description |
 |---|---|---|---|
@@ -274,7 +313,7 @@ db.languages[:5]         # List[Language]
 for lang in db.languages: ...
 ```
 
-### `.get(query)` — Polymorphic lookup
+### `.get(query)` - Polymorphic lookup
 
 | Query pattern | Resolves to |
 |---|---|
@@ -295,7 +334,7 @@ db.languages.filter(label_contains="creole", min_speakers=100_000)
 ### `.roots()` (FamilyCollection only)
 
 ```python
-db.families.roots()   # List[LanguageFamily] — only top-level families
+db.families.roots()   # List[LanguageFamily] - only top-level families
 ```
 
 ### SpeakerCountCollection (`db.speaker_counts`)
@@ -304,19 +343,19 @@ The `SpeakerCount` collection adds three targeted query methods on top of the
 standard sequence protocol:
 
 ```python
-db.speaker_counts.for_country("DE")    # List[SpeakerCount] — all entries for Germany
-db.speaker_counts.for_language("deu")  # List[SpeakerCount] — all entries for German
-db.speaker_counts.by_source("cldr")        # List[SpeakerCount] — CLDR entries only
-db.speaker_counts.by_source("cia")         # List[SpeakerCount] — CIA entries only
-db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] — LinguaMeta entries only
-db.speaker_counts.by_source("scraped")  # List[SpeakerCount] — web-scraped entries only
+db.speaker_counts.for_country("DE")    # List[SpeakerCount] - all entries for Germany
+db.speaker_counts.for_language("deu")  # List[SpeakerCount] - all entries for German
+db.speaker_counts.by_source("cldr")        # List[SpeakerCount] - CLDR entries only
+db.speaker_counts.by_source("cia")         # List[SpeakerCount] - CIA entries only
+db.speaker_counts.by_source("linguameta")  # List[SpeakerCount] - LinguaMeta entries only
+db.speaker_counts.by_source("scraped")  # List[SpeakerCount] - web-scraped entries only
 ```
 
 ### ScriptCollection (`db.scripts`)
 
 ```python
-db.scripts.get("deva")           # Script — by ISO 15924 code
-db.scripts.for_language("hin")   # List[Script] — all scripts for Hindi
+db.scripts.get("deva")           # Script - by ISO 15924 code
+db.scripts.for_language("hin")   # List[Script] - all scripts for Hindi
 ```
 
 ### LanguageNameCollection (`db.language_names`)
@@ -344,12 +383,12 @@ db.languages.get("deu").speaker_counts  # identical to for_language("deu")
 
 ## Data Provenance
 
-`low` integrates six open datasets fetched at build time, plus a committed
+`low` integrates seven open datasets fetched at build time, plus a committed
 web-scraped speaker-count snapshot merged in when present.  The bootstrap pipeline
 (`python -m low.bootstrap`) pulls the upstream sources and bakes the result into
 `src/low/data/low_db.json`.
 
-### [SIL International — ISO 639-3](https://iso639-3.sil.org/)
+### [SIL International - ISO 639-3](https://iso639-3.sil.org/)
 
 **URL:** `https://iso639-3.sil.org/sites/iso639-3/files/downloads/iso-639-3.tab`  
 **Licence:** [SIL Usage](https://www.sil.org/iso639-3/download.asp)  
@@ -367,7 +406,7 @@ Every language in `low` originates here; other sources add extra attributes.
 
 ---
 
-### [UN M49 — ISO-3166-Countries-with-Regional-Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
+### [UN M49 - ISO-3166-Countries-with-Regional-Codes](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes)
 
 **URL:** `https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv`  
 **Licence:** [MIT](https://github.com/lukes/ISO-3166-Countries-with-Regional-Codes/blob/master/LICENSE.md)  
@@ -384,7 +423,7 @@ Countries, regions, and continents are entirely built from this CSV.
 
 ---
 
-### [Google Research — LinguaMeta](https://github.com/google-research/url-nlp/tree/main/linguameta)
+### [Google Research - LinguaMeta](https://github.com/google-research/url-nlp/tree/main/linguameta)
 
 **TSV URL:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/linguameta.tsv`
 **Per-language JSON base:** `https://raw.githubusercontent.com/google-research/url-nlp/main/linguameta/data/<bcp47>.json`
@@ -450,7 +489,7 @@ The bootstrap extracts the last element as the immediate parent, producing the
 full navigable tree.  The production database contains ~4 800 family-level nodes
 and 246 root families.
 
-### [Unicode CLDR — supplementalData.xml](https://github.com/unicode-org/cldr)
+### [Unicode CLDR - supplementalData.xml](https://github.com/unicode-org/cldr)
 
 **URL:** `https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml`  
 **Scripts URL:** `https://raw.githubusercontent.com/unicode-org/cldr/main/common/main/en.xml`  
@@ -464,8 +503,8 @@ and 246 root families.
 | `Country.official_languages` | `languagePopulation[@officialStatus="official"]` |
 | `Country.official_regional_languages` | `languagePopulation[@officialStatus="official_regional"]` |
 | `Country.de_facto_official_languages` | `languagePopulation[@officialStatus="de_facto_official"]` |
-| `SpeakerCount.country` | `<territory type="…">` — ISO 3166-1 alpha-2 |
-| `SpeakerCount.language` | `<languagePopulation type="…">` — BCP 47 tag, mapped to ISO 639-3 |
+| `SpeakerCount.country` | `<territory type="…">` - ISO 3166-1 alpha-2 |
+| `SpeakerCount.language` | `<languagePopulation type="…">` - BCP 47 tag, mapped to ISO 639-3 |
 | `SpeakerCount.speaker_count` | `territory[@population]` × `languagePopulation[@populationPercent]` / 100 |
 | `SpeakerCount.speaker_fraction` | `languagePopulation[@populationPercent]` / 100 |
 | `Script.label` | `en.xml` → `<script type="…">` text (English display name) |
@@ -481,7 +520,7 @@ BCP 47 language tags are normalised to ISO 639-3 codes using the SIL table
 
 ---
 
-### [CIA World Factbook — factbook.json](https://github.com/factbook/factbook.json)
+### [CIA World Factbook - factbook.json](https://github.com/factbook/factbook.json)
 
 **Index URL:** `https://raw.githubusercontent.com/factbook/factbook.json/master/index.json`  
 **Per-country base:** `https://raw.githubusercontent.com/factbook/factbook.json/master/`  
@@ -491,8 +530,8 @@ BCP 47 language tags are normalised to ISO 639-3 codes using the SIL table
 
 | Field | Source path in country JSON |
 |---|---|
-| `SpeakerCount.country` | `Government › Country name › conventional short form` — matched to ISO alpha-2 by label |
-| `SpeakerCount.language` | `People and Society › Languages › language[].name` — matched to ISO 639-3 by label |
+| `SpeakerCount.country` | `Government › Country name › conventional short form` - matched to ISO alpha-2 by label |
+| `SpeakerCount.language` | `People and Society › Languages › language[].name` - matched to ISO 639-3 by label |
 | `SpeakerCount.speaker_count` | country population × language `percent` / 100 |
 | `SpeakerCount.speaker_fraction` | language `percent` / 100 |
 
@@ -501,7 +540,7 @@ section is parsed as a structured list when available or extracted from free tex
 via a percentage regex as fallback.  Language names are matched to ISO 639-3
 codes against the `Language.label` index.
 
-### [Wikidata — SPARQL Query Service](https://query.wikidata.org/)
+### [Wikidata - SPARQL Query Service](https://query.wikidata.org/)
 
 **Endpoint:** `https://query.wikidata.org/sparql`
 **Licence:** [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)
@@ -523,7 +562,7 @@ Merged into `Language.speaker_count` as `max(linguameta, wikidata)`.
 
 ### Web-scraped speaker counts (`low-scraper`)
 
-Unlike the six upstream datasets above, scraped speaker counts are **not fetched
+Unlike the seven upstream datasets above, scraped speaker counts are **not fetched
 during bootstrap**.  They are produced offline by the optional `low-scraper` CLI
 (web search via [serper.dev](https://serper.dev), page fetch, answer extraction
 via **Google Gemini**), committed to the repo, and merged when bootstrap runs.
@@ -543,7 +582,7 @@ via **Google Gemini**), committed to the repo, and merged when bootstrap runs.
 Bootstrap loads `low_scraper_speakers.json` when the file is present and merges
 records into `country_language_speakers` with `source="scraped"`, deduplicating
 on `(country_code, language_code, source)` and keeping the highest speaker count.
-Pairs already covered by CLDR, CIA, or LinguaMeta are not overwritten — scraped
+Pairs already covered by CLDR, CIA, or LinguaMeta are not overwritten - scraped
 data fills **gaps** where no other source reported a per-country count.
 
 For install, CLI workflow, caching, and release notes, see
@@ -551,7 +590,7 @@ For install, CLI workflow, caching, and release notes, see
 
 ## Speaker-count scraper (`low-scraper`)
 
-The optional scraper fills in **missing per-country speaker counts** — country/language
+The optional scraper fills in **missing per-country speaker counts** - country/language
 pairs where `low` knows the language is spoken but has no `SpeakerCount` from CLDR,
 CIA, or LinguaMeta.  See [Data Provenance](#web-scraped-speaker-counts-low-scraper)
 for how scraped records are stored and merged into `low_db.json`.
@@ -580,7 +619,7 @@ python -m low.bootstrap             # optional local preview → low_db.json
 ```
 
 **PyPI releases:** commit `low_scraper_speakers.json` to the repo. The release
-workflow runs `python -m low.bootstrap` and merges this file into `low_db.json` —
+workflow runs `python -m low.bootstrap` and merges this file into `low_db.json` -
 it does **not** run the scraper or call Serper/Gemini (too expensive for CI).
 
 Each round retries **UNKNOWN** pairs with fresh search results. Serper and Gemini
@@ -619,28 +658,6 @@ The bootstrap writes `low_db.json` plus one raw JSON file per upstream source:
 The source files under `src/low/data/sources/` preserve upstream (or scrape) data
 exactly as parsed, before deduplication and ISO-code resolution, so they can be
 used independently.
-
-## Examples
-
-See the [`examples/`](examples/) directory for Jupyter notebooks.
-Install notebook dependencies with:
-
-```bash
-pip install "languages-of-the-world[examples]"
-```
-
-| Notebook | Description |
-|---|---|
-| [`01_languages_per_country.ipynb`](examples/01_languages_per_country.ipynb) | World choropleth map — number of languages per country |
-| [`02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) | Scraper per-round resolution rate analysis |
-| [`03_endangered_languages_by_continent.ipynb`](examples/03_endangered_languages_by_continent.ipynb) | At-risk languages by continent and endangerment tier |
-| [`04_language_families.ipynb`](examples/04_language_families.ipynb) | Glottolog family tree — roots, lineage, and language counts |
-| [`05_speaker_source_disagreement.ipynb`](examples/05_speaker_source_disagreement.ipynb) | CLDR vs CIA speaker-count comparison per country |
-| [`06_official_vs_spoken.ipynb`](examples/06_official_vs_spoken.ipynb) | Official language status vs most-spoken language |
-| [`07_endonyms_and_exonyms.ipynb`](examples/07_endonyms_and_exonyms.ipynb) | Endonym coverage and cross-lingual name lookup |
-| [`08_scripts_of_the_world.ipynb`](examples/08_scripts_of_the_world.ipynb) | Writing-system distribution weighted by speakers |
-| [`09_languages_without_borders.ipynb`](examples/09_languages_without_borders.ipynb) | Cross-border languages and continental spread |
-| [`10_top_languages_by_speakers.ipynb`](examples/10_top_languages_by_speakers.ipynb) | Top languages by global speaker count and ISO scope |
 
 ## Development
 
