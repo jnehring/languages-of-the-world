@@ -7,7 +7,41 @@
 
 Instead of wrapping data behind traditional repository classes, `low` exposes everything through idiomatic Python sequences, smart multi-key lookups, and direct dot-notation object navigation.
 
----
+[Installation](#installation)
+[Quick Start](#quick-start)
+[Entity Model](#entity-model)
+  [Language](#language)
+  [Script](#script)
+  [LanguageName](#languagename)
+  [Country](#country)
+  [SpeakerCount](#speakercount)
+  [Region](#region)
+  [Continent](#continent)
+  [LanguageFamily](#languagefamily)
+[Collection Interface](#collection-interface)
+  [`.get(query)` — Polymorphic lookup](#getquery--polymorphic-lookup)
+  [`.filter()` (LanguageCollection only)](#filter-languagecollection-only)
+  [`.roots()` (FamilyCollection only)](#roots-familycollection-only)
+  [SpeakerCountCollection (`db.speaker_counts`)](#speakercountcollection-dbspeaker_counts)
+  [ScriptCollection (`db.scripts`)](#scriptcollection-dbscripts)
+  [LanguageNameCollection (`db.language_names`)](#languagenamecollection-dblanguage_names)
+[Data Provenance](#data-provenance)
+  [SIL International — ISO 639-3](#sil-international--iso-639-3)
+  [UN M49 — ISO-3166-Countries-with-Regional-Codes](#un-m49--iso-3166-countries-with-regional-codes)
+  [Google Research — LinguaMeta](#google-research--linguameta)
+  [Glottolog CLDF](#glottolog-cldf)
+  [Unicode CLDR — supplementalData.xml](#unicode-cldr--supplementaldataxml)
+  [CIA World Factbook — factbook.json](#cia-world-factbook--factbookjson)
+  [Wikidata — SPARQL Query Service](#wikidata--sparql-query-service)
+  [Web-scraped speaker counts (`low-scraper`)](#web-scraped-speaker-counts-low-scraper)
+[Speaker-count scraper (`low-scraper`)](#speaker-count-scraper-low-scraper)
+  [Install](#install)
+  [Workflow](#workflow)
+[Regenerating the Database](#regenerating-the-database)
+[Examples](#examples)
+[Development](#development)
+[License](#license)
+
 
 ## Installation
 
@@ -110,8 +144,6 @@ db.speaker_counts.by_source("cldr")        # all CLDR-sourced entries
 db.speaker_counts.by_source("cia")         # all CIA-sourced entries
 db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 ```
-
----
 
 ## Entity Model
 
@@ -231,8 +263,6 @@ family like Indo-European — is a `LanguageFamily` instance.
 | `ancestors` | `List[LanguageFamily]` *(property)* | derived | Ordered list parent → root |
 | `depth` | `int` *(property)* | derived | Depth in tree (0 = root family) |
 
----
-
 ## Collection Interface
 
 Every entity collection (`db.languages`, `db.countries`, `db.continents`, `db.regions`, `db.families`, `db.scripts`, `db.speaker_counts`, `db.language_names`) implements the Python sequence protocol:
@@ -312,12 +342,12 @@ db.countries.get("DE").speaker_counts   # identical to for_country("DE")
 db.languages.get("deu").speaker_counts  # identical to for_language("deu")
 ```
 
----
-
 ## Data Provenance
 
-`low` integrates six open datasets.  The bootstrap pipeline (`python -m low.bootstrap`)
-fetches them at build time and bakes the result into `src/low/data/low_db.json`.
+`low` integrates six open datasets fetched at build time, plus a committed
+web-scraped speaker-count snapshot merged in when present.  The bootstrap pipeline
+(`python -m low.bootstrap`) pulls the upstream sources and bakes the result into
+`src/low/data/low_db.json`.
 
 ### [SIL International — ISO 639-3](https://iso639-3.sil.org/)
 
@@ -376,7 +406,9 @@ Countries, regions, and continents are entirely built from this CSV.
 | `LanguageName.source` | `name_data[].source` (e.g. `"CLDR"`, `"GOOGLE_RESEARCH"`) |
 | `Script.code` | `language_script_locale[].script.iso_15924_code` |
 | `Language.scripts` | all distinct scripts per language from `language_script_locale` |
-| `Script.label` | Unicode CLDR `en.xml` (English) |
+
+Script **codes** come from LinguaMeta; English **labels** are resolved from
+[Unicode CLDR `en.xml`](#unicode-cldr--supplementaldataxml) at bootstrap time (see below).
 
 The TSV is the authoritative table for the global per-language total
 (`estimated_number_of_speakers`, order-of-magnitude rounded). Multiple BCP-47
@@ -418,8 +450,6 @@ The bootstrap extracts the last element as the immediate parent, producing the
 full navigable tree.  The production database contains ~4 800 family-level nodes
 and 246 root families.
 
----
-
 ### [Unicode CLDR — supplementalData.xml](https://github.com/unicode-org/cldr)
 
 **URL:** `https://raw.githubusercontent.com/unicode-org/cldr/main/common/supplemental/supplementalData.xml`  
@@ -438,6 +468,7 @@ and 246 root families.
 | `SpeakerCount.language` | `<languagePopulation type="…">` — BCP 47 tag, mapped to ISO 639-3 |
 | `SpeakerCount.speaker_count` | `territory[@population]` × `languagePopulation[@populationPercent]` / 100 |
 | `SpeakerCount.speaker_fraction` | `languagePopulation[@populationPercent]` / 100 |
+| `Script.label` | `en.xml` → `<script type="…">` text (English display name) |
 
 Each `<territory>` element carries the total population and a list of
 `<languagePopulation>` children with `populationPercent` and optional
@@ -470,8 +501,6 @@ section is parsed as a structured list when available or extracted from free tex
 via a percentage regex as fallback.  Language names are matched to ISO 639-3
 codes against the `Language.label` index.
 
----
-
 ### [Wikidata — SPARQL Query Service](https://query.wikidata.org/)
 
 **Endpoint:** `https://query.wikidata.org/sparql`
@@ -492,12 +521,40 @@ Merged into `Language.speaker_count` as `max(linguameta, wikidata)`.
 
 ---
 
+### Web-scraped speaker counts (`low-scraper`)
+
+Unlike the six upstream datasets above, scraped speaker counts are **not fetched
+during bootstrap**.  They are produced offline by the optional `low-scraper` CLI
+(web search via [serper.dev](https://serper.dev), page fetch, answer extraction
+via **Google Gemini**), committed to the repo, and merged when bootstrap runs.
+
+**Raw output:** `src/low/data/sources/low_scraper_speakers.json`  
+**Licence:** derived from web pages retrieved at scrape time (no single upstream licence)  
+**Fields provided:**
+
+| Field | Source |
+|---|---|
+| `SpeakerCount.country` | ISO 3166-1 alpha-2 from the scraped task |
+| `SpeakerCount.language` | ISO 639-3 from the scraped task |
+| `SpeakerCount.speaker_count` | LLM-extracted integer from aggregated scrape rounds |
+| `SpeakerCount.speaker_fraction` | `speaker_count / Country.population` (CLDR-sourced population) |
+| `SpeakerCount.source` | always `"scraped"` |
+
+Bootstrap loads `low_scraper_speakers.json` when the file is present and merges
+records into `country_language_speakers` with `source="scraped"`, deduplicating
+on `(country_code, language_code, source)` and keeping the highest speaker count.
+Pairs already covered by CLDR, CIA, or LinguaMeta are not overwritten — scraped
+data fills **gaps** where no other source reported a per-country count.
+
+For install, CLI workflow, caching, and release notes, see
+[Speaker-count scraper (`low-scraper`)](#speaker-count-scraper-low-scraper) below.
+
 ## Speaker-count scraper (`low-scraper`)
 
 The optional scraper fills in **missing per-country speaker counts** — country/language
 pairs where `low` knows the language is spoken but has no `SpeakerCount` from CLDR,
-CIA, or LinguaMeta. It searches the web via [serper.dev](https://serper.dev),
-downloads pages, extracts answers with **Google Gemini**, and writes aggregated JSON.
+CIA, or LinguaMeta.  See [Data Provenance](#web-scraped-speaker-counts-low-scraper)
+for how scraped records are stored and merged into `low_db.json`.
 
 ### Install
 
@@ -546,33 +603,44 @@ pip install "low[bootstrap]"
 python -m low.bootstrap
 ```
 
-The bootstrap writes three files:
+The bootstrap writes `low_db.json` plus one raw JSON file per upstream source:
 
 | File | Contents |
 |---|---|
-| `src/low/data/low_db.json` | Merged, deduplicated graph database (includes `country_official_languages` section) |
+| `src/low/data/low_db.json` | Merged, deduplicated graph database |
 | `src/low/data/sources/cldr_speakers.json` | Raw CLDR per-territory language population records (includes `official_status` field) |
 | `src/low/data/sources/cia_speakers.json` | Raw CIA World Factbook per-country language records |
 | `src/low/data/sources/linguameta_speakers.json` | Raw LinguaMeta per-locale speaker-count records |
 | `src/low/data/sources/linguameta_names.json` | Raw LinguaMeta canonical language-name records |
+| `src/low/data/sources/linguameta_scripts.json` | Raw LinguaMeta language–script association records |
 | `src/low/data/sources/wikidata_speakers.json` | Raw Wikidata SPARQL global speaker-count records |
-| `src/low/data/sources/low_scraper_speakers.json` | Normalized web-scraped per-country speaker counts |
+| `src/low/data/sources/low_scraper_speakers.json` | Normalized web-scraped per-country speaker counts (committed separately; not re-fetched by bootstrap) |
 
-The two source files preserve the original data exactly as parsed, before
-deduplication and ISO-code resolution, so they can be used independently.
-
----
+The source files under `src/low/data/sources/` preserve upstream (or scrape) data
+exactly as parsed, before deduplication and ISO-code resolution, so they can be
+used independently.
 
 ## Examples
 
-See the [`examples/`](examples/) directory for Jupyter notebooks:
+See the [`examples/`](examples/) directory for Jupyter notebooks.
+Install notebook dependencies with:
+
+```bash
+pip install "languages-of-the-world[examples]"
+```
 
 | Notebook | Description |
 |---|---|
 | [`01_languages_per_country.ipynb`](examples/01_languages_per_country.ipynb) | World choropleth map — number of languages per country |
 | [`02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb) | Scraper per-round resolution rate analysis |
-
----
+| [`03_endangered_languages_by_continent.ipynb`](examples/03_endangered_languages_by_continent.ipynb) | At-risk languages by continent and endangerment tier |
+| [`04_language_families.ipynb`](examples/04_language_families.ipynb) | Glottolog family tree — roots, lineage, and language counts |
+| [`05_speaker_source_disagreement.ipynb`](examples/05_speaker_source_disagreement.ipynb) | CLDR vs CIA speaker-count comparison per country |
+| [`06_official_vs_spoken.ipynb`](examples/06_official_vs_spoken.ipynb) | Official language status vs most-spoken language |
+| [`07_endonyms_and_exonyms.ipynb`](examples/07_endonyms_and_exonyms.ipynb) | Endonym coverage and cross-lingual name lookup |
+| [`08_scripts_of_the_world.ipynb`](examples/08_scripts_of_the_world.ipynb) | Writing-system distribution weighted by speakers |
+| [`09_languages_without_borders.ipynb`](examples/09_languages_without_borders.ipynb) | Cross-border languages and continental spread |
+| [`10_top_languages_by_speakers.ipynb`](examples/10_top_languages_by_speakers.ipynb) | Top languages by global speaker count and ISO scope |
 
 ## Development
 
