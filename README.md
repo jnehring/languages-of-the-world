@@ -16,7 +16,6 @@
 - **Per-country speaker counts** - from CLDR, CIA World Factbook, LinguaMeta, and optional web-scraped data
 - **Global speaker totals** - merged across LinguaMeta and Wikidata
 - **Official language status** - nationally official, regionally official, and de facto official languages per country
-- **Queryable collections** - polymorphic `.get()`, `.filter()`, and indexed access on every entity type
 
 **Table of contents**
 
