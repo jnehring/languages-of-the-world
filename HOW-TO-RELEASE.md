@@ -46,16 +46,17 @@ For `pypi`, optionally add a required reviewer so production publishes require m
 
 ### Standard release (production PyPI)
 
+The **git tag is the source of truth** for the published version. Tag names must start with `v` (e.g. `v0.2.0`); the workflow strips the prefix and writes `0.2.0` into [`pyproject.toml`](pyproject.toml) and [`src/low/__init__.py`](src/low/__init__.py) before building. You do not need to bump those files before tagging — though updating them on `main` after a release keeps local installs and CI in sync with what is on PyPI.
+
 1. Make sure `main` is green on CI.
-2. Bump the version in [`pyproject.toml`](pyproject.toml) (`project.version`).
-3. Commit: `git commit -am "Release vX.Y.Z"`.
-4. Tag and push:
+2. Tag and push:
    ```bash
    git tag vX.Y.Z
-   git push origin main --tags
+   git push origin vX.Y.Z
    ```
-5. The `Release` workflow fires automatically on the `v*` tag. Watch it in the Actions tab.
-6. When the `publish-pypi` job finishes, verify on [pypi.org/project/languages-of-the-world](https://pypi.org/project/languages-of-the-world/) and install:
+3. *(Optional)* Create a GitHub release for the tag (e.g. tag `v0.2.0`, title `0.2.0`). This is cosmetic; the workflow is triggered by the tag push, not the release.
+4. The `Release` workflow fires automatically on the `v*` tag. Watch it in the Actions tab.
+5. When the `publish-pypi` job finishes, verify on [pypi.org/project/languages-of-the-world](https://pypi.org/project/languages-of-the-world/) and install:
    ```bash
    pip install --upgrade languages-of-the-world
    python -c "import low; db = low.LanguagesOfTheWorld(); print(len(db.languages), 'languages')"
@@ -64,6 +65,8 @@ For `pypi`, optionally add a required reviewer so production publishes require m
 ### Dry-run via TestPyPI
 
 Use this for the first release or any time you want to validate the pipeline without polluting PyPI.
+
+Manual runs do **not** read a tag — they use whatever `version` is already in `pyproject.toml` on the selected branch.
 
 1. In GitHub → *Actions* → *Release* → *Run workflow*.
 2. Pick branch (`main`), set **Publish target** to `testpypi`, click *Run*.
@@ -87,7 +90,8 @@ If you need to re-publish without cutting a new tag (rare — versions are immut
 ## What the Workflow Does
 
 1. **build job**
-   - Checks out the tag.
+   - Checks out the tag (or branch, for manual runs).
+   - **Tag releases only:** derives the version from the tag name (`v0.2.0` → `0.2.0`) and writes it to `pyproject.toml` and `src/low/__init__.py`.
    - Installs `.[bootstrap]` (gets the bootstrap dependencies) and `build`.
    - Verifies `src/low/data/sources/low_scraper_speakers.json` exists (committed scraped data — **not** fetched from the web).
    - Runs `python -m low.bootstrap` to regenerate `src/low/data/low_db.json` and the raw source files in `src/low/data/sources/` from upstream (SIL, UN M49, LinguaMeta, Glottolog, CLDR, CIA Factbook, Wikidata), **plus** the committed scraped speaker file.
@@ -128,6 +132,13 @@ Working files under `scraper-data/` are gitignored and are **not** used by boots
 ---
 
 ## Versioning
+
+| Trigger | Version source |
+|---|---|
+| Tag push (`v*`) | Tag name without the `v` prefix (e.g. `v0.2.0` → `0.2.0`) |
+| Manual workflow dispatch | `project.version` in `pyproject.toml` on the selected branch |
+
+After a production release, consider bumping `pyproject.toml` and `src/low/__init__.py` on `main` so the repo reflects the latest shipped version. The CI-only update during a tag build is not committed back to git.
 
 This project follows [SemVer](https://semver.org/):
 
