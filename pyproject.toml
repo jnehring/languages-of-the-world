@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "languages-of-the-world"
-version = "0.1.0"
+version = "0.2.0"
 description = "Languages of the World — an in-memory object graph for language, country, continent, and regional data"
 readme = "README.md"
 license = { text = "MIT" }
