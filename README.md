@@ -3,6 +3,8 @@
 [![CI](https://github.com/your-org/low/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/low/actions/workflows/ci.yml)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
+<img src="https://github.com/jnehring/languages-of-the-world/blob/main/images/low-logo-small.jpeg" width="250" style="float:left">
+
 `low` is a lightweight, read-only Python utility that aggregates and normalises seven open linguistic datasets — SIL ISO 639-3, UN M49, LinguaMeta, Glottolog, Unicode CLDR, the CIA World Factbook, and Wikidata — into a connected in-memory object graph. Instead of wrapping data behind traditional repository classes, `low` exposes everything through idiomatic Python sequences, smart multi-key lookups, and direct dot-notation object navigation. `low` contains
 
 - **~7,900 languages** - ISO 639-3 codes, labels, scope (individual / macrolanguage), and optional ISO 639-1 codes
