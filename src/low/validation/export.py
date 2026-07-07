@@ -598,7 +598,7 @@ def export_annotation_bundle(
         encoding="utf-8",
     )
 
-    guide_src = Path(__file__).resolve().parents[3] / "annotation" / "ANNOTATOR_GUIDE.md"
+    guide_src = Path(__file__).parent / "ANNOTATOR_GUIDE.md"
     guide_dst = output_dir / "ANNOTATOR_GUIDE.md"
     if guide_src.exists() and guide_src.resolve() != guide_dst.resolve():
         shutil.copy2(guide_src, guide_dst)
