@@ -25,6 +25,7 @@ dependencies = []
 
 [project.optional-dependencies]
 examples = ["pandas>=2.0", "plotly>=5.0", "matplotlib>=3.7", "nbformat>=4.2.0"]
+validation = ["pandas>=2.0", "click>=8.1", "openpyxl>=3.1"]
 bootstrap = ["requests>=2.28"]
 scraper = [
     "requests>=2.31",
@@ -38,6 +39,7 @@ dev = ["pytest>=7.0", "pytest-cov>=4.0", "requests>=2.28", "pandas>=2.0", "plotl
 
 [project.scripts]
 low-scraper = "low.scraper.cli:main"
+low-validate = "low.validation.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/low"]
