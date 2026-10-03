@@ -23,6 +23,13 @@ classifiers = [
 ]
 dependencies = []
 
+[project.urls]
+Homepage = "https://github.com/jnehring/languages-of-the-world"
+Repository = "https://github.com/jnehring/languages-of-the-world"
+Documentation = "https://github.com/jnehring/languages-of-the-world#readme"
+Issues = "https://github.com/jnehring/languages-of-the-world/issues"
+Examples = "https://github.com/jnehring/languages-of-the-world/tree/main/examples"
+
 [project.optional-dependencies]
 examples = ["pandas>=2.0", "plotly>=5.0", "matplotlib>=3.7", "nbformat>=4.2.0"]
 validation = ["pandas>=2.0", "click>=8.1", "openpyxl>=3.1"]

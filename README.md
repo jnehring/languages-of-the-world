@@ -1,9 +1,11 @@
 # low - Languages of the World
 
-[![CI](https://github.com/your-org/low/actions/workflows/ci.yml/badge.svg)](https://github.com/your-org/low/actions/workflows/ci.yml)
+[![CI](https://github.com/jnehring/languages-of-the-world/actions/workflows/ci.yml/badge.svg)](https://github.com/jnehring/languages-of-the-world/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/languages-of-the-world.svg)](https://pypi.org/project/languages-of-the-world/)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/jnehring/languages-of-the-world/blob/main/LICENSE)
 
-<img src="https://github.com/jnehring/languages-of-the-world/blob/main/images/low-logo-small.jpeg" width="250" style="float:left">
+<img src="https://raw.githubusercontent.com/jnehring/languages-of-the-world/main/low-logo-small.jpeg" alt="low logo" width="250">
 
 `low` is a lightweight, read-only Python utility that aggregates and normalises seven open linguistic datasets — SIL ISO 639-3, UN M49, LinguaMeta, Glottolog, Unicode CLDR, the CIA World Factbook, and Wikidata — into a connected in-memory object graph. Instead of wrapping data behind traditional repository classes, `low` exposes everything through idiomatic Python sequences, smart multi-key lookups, and direct dot-notation object navigation. `low` contains
 
@@ -21,38 +23,37 @@
 
 **Table of contents**
 
-- [low - Languages of the World](#low---languages-of-the-world)
-  - [Installation](#installation)
-  - [Quick Start](#quick-start)
-  - [Examples](#examples)
-  - [Entity Model](#entity-model)
-    - [Language](#language)
-    - [Script](#script)
-    - [LanguageName](#languagename)
-    - [Country](#country)
-    - [SpeakerCount](#speakercount)
-    - [Region](#region)
-    - [Continent](#continent)
-    - [LanguageFamily](#languagefamily)
-  - [Collection Interface](#collection-interface)
-    - [`.get(query)` - Polymorphic lookup](#getquery---polymorphic-lookup)
-    - [`.filter()` (LanguageCollection only)](#filter-languagecollection-only)
-    - [`.roots()` (FamilyCollection only)](#roots-familycollection-only)
-    - [SpeakerCountCollection (`db.speaker_counts`)](#speakercountcollection-dbspeaker_counts)
-    - [ScriptCollection (`db.scripts`)](#scriptcollection-dbscripts)
-    - [LanguageNameCollection (`db.language_names`)](#languagenamecollection-dblanguage_names)
-  - [Data Provenance](#data-provenance)
-    - [SIL International - ISO 639-3](#sil-international---iso-639-3)
-    - [UN M49 - ISO-3166-Countries-with-Regional-Codes](#un-m49---iso-3166-countries-with-regional-codes)
-    - [Google Research - LinguaMeta](#google-research---linguameta)
-    - [Glottolog CLDF](#glottolog-cldf)
-    - [Unicode CLDR - supplementalData.xml](#unicode-cldr---supplementaldataxml)
-    - [CIA World Factbook - factbook.json](#cia-world-factbook---factbookjson)
-    - [Wikidata - SPARQL Query Service](#wikidata---sparql-query-service)
-    - [Web-scraped speaker counts (`low-scraper`)](#web-scraped-speaker-counts-low-scraper)
-  - [Regenerating the Database](#regenerating-the-database)
-  - [Additional documentation](#additional-documentation)
-  - [License](#license)
+**[Installation](#installation)**\
+**[Quick Start](#quick-start)**\
+**[Examples](#examples)**\
+**[Entity Model](#entity-model)**\
+&emsp;&emsp;[Language](#language)\
+&emsp;&emsp;[Script](#script)\
+&emsp;&emsp;[LanguageName](#languagename)\
+&emsp;&emsp;[Country](#country)\
+&emsp;&emsp;[SpeakerCount](#speakercount)\
+&emsp;&emsp;[Region](#region)\
+&emsp;&emsp;[Continent](#continent)\
+&emsp;&emsp;[LanguageFamily](#languagefamily)\
+**[Collection Interface](#collection-interface)**\
+&emsp;&emsp;[`.get(query)` - Polymorphic lookup](#getquery---polymorphic-lookup)\
+&emsp;&emsp;[`.filter()` (LanguageCollection only)](#filter-languagecollection-only)\
+&emsp;&emsp;[`.roots()` (FamilyCollection only)](#roots-familycollection-only)\
+&emsp;&emsp;[SpeakerCountCollection (`db.speaker_counts`)](#speakercountcollection-dbspeaker_counts)\
+&emsp;&emsp;[ScriptCollection (`db.scripts`)](#scriptcollection-dbscripts)\
+&emsp;&emsp;[LanguageNameCollection (`db.language_names`)](#languagenamecollection-dblanguage_names)\
+**[Data Provenance](#data-provenance)**\
+&emsp;&emsp;[SIL International - ISO 639-3](#sil-international---iso-639-3)\
+&emsp;&emsp;[UN M49 - ISO-3166-Countries-with-Regional-Codes](#un-m49---iso-3166-countries-with-regional-codes)\
+&emsp;&emsp;[Google Research - LinguaMeta](#google-research---linguameta)\
+&emsp;&emsp;[Glottolog CLDF](#glottolog-cldf)\
+&emsp;&emsp;[Unicode CLDR - supplementalData.xml](#unicode-cldr---supplementaldataxml)\
+&emsp;&emsp;[CIA World Factbook - factbook.json](#cia-world-factbook---factbookjson)\
+&emsp;&emsp;[Wikidata - SPARQL Query Service](#wikidata---sparql-query-service)\
+&emsp;&emsp;[Web-scraped speaker counts (`low-scraper`)](#web-scraped-speaker-counts-low-scraper)\
+**[Regenerating the Database](#regenerating-the-database)**\
+**[Additional documentation](#additional-documentation)**\
+**[License](#license)**
 
 
 ## Installation
@@ -161,7 +162,7 @@ db.speaker_counts.by_source("linguameta")  # all LinguaMeta-sourced entries
 
 ## Examples
 
-Jupyter notebooks in [`examples/`](examples/) walk through the
+Jupyter notebooks in [`examples/`](https://github.com/jnehring/languages-of-the-world/tree/main/examples) walk through the
 full `low` API - from geography and speaker counts to families, scripts, and
 names. Install notebook dependencies with:
 
@@ -169,16 +170,16 @@ names. Install notebook dependencies with:
 pip install "languages-of-the-world[examples]"
 ```
 
-- **[`01_languages_per_country.ipynb`](examples/01_languages_per_country.ipynb)** - Count languages spoken in each country and map global linguistic diversity as a choropleth and bar chart.
-- **[`02_scraper_analysis.ipynb`](examples/02_scraper_analysis.ipynb)** - Track how many `(country, language)` pairs the optional `low-scraper` resolves per scrape round.
-- **[`03_endangered_languages_by_continent.ipynb`](examples/03_endangered_languages_by_continent.ipynb)** - Map Glottolog endangerment tiers by continent and highlight countries with the most at-risk languages.
-- **[`04_language_families.ipynb`](examples/04_language_families.ipynb)** - Explore the Glottolog family tree: root-family sizes, descendant counts, and a lineage walk for German.
-- **[`05_speaker_source_disagreement.ipynb`](examples/05_speaker_source_disagreement.ipynb)** - Compare CLDR, CIA, and LinguaMeta speaker estimates for the same country–language pairs.
-- **[`06_official_vs_spoken.ipynb`](examples/06_official_vs_spoken.ipynb)** - Find countries where the most-spoken language is not the legally official one.
-- **[`07_endonyms_and_exonyms.ipynb`](examples/07_endonyms_and_exonyms.ipynb)** - Report endonym coverage and build cross-lingual name lookup tables.
-- **[`08_scripts_of_the_world.ipynb`](examples/08_scripts_of_the_world.ipynb)** - Chart how ISO 15924 writing systems are distributed across languages and speaker totals.
-- **[`09_languages_without_borders.ipynb`](examples/09_languages_without_borders.ipynb)** - Rank languages by how many countries they span and map their geographic spread.
-- **[`10_top_languages_by_speakers.ipynb`](examples/10_top_languages_by_speakers.ipynb)** - Rank global speaker totals, explore macrolanguages, and demo `get()` / `filter()`.
+- **[`01_languages_per_country.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/01_languages_per_country.ipynb)** - Count languages spoken in each country and map global linguistic diversity as a choropleth and bar chart.
+- **[`02_scraper_analysis.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/02_scraper_analysis.ipynb)** - Track how many `(country, language)` pairs the optional `low-scraper` resolves per scrape round.
+- **[`03_endangered_languages_by_continent.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/03_endangered_languages_by_continent.ipynb)** - Map Glottolog endangerment tiers by continent and highlight countries with the most at-risk languages.
+- **[`04_language_families.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/04_language_families.ipynb)** - Explore the Glottolog family tree: root-family sizes, descendant counts, and a lineage walk for German.
+- **[`05_speaker_source_disagreement.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/05_speaker_source_disagreement.ipynb)** - Compare CLDR, CIA, and LinguaMeta speaker estimates for the same country–language pairs.
+- **[`06_official_vs_spoken.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/06_official_vs_spoken.ipynb)** - Find countries where the most-spoken language is not the legally official one.
+- **[`07_endonyms_and_exonyms.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/07_endonyms_and_exonyms.ipynb)** - Report endonym coverage and build cross-lingual name lookup tables.
+- **[`08_scripts_of_the_world.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/08_scripts_of_the_world.ipynb)** - Chart how ISO 15924 writing systems are distributed across languages and speaker totals.
+- **[`09_languages_without_borders.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/09_languages_without_borders.ipynb)** - Rank languages by how many countries they span and map their geographic spread.
+- **[`10_top_languages_by_speakers.ipynb`](https://github.com/jnehring/languages-of-the-world/blob/main/examples/10_top_languages_by_speakers.ipynb)** - Rank global speaker totals, explore macrolanguages, and demo `get()` / `filter()`.
 
 ---
 
@@ -562,7 +563,7 @@ Merged into `Language.speaker_count` as `max(linguameta, wikidata)`.
 
 An optional eighth data source: web-scraped per-country speaker counts produced by the
 `low-scraper` CLI and merged at bootstrap time from a committed JSON file. See
-[`doc/WEB_SCRAPER.md`](doc/WEB_SCRAPER.md) for provenance, install, and workflow.
+[`doc/WEB_SCRAPER.md`](https://github.com/jnehring/languages-of-the-world/blob/main/doc/WEB_SCRAPER.md) for provenance, install, and workflow.
 
 ---
 
@@ -571,7 +572,7 @@ An optional eighth data source: web-scraped per-country speaker counts produced 
 The baked JSON (`src/low/data/low_db.json`) is shipped with the package. To re-pull from upstream sources (requires internet access):
 
 ```bash
-pip install "low[bootstrap]"
+pip install "languages-of-the-world[bootstrap]"
 python -m low.bootstrap
 ```
 
@@ -596,10 +597,12 @@ used independently.
 
 | Document | Description |
 |---|---|
-| [`doc/WEB_SCRAPER.md`](doc/WEB_SCRAPER.md) | Install and run `low-scraper` to fill missing per-country speaker counts; data provenance and merge behaviour |
-| [`doc/HOW-TO-RELEASE.md`](doc/HOW-TO-RELEASE.md) | One-time PyPI setup and step-by-step guide for cutting a release |
-| [`doc/GITHUB_WORKFLOWS.md`](doc/GITHUB_WORKFLOWS.md) | What the CI and release GitHub Actions workflows do |
+| [`doc/WEB_SCRAPER.md`](https://github.com/jnehring/languages-of-the-world/blob/main/doc/WEB_SCRAPER.md) | Install and run `low-scraper` to fill missing per-country speaker counts; data provenance and merge behaviour |
+| [`doc/HOW-TO-RELEASE.md`](https://github.com/jnehring/languages-of-the-world/blob/main/doc/HOW-TO-RELEASE.md) | One-time PyPI setup and step-by-step guide for cutting a release |
+| [`doc/GITHUB_WORKFLOWS.md`](https://github.com/jnehring/languages-of-the-world/blob/main/doc/GITHUB_WORKFLOWS.md) | What the CI and release GitHub Actions workflows do |
 
 ## License
 
-MIT
+The `low` source code is released under the [MIT License](https://github.com/jnehring/languages-of-the-world/blob/main/LICENSE).
+
+The bundled data in `src/low/data/` is derived from third-party datasets and remains subject to their original licences: SIL ISO 639-3 ([SIL terms of use](https://www.sil.org/iso639-3/download.asp)), LinguaMeta and Glottolog ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)), Unicode CLDR ([Unicode License v3](https://www.unicode.org/license.txt)), ISO-3166-Countries-with-Regional-Codes (MIT), CIA World Factbook (public domain) and Wikidata ([CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)). If you redistribute the data, please credit the upstream sources as listed in [Data Provenance](#data-provenance).
