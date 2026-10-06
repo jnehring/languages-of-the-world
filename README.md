@@ -69,88 +69,114 @@ pip install languages-of-the-world
 ```python
 import low
 
-# Initialise the graph (~7900 languages, 247 countries, 4800+ family tree nodes)
+# Load the bundled database (~7,900 languages, 247 countries, 4,800+ family tree nodes) into memory
 db = low.LanguagesOfTheWorld()
 
-# Slice like a list
+# Take the first ten languages and count all languages, just like with a Python list
 first_ten = db.languages[:10]
 total     = len(db.languages)
 
-# Polymorphic single-key lookup
+# Look up Kinyarwanda by its ISO 639-1 code, ISO 639-3 code, Glottolog code, or name
 db.languages.get("rw")          # ISO 639-1 (2-char)  → Kinyarwanda
 db.languages.get("kin")         # ISO 639-3 (3-char)  → Kinyarwanda
+db.languages.get("kiny1244")    # Glottolog code      → Kinyarwanda
 db.languages.get("Kinyarwanda") # Label (case-insensitive) → Kinyarwanda
 
-# Navigate the object graph with dot notation
+# Print every country where Kinyarwanda is spoken, with the country's region and continent
 lang = db.languages.get("kin")
 for country in lang.countries:
     print(f"{country.label} - {country.region.label} ({country.continent.label})")
-# Rwanda - Eastern Africa (Africa)
-# DR Congo - Eastern Africa (Africa)
-# Uganda - Eastern Africa (Africa)
+# Rwanda - Sub-Saharan Africa (Africa)
 
-# Country → back-reference to languages
+# Print every language spoken in Rwanda
 rw = db.countries.get("RW")
 for l in rw.languages:
     print(l.label)
+# English
+# French
+# Kinyarwanda
+# Swahili (individual language)
+# Swahili (macrolanguage)
 
-# Filter by partial name or minimum speakers
+# Find all languages with at least 50 million speakers, and all languages whose name contains "Portug"
 popular = db.languages.filter(min_speakers=50_000_000)
 romance = db.languages.filter(label_contains="Portug")
 
-# Glottolog endangerment status
+# Print the endangerment status of Kinyarwanda and Dolgan, then collect all nearly extinct or moribund languages
 print(db.languages.get("kin").endangerment)   # 'not_endangered'
-print(db.languages.get("dlg").endangerment)   # 'moribund'  (Dolgan)
+print(db.languages.get("dlg").endangerment)   # 'shifting'  (Dolgan)
 at_risk = [l for l in db.languages
            if l.endangerment in {"nearly_extinct", "moribund"}]
 
-# Walk the Glottolog language family tree
+# Print German's Glottolog family lineage, from its immediate parent up to the root family
 deu = db.languages.get("deu")
 node = deu.family
 while node:
     print("  " * node.depth + node.label)
     node = node.parent
-# Standard German's Glottolog lineage, leaf → root
+#                     Global German
+#                   Upper Franconian
+#                 Modern High German
+#               ...
+#     Germanic
+#   Classical Indo-European
+# Indo-European
 
-# All top-level root families
+# Print every top-level language family with its number of direct subgroups
 for fam in db.families.roots():
     print(fam.label, f"({len(fam.children)} subgroups)")
+# Abkhaz-Adyge (2 subgroups)
+# Afro-Asiatic (5 subgroups)
+# Ainu (1 subgroups)
+# ...  (246 root families in total)
 
-# Official language status per country (from CLDR)
+# Print Switzerland's nationally official, regionally official, and de facto official languages
 ch = db.countries.get("CH")
 print([l.label for l in ch.official_languages])
-# ['French', 'German', 'Italian', 'Romansh']
+# ['German', 'French', 'Italian']
 print([l.label for l in ch.official_regional_languages])
-# e.g. regionally recognised languages
+# ['Romansh']
 print([l.label for l in ch.de_facto_official_languages])
-# e.g. de facto official languages with no formal legal status
+# ['Swiss German']
 
-# Per-country speaker counts - how many people speak a language in each country
+# Print Rwanda's population and how many people speak each language there, per data source
 rw = db.countries.get("RW")
 print(f"Rwanda population: {rw.population:,}")
 for sc in rw.speaker_counts:
     print(f"{sc.language.label}: {sc.speaker_count:,} ({sc.speaker_fraction:.1%}) [{sc.source}]")
-# Rwanda population: 13,776,698
-# Kinyarwanda: 10,200,000 (74.0%) [cldr]
-# French: 300,000 (2.2%) [cldr]
-# Kinyarwanda: 9,900,000 (71.8%) [cia]
+# Rwanda population: 13,623,300
+# English: 2,043,495 (15.0%) [cldr]
+# French: 790,151 (5.8%) [cldr]
+# Kinyarwanda: 10,489,941 (77.0%) [cldr]
+# English: 1,900,000 (13.9%) [linguameta]
+# French: 2,300 (0.0%) [linguameta]
+# Kinyarwanda: 9,800,000 (71.9%) [linguameta]
 
-# Same from the language side
+# Print how many people speak Kinyarwanda in each country, per data source
 kin = db.languages.get("kin")
 for sc in kin.speaker_counts:
     print(f"{sc.country.label}: {sc.speaker_count:,} ({sc.source})")
+# Congo, Democratic Republic of the: 438,531 (cldr)
+# Rwanda: 10,489,941 (cldr)
+# Rwanda: 9,800,000 (linguameta)
+# Uganda: 1,034,943 (cldr)
 
-# Canonical names for a language across other languages
+# Print German's name for itself (its endonym) and its French name
 deu = db.languages.get("deu")
 print(deu.endonym.name)                       # "Deutsch"
 print([n.name for n in deu.names if n.in_language_bcp47 == "fr"])
 # ['allemand']
 
-# All known English names for every language
+# Print the English names of the first five languages
 for n in db.language_names.in_language("en")[:5]:
     print(f"{n.language.part3} → {n.name}")
+# aaa → Ghotuo
+# aab → Alumu-Tesu
+# aac → Ari
+# aad → Amal
+# aae → Arbëreshë Albanian
 
-# Query the full SpeakerCount collection directly
+# Get speaker counts filtered by country, language, or data source
 db.speaker_counts.for_country("DE")        # all entries for Germany
 db.speaker_counts.for_language("deu")      # all entries for German
 db.speaker_counts.by_source("cldr")        # all CLDR-sourced entries
@@ -185,15 +211,9 @@ pip install "languages-of-the-world[examples]"
 
 ## Entity Model
 
-```
-[Continent] <───1:N─── [Region] <───1:N─── [Country] <───M:N─── [Language] ───1:N─── [LanguageName]
-     │                                           │                     │                    │
-     └───────────────────1:N────────────────────┘                     └───N:1─── [LanguageFamily]
-                                │                                                      │ parent/children
-                                └───────────── [SpeakerCount] ─────────────────────────
-                                                  (country, language,
-                                                   speaker_count, source)
-```
+<img src="https://raw.githubusercontent.com/jnehring/languages-of-the-world/main/doc/entity-model.svg" alt="low entity model: Continent, Region, Country, SpeakerCount, Language, LanguageFamily, Script and LanguageName with their relationships">
+
+Every entity is a plain Python object; the blue fields in the diagram are references you can follow with dot notation (e.g. `lang.countries[0].region.continent`). Geography (`Continent` → `Region` → `Country`) comes from UN M49, and the linguistic side (`Language`, `LanguageFamily`, `Script`, `LanguageName`) is built around SIL ISO 639-3 codes. `SpeakerCount` links the two: it holds one row per country × language × source. Relationships are bidirectional: `Country.languages` and `Language.countries` are two views of the same many-to-many link.
 
 ### Language
 
@@ -318,8 +338,8 @@ for lang in db.languages: ...
 |---|---|
 | 2-char string | ISO 639-1 / ISO 3166-1 alpha-2 |
 | 3-char string | ISO 639-3 |
+| Glottolog code (languages, families) | Glottolog identifier, e.g. `"kiny1244"` |
 | 4-char string (scripts) | ISO 15924 |
-| 8-char string (families) | Glottolog code |
 | Longer string | Case-insensitive label |
 
 ### `.filter()` (LanguageCollection only)

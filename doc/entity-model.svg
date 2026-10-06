@@ -1,0 +1,225 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>low entity model</title>
+  <desc>Entities of the low package and how they reference each other: Continent, Region, Country, SpeakerCount, Language, LanguageFamily, Script and LanguageName.</desc>
+  <style>
+    .bg      { fill: #ffffff; }
+    .box     { fill: #ffffff; stroke: #d0d7de; stroke-width: 1.2; }
+    .geo     { fill: #ddf4ff; stroke: #54aeff; }
+    .lang    { fill: #dafbe1; stroke: #4ac26b; }
+    .link    { fill: #fff8c5; stroke: #d4a72c; }
+    .title   { font-size: 15px; font-weight: 600; fill: #1f2328; }
+    .src     { font-size: 10.5px; fill: #59636e; }
+    .field   { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #1f2328; }
+    .ref     { fill: #0969da; }
+    .edge    { fill: none; stroke: #59636e; stroke-width: 1.5; }
+    .dashed  { stroke-dasharray: 5 4; }
+    .card    { font-size: 12px; font-weight: 700; fill: #1f2328; }
+    .elabel  { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; fill: #59636e; }
+    .legend  { font-size: 12px; fill: #59636e; }
+    @media (prefers-color-scheme: dark) {
+      .bg    { fill: #0d1117; }
+      .box   { fill: #161b22; stroke: #3d444d; }
+      .geo   { fill: #0c2d6b; stroke: #388bfd; }
+      .lang  { fill: #033a16; stroke: #2ea043; }
+      .link  { fill: #4b3c00; stroke: #bb8009; }
+      .title, .field, .card { fill: #e6edf3; }
+      .src, .elabel, .legend { fill: #9198a1; }
+      .ref   { fill: #4493f8; }
+      .edge  { stroke: #9198a1; }
+    }
+  </style>
+
+  <rect class="bg" width="1280" height="640" rx="8"/>
+
+  <!-- ============ Edges (drawn first, under the boxes) ============ -->
+
+  <!-- Region -> Continent -->
+  <line class="edge" x1="150" y1="200" x2="150" y2="132"/>
+  <text class="card" x="158" y="146">1</text>
+  <text class="card" x="158" y="195">N</text>
+  <text class="elabel" x="174" y="170">continent</text>
+
+  <!-- Country -> Region -->
+  <line class="edge" x1="150" y1="380" x2="150" y2="308"/>
+  <text class="card" x="158" y="322">1</text>
+  <text class="card" x="158" y="375">N</text>
+  <text class="elabel" x="174" y="348">region</text>
+
+  <!-- Country -> Continent (around the left side) -->
+  <path class="edge" d="M40,410 H18 V86 H40"/>
+  <text class="card" x="24" y="80">1</text>
+  <text class="card" x="24" y="426">N</text>
+
+  <!-- Country <-> Language (spoken in) -->
+  <line class="edge" x1="260" y1="420" x2="690" y2="420"/>
+  <text class="card" x="266" y="414">M</text>
+  <text class="card" x="676" y="414">N</text>
+  <text class="elabel" x="475" y="412" text-anchor="middle">languages ⟷ countries</text>
+
+  <!-- Country -> Language (official status, CLDR) -->
+  <line class="edge dashed" x1="260" y1="460" x2="690" y2="460"/>
+  <text class="elabel" x="475" y="478" text-anchor="middle">official_ / official_regional_ /</text>
+  <text class="elabel" x="475" y="492" text-anchor="middle">de_facto_official_languages</text>
+
+  <!-- SpeakerCount -> Country -->
+  <line class="edge" x1="380" y1="324" x2="240" y2="380"/>
+  <text class="card" x="236" y="374" text-anchor="end">1</text>
+  <text class="card" x="372" y="342" text-anchor="end">N</text>
+  <text class="elabel" x="290" y="346" text-anchor="end">country</text>
+
+  <!-- SpeakerCount -> Language -->
+  <line class="edge" x1="590" y1="262" x2="690" y2="262"/>
+  <text class="card" x="598" y="256">N</text>
+  <text class="card" x="678" y="256">1</text>
+  <text class="elabel" x="640" y="280" text-anchor="middle">language</text>
+
+  <!-- Language -> LanguageFamily -->
+  <line class="edge" x1="805" y1="240" x2="805" y2="164"/>
+  <text class="card" x="813" y="178">1</text>
+  <text class="card" x="813" y="235">N</text>
+  <text class="elabel" x="829" y="206">family</text>
+
+  <!-- LanguageFamily self reference -->
+  <path class="edge" d="M920,76 H968 V140 H920"/>
+  <text class="elabel" x="976" y="104">parent /</text>
+  <text class="elabel" x="976" y="118">children</text>
+
+  <!-- Language <-> Script -->
+  <line class="edge" x1="920" y1="286" x2="1010" y2="286"/>
+  <text class="card" x="926" y="280">M</text>
+  <text class="card" x="998" y="280">N</text>
+  <text class="elabel" x="965" y="302" text-anchor="middle">scripts</text>
+
+  <!-- Language -> LanguageName (names) -->
+  <line class="edge" x1="920" y1="420" x2="1010" y2="420"/>
+  <text class="card" x="926" y="414">1</text>
+  <text class="card" x="998" y="414">N</text>
+  <text class="elabel" x="965" y="436" text-anchor="middle">names</text>
+
+  <!-- LanguageName -> Language (in_language) -->
+  <line class="edge dashed" x1="920" y1="460" x2="1010" y2="460"/>
+  <text class="elabel" x="965" y="476" text-anchor="middle">in_language</text>
+
+  <!-- ============ Entities ============ -->
+
+  <!-- Continent -->
+  <g>
+    <rect class="box" x="40" y="40" width="220" height="92" rx="6"/>
+    <path class="geo" d="M46,40 H254 A6,6 0 0 1 260,46 V70 H40 V46 A6,6 0 0 1 46,40 Z"/>
+    <text class="title" x="52" y="60">Continent</text>
+    <text class="src" x="248" y="60" text-anchor="end">UN M49</text>
+    <text class="field" x="52" y="88">id, label</text>
+    <text class="field ref" x="52" y="104">countries</text>
+    <text class="field" x="52" y="120" opacity="0">.</text>
+  </g>
+
+  <!-- Region -->
+  <g>
+    <rect class="box" x="40" y="200" width="220" height="108" rx="6"/>
+    <path class="geo" d="M46,200 H254 A6,6 0 0 1 260,206 V230 H40 V206 A6,6 0 0 1 46,200 Z"/>
+    <text class="title" x="52" y="220">Region</text>
+    <text class="src" x="248" y="220" text-anchor="end">UN M49</text>
+    <text class="field" x="52" y="248">id, label</text>
+    <text class="field ref" x="52" y="264">continent</text>
+    <text class="field ref" x="52" y="280">countries</text>
+  </g>
+
+  <!-- Country -->
+  <g>
+    <rect class="box" x="40" y="380" width="220" height="172" rx="6"/>
+    <path class="geo" d="M46,380 H254 A6,6 0 0 1 260,386 V410 H40 V386 A6,6 0 0 1 46,380 Z"/>
+    <text class="title" x="52" y="400">Country</text>
+    <text class="src" x="248" y="400" text-anchor="end">UN M49 · CLDR</text>
+    <text class="field" x="52" y="428">code  (ISO 3166-1)</text>
+    <text class="field" x="52" y="444">label, population</text>
+    <text class="field ref" x="52" y="460">continent, region</text>
+    <text class="field ref" x="52" y="476">languages</text>
+    <text class="field ref" x="52" y="492">official_languages</text>
+    <text class="field ref" x="52" y="508">official_regional_…</text>
+    <text class="field ref" x="52" y="524">de_facto_official_…</text>
+    <text class="field ref" x="52" y="540">speaker_counts</text>
+  </g>
+
+  <!-- SpeakerCount -->
+  <g>
+    <rect class="box" x="360" y="200" width="230" height="124" rx="6"/>
+    <path class="link" d="M366,200 H584 A6,6 0 0 1 590,206 V230 H360 V206 A6,6 0 0 1 366,200 Z"/>
+    <text class="title" x="372" y="220">SpeakerCount</text>
+    <text class="src" x="578" y="220" text-anchor="end">4 sources</text>
+    <text class="field ref" x="372" y="248">country</text>
+    <text class="field ref" x="372" y="264">language</text>
+    <text class="field" x="372" y="280">speaker_count</text>
+    <text class="field" x="372" y="296">speaker_fraction</text>
+    <text class="field" x="372" y="312">source</text>
+  </g>
+
+  <!-- LanguageFamily -->
+  <g>
+    <rect class="box" x="690" y="40" width="230" height="124" rx="6"/>
+    <path class="lang" d="M696,40 H914 A6,6 0 0 1 920,46 V70 H690 V46 A6,6 0 0 1 696,40 Z"/>
+    <text class="title" x="702" y="60">LanguageFamily</text>
+    <text class="src" x="908" y="60" text-anchor="end">Glottolog</text>
+    <text class="field" x="702" y="88">glottocode, label</text>
+    <text class="field ref" x="702" y="104">parent</text>
+    <text class="field ref" x="702" y="120">children</text>
+    <text class="field ref" x="702" y="136">languages</text>
+    <text class="field" x="702" y="152">root, ancestors, depth</text>
+  </g>
+
+  <!-- Language -->
+  <g>
+    <rect class="box" x="690" y="240" width="230" height="236" rx="6"/>
+    <path class="lang" d="M696,240 H914 A6,6 0 0 1 920,246 V270 H690 V246 A6,6 0 0 1 696,240 Z"/>
+    <text class="title" x="702" y="260">Language</text>
+    <text class="src" x="908" y="260" text-anchor="end">SIL ISO 639-3</text>
+    <text class="field" x="702" y="288">part3  (primary key)</text>
+    <text class="field" x="702" y="304">part1, label, scope</text>
+    <text class="field" x="702" y="320">speaker_count</text>
+    <text class="field" x="702" y="336">glottocode</text>
+    <text class="field" x="702" y="352">endangerment</text>
+    <text class="field ref" x="702" y="368">countries</text>
+    <text class="field ref" x="702" y="384">family</text>
+    <text class="field ref" x="702" y="400">scripts, primary_script</text>
+    <text class="field ref" x="702" y="416">names, endonym</text>
+    <text class="field ref" x="702" y="432">speaker_counts</text>
+  </g>
+
+  <!-- Script -->
+  <g>
+    <rect class="box" x="1010" y="240" width="230" height="92" rx="6"/>
+    <path class="lang" d="M1016,240 H1234 A6,6 0 0 1 1240,246 V270 H1010 V246 A6,6 0 0 1 1016,240 Z"/>
+    <text class="title" x="1022" y="260">Script</text>
+    <text class="src" x="1228" y="260" text-anchor="end">ISO 15924</text>
+    <text class="field" x="1022" y="288">code  (e.g. "deva")</text>
+    <text class="field" x="1022" y="304">label</text>
+    <text class="field ref" x="1022" y="320">languages</text>
+  </g>
+
+  <!-- LanguageName -->
+  <g>
+    <rect class="box" x="1010" y="380" width="230" height="140" rx="6"/>
+    <path class="lang" d="M1016,380 H1234 A6,6 0 0 1 1240,386 V410 H1010 V386 A6,6 0 0 1 1016,380 Z"/>
+    <text class="title" x="1022" y="400">LanguageName</text>
+    <text class="src" x="1228" y="400" text-anchor="end">LinguaMeta</text>
+    <text class="field ref" x="1022" y="428">language</text>
+    <text class="field ref" x="1022" y="444">in_language</text>
+    <text class="field" x="1022" y="460">name</text>
+    <text class="field" x="1022" y="476">in_language_bcp47</text>
+    <text class="field" x="1022" y="492">script, source</text>
+    <text class="field" x="1022" y="508">is_endonym</text>
+  </g>
+
+  <!-- ============ Legend ============ -->
+  <g transform="translate(40,590)">
+    <rect class="geo" x="0" y="-11" width="14" height="14" rx="3"/>
+    <text class="legend" x="20" y="0">Geography</text>
+    <rect class="lang" x="110" y="-11" width="14" height="14" rx="3"/>
+    <text class="legend" x="130" y="0">Linguistic</text>
+    <rect class="link" x="215" y="-11" width="14" height="14" rx="3"/>
+    <text class="legend" x="235" y="0">Association (one row per country × language × source)</text>
+    <text class="field ref" x="610" y="0">blue</text>
+    <text class="legend" x="645" y="0">= navigable object reference</text>
+    <line class="edge dashed" x1="840" y1="-4" x2="880" y2="-4"/>
+    <text class="legend" x="888" y="0">= secondary / optional link</text>
+  </g>
+</svg>

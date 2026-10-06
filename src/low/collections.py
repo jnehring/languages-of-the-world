@@ -44,18 +44,24 @@ class LanguageCollection(_BaseCollection[Language]):
         self._idx_p1 = {l.part1: l for l in languages if l.part1}
         self._idx_p3 = {l.part3: l for l in languages}
         self._idx_lbl = {l.label.lower(): l for l in languages}
+        self._idx_glottocode = {l.glottocode: l for l in languages if l.glottocode}
 
     def get(self, query: str) -> Optional[Language]:
         """
-        Polymorphic lookup by ISO 639-1 (2-char), ISO 639-3 (3-char), or label.
+        Polymorphic lookup by ISO 639-1 (2-char), ISO 639-3 (3-char), Glottolog
+        code, or label.
 
-        low.languages.get("fr")      -> ISO 639-1
-        low.languages.get("fra")     -> ISO 639-3
-        low.languages.get("French")  -> case-insensitive label
+        low.languages.get("fr")        -> ISO 639-1
+        low.languages.get("fra")       -> ISO 639-3
+        low.languages.get("stan1290")  -> Glottolog code
+        low.languages.get("French")    -> case-insensitive label
         """
         if not isinstance(query, str) or not query:
             return None
         token = query.strip()
+        result = self._idx_glottocode.get(token.lower())
+        if result is not None:
+            return result
         if len(token) == 2:
             return self._idx_p1.get(token.lower())
         if len(token) == 3:

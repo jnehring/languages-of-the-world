@@ -44,6 +44,10 @@ class TestRealDB:
         lang = real_db.languages.get("kin")
         assert lang.glottocode is not None
 
+    def test_lookup_by_glottocode(self, real_db):
+        assert real_db.languages.get("kiny1244").part3 == "kin"
+        assert real_db.languages.get("KINY1244").part3 == "kin"
+
     def test_french_part1(self, real_db):
         lang = real_db.languages.get("fr")
         assert lang is not None
